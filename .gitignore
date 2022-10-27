@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+.vscode
+*.vcd
+
+__pycache__/
+
+# Unit test results
+*.xml
+*.vcd
