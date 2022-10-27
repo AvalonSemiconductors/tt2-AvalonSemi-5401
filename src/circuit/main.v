@@ -192,7 +192,7 @@ module main( CAR_I,
    assign s_logisimNet7 = ~s_logisimNet16;
 
    // NOT Gate
-   assign s_logisimNet73 = ~s_logisimNet12;
+   assign s_logisimNet69 = ~s_logisimNet12;
 
    // NOT Gate
    assign s_logisimNet38 = ~s_logisimNet0;
@@ -298,22 +298,22 @@ module main( CAR_I,
    XOR_GATE_ONEHOT #(.BubblesMask(2'b00))
       GATES_20 (.input1(s_logisimNet2),
                 .input2(s_logisimNet24),
-                .result(s_logisimNet69));
+                .result(s_logisimNet70));
 
    XOR_GATE_ONEHOT #(.BubblesMask(2'b00))
       GATES_21 (.input1(s_logisimNet19),
                 .input2(s_logisimNet3),
-                .result(s_logisimNet70));
+                .result(s_logisimNet71));
 
    XOR_GATE_ONEHOT #(.BubblesMask(2'b00))
       GATES_22 (.input1(s_logisimNet11),
                 .input2(s_logisimNet17),
-                .result(s_logisimNet71));
+                .result(s_logisimNet72));
 
    XOR_GATE_ONEHOT #(.BubblesMask(2'b00))
       GATES_23 (.input1(s_logisimNet25),
                 .input2(s_logisimNet10),
-                .result(s_logisimNet72));
+                .result(s_logisimNet73));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_24 (.input1(s_logisimNet27),
@@ -461,33 +461,33 @@ module main( CAR_I,
                 .result(s_logisimNet21));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_53 (.input1(s_logisimNet69),
+      GATES_53 (.input1(s_logisimNet70),
                 .input2(s_logisimNet45),
                 .result(s_logisimNet49));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_54 (.input1(s_logisimNet70),
+      GATES_54 (.input1(s_logisimNet71),
                 .input2(s_logisimNet45),
                 .result(s_logisimNet8));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_55 (.input1(s_logisimNet71),
+      GATES_55 (.input1(s_logisimNet72),
                 .input2(s_logisimNet45),
                 .result(s_logisimNet56));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_56 (.input1(s_logisimNet72),
+      GATES_56 (.input1(s_logisimNet73),
                 .input2(s_logisimNet45),
                 .result(s_logisimNet28));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_57 (.input1(s_logisimNet0),
-                .input2(s_logisimNet12),
+                .input2(s_logisimNet69),
                 .result(s_logisimNet45));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_58 (.input1(s_logisimNet38),
-                .input2(s_logisimNet73),
+                .input2(s_logisimNet69),
                 .result(s_logisimNet9));
 
    OR_GATE #(.BubblesMask(2'b00))

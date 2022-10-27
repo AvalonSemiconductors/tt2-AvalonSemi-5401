@@ -67,16 +67,16 @@ module clock_gen( CLK,
    *******************************************************************************/
 
    // NOT Gate
+   assign s_logisimNet10 = ~s_logisimNet15;
+
+   // NOT Gate
+   assign s_logisimNet12 = ~s_logisimNet0;
+
+   // NOT Gate
    assign s_logisimNet8 = ~s_logisimNet14;
 
    // NOT Gate
    assign s_logisimNet13 = ~s_logisimNet3;
-
-   // NOT Gate
-   assign s_logisimNet10 = ~s_logisimNet15;
-
-   // NOT Gate
-   assign s_logisimNet12 = ~s_logisimNet1;
 
    /*******************************************************************************
    ** Here all normal components are defined                                     **
@@ -89,11 +89,11 @@ module clock_gen( CLK,
    OR_GATE #(.BubblesMask(2'b00))
       GATES_2 (.input1(s_logisimNet2),
                .input2(s_logisimNet7),
-               .result(s_logisimNet0));
+               .result(s_logisimNet1));
 
    NOR_GATE #(.BubblesMask(2'b00))
       GATES_3 (.input1(s_logisimNet11),
-               .input2(s_logisimNet0),
+               .input2(s_logisimNet1),
                .result(s_logisimNet5));
 
    NOR_GATE #(.BubblesMask(2'b00))
@@ -106,7 +106,7 @@ module clock_gen( CLK,
                 .d(s_logisimNet10),
                 .preset(s_logisimNet2),
                 .q(),
-                .qBar(s_logisimNet1),
+                .qBar(s_logisimNet0),
                 .reset(1'b0),
                 .tick(1'b1));
 
