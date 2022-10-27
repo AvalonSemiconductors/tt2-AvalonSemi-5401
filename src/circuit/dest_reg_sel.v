@@ -88,12 +88,17 @@ module dest_reg_sel( CLK,
    ** Here all normal components are defined                                     **
    *******************************************************************************/
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_1 (.input1(s_logisimNet13),
+      GATES_1 (.input1(s_logisimNet14),
+               .input2(s_logisimNet1),
+               .result(s_logisimNet10));
+
+   AND_GATE #(.BubblesMask(2'b00))
+      GATES_2 (.input1(s_logisimNet13),
                .input2(s_logisimNet7),
                .result(s_logisimNet8));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_2 (.clock(s_logisimNet10),
+      MEMORY_3 (.clock(s_logisimNet10),
                 .d(s_logisimNet0),
                 .preset(s_logisimNet8),
                 .q(s_logisimNet4),
@@ -102,7 +107,7 @@ module dest_reg_sel( CLK,
                 .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_3 (.clock(s_logisimNet10),
+      MEMORY_4 (.clock(s_logisimNet10),
                 .d(s_logisimNet5),
                 .preset(1'b0),
                 .q(s_logisimNet9),
@@ -111,18 +116,13 @@ module dest_reg_sel( CLK,
                 .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_4 (.clock(s_logisimNet10),
+      MEMORY_5 (.clock(s_logisimNet10),
                 .d(s_logisimNet12),
                 .preset(1'b0),
                 .q(s_logisimNet11),
                 .qBar(s_logisimNet6),
                 .reset(s_logisimNet8),
                 .tick(1'b1));
-
-   AND_GATE #(.BubblesMask(2'b00))
-      GATES_5 (.input1(s_logisimNet14),
-               .input2(s_logisimNet1),
-               .result(s_logisimNet10));
 
 
 endmodule
