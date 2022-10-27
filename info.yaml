@@ -17,7 +17,7 @@ project:
     - gates/NOR_GATE.v
     - gates/XOR_GATE_ONEHOT.v
     - memory/D_FLIPFLOP.v
-  top_module:  "logisim_demo"      # put the name of your top module here, make it unique by prepending your github username
+  top_module:  "tholin_avalonsemi_5401"      # put the name of your top module here, make it unique by prepending your github username
 
 # As everyone will have access to all designs, try to make it easy for someone new to your design to know what
 # it does and how to operate it.
@@ -27,11 +27,11 @@ project:
 # This info will be automatically collected and used to make a datasheet for the chip.
 documentation: 
   author:       "Tholin"      # Your name
-  title:        "Logisim demo - LED blinker"      # Project title
-  description:  "Example of how to use Logisim Evolution generated Verilog for TinyTapeout."      # Short description of what your project does
-  how_it_works: "Its a 4-bit ring-shift register with a single '1' cycling through it after reset."      # Longer description of how the project works
-  how_to_test:  "After starting the clock, the 4 outputs will remain off or in a random state until the reset input is activated. Then it should work as described."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
-  external_hw:  "A button for reset, some way to display the output (LEDs)"      # Describe any external hardware needed
+  title:        "AvalonSemi 5401 4-bit Microprocessor"      # Project title
+  description:  "4-bit CPU capable of addressing 4096 bytes program memory and 256 words data memory. Hopefully capable of more complex computation than previous CPU submissions."      # Short description of what your project does
+  how_it_works: "TODO"      # Longer description of how the project works
+  how_to_test:  "TODO"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "TODO"      # Describe any external hardware needed
   language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     2       # Clock frequency in Hz (if required)
@@ -39,19 +39,19 @@ documentation:
   inputs:               # a description of what the inputs do
     - CLK
     - RST
-    - none
-    - none
-    - none
-    - none
+    - D0
+    - D1
+    - D2
+    - D3
     - none
     - none
   outputs:
-    - O_0         # a description of what the outputs do
-    - O_1
-    - O_2
-    - O_3
-    - none
-    - none
-    - none
-    - none
+    - D0_RR0         # a description of what the outputs do
+    - D1_RR1
+    - D2_RR2
+    - D3_RR3
+    - D4_MAR
+    - D5_WRITE
+    - D6_JMP
+    - D7_I
 
