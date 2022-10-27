@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1666869827" />
+    <testcase name="test_shift" classname="test" file="/home/lucah/tt02-logisim-example/src/test.py" lineno="7" time="0.005526542663574219" sim_time_ns="13000000000.001" ratio_time="2352284383089.051" />
+  </testsuite>
+</testsuites>
