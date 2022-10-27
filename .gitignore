@@ -4,6 +4,7 @@
 *.vcd
 
 __pycache__/
+sim_build/
 
 # Unit test results
 *.xml
