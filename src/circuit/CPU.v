@@ -659,7 +659,7 @@ module CPU( CLK,
                   .is_zero(s_logisimNet54));
 
    dest_reg_sel   dest_reg_sel_1 (.CLK(s_logisimNet40),
-                                  .CLK2(s_logisimNet4),
+                                  .CLK1(s_logisimNet46),
                                   .LDD(s_logisimNet13),
                                   .RST(s_logisimNet76),
                                   .S0(s_logisimNet22),

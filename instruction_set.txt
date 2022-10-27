@@ -1,0 +1,16 @@
+0000: LD            - Load
+0001: STR           - Store
+0010: SEI           - Set I
+0011: LML           - Load MAR Lower
+0100: JMP           - Jump, unconditional
+0101: JC            - Jump if Carry
+0110: JZ            - Jump if Zero
+0111: LDD           - Load Destination Register
+1000: ADD           - Add to RR
+1001: SUB           - Substract from RR
+1010: ADC           - Add to RR with carry
+1011: SUC           - Substract from RR with carry
+1100: OR            - AND with RR
+1101: AND           - OR with RR
+1110: XOR           - XOR with RR
+1111: LMH           - Load MAR Higher
