@@ -192,10 +192,10 @@ module main( CAR_I,
    assign s_logisimNet7 = ~s_logisimNet16;
 
    // NOT Gate
-   assign s_logisimNet38 = ~s_logisimNet0;
+   assign s_logisimNet73 = ~s_logisimNet12;
 
    // NOT Gate
-   assign s_logisimNet73 = ~s_logisimNet12;
+   assign s_logisimNet38 = ~s_logisimNet0;
 
    /*******************************************************************************
    ** Here all normal components are defined                                     **

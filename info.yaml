@@ -27,7 +27,7 @@ project:
 # This info will be automatically collected and used to make a datasheet for the chip.
 documentation: 
   author:       "Tholin"      # Your name
-  title:        "AvalonSemi 5401 4-bit Microprocessor"      # Project title
+  title:        "Avalon Semiconductors '5401' 4-bit Microprocessor"      # Project title
   description:  "4-bit CPU capable of addressing 4096 bytes program memory and 256 words data memory. Hopefully capable of more complex computation than previous CPU submissions."      # Short description of what your project does
   how_it_works: "TODO"      # Longer description of how the project works
   how_to_test:  "TODO"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
