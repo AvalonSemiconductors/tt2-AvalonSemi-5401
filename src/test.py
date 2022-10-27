@@ -31,9 +31,9 @@ async def reset_cpu(dut):
 	dut._log.info("reset")
 	dut.RST.value = 1
 	await Timer(3, units="ms")
-	await Timer(0.75, units="ms")
+	await Timer(750, units="us")
 	dut.RST.value = 0
-	await Timer(0.25, units="ms")
+	await Timer(250, units="us")
 
 async def exec_instr(dut, instr, data=-1, expect_flag=0):
 	dut._log.info(instr_names[instr])
@@ -69,7 +69,7 @@ async def sei(dut):
 async def test_cpu(dut):
 	dut._log.info("start")
 	clock = Clock(dut.CLK, 1, units="ms")
-	cocotb.fork(clock.start())
+	cocotb.start_soon(clock.start())
 
 	await reset_cpu(dut)
 	
