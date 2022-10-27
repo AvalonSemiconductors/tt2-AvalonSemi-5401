@@ -21,6 +21,7 @@ jobs:
       run: |
         cd src
         make
+        pwd
         ! grep failure results.xml
     - uses: actions/upload-artifact@v3
       with:
