@@ -5,6 +5,8 @@ This is a submission for TinyTapeout 2.
 
 The 5401 is a 4-bit hybrid Harvard architecture microprocessor capable of addressing up to 4096 bytes of program memory, and 256 words of data memory. This is possible through multiplexing on both the input and output ports.
 
+![block diagram](https://raw.githubusercontent.com/89Mods/tt2-AvalonSemi-5401/main/assets/block_diag.png)
+
 # Pinout Diagram
 
 | Inputs    | --- | Outputs                   |

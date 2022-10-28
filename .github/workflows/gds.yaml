@@ -6,7 +6,7 @@ permissions:
   pages: write
   id-token: write
 jobs:
-  test:
+  tests:
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo
@@ -17,7 +17,7 @@ jobs:
         pip3 install cocotb pytest
         cocotb-config --libpython
         cocotb-config --python-bin
-    - name: test
+    - name: run tests
       run: |
         cd src
         make
