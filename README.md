@@ -72,16 +72,28 @@ The processor is requesting the Program Counter be loaded with a new value. The 
 
 Flag I, also called the Immediate Flag, indicates to the control logic that the next instruction wants to load from program memory, rather than data memory. The memory location to be read from is the same as the memory location of the following instruction. If a standard 8-bit ROM is used as the program memory, instructions may be stored in the lower nibble, and data in the higher nibble. This flag must be latched to take effect during the entirety of the following instruction. It must not be cleared until the next falling edge of T3 where the flag is inactive.
 
+## Register set
+
+The following registers are present inside the 5401:
+
+| Name | Mnemonic | Size (bits) | Description |
+| ---- | -------- | ----------- | ----------- |
+| Result Register | RR | 4 | Accumulator register |
+| Carry flag | CAR | 1 | Stores the carry bit after an addition or substraction operation |
+| Destination Register | DR | 12 | Buffers the branch target for jump instructions |
+| Memory Address Buffer Register | MABR | 8 | Internal buffer of the Memory Address Register |
+| Destination Register Pointer | DRP | 3 | Pointer to one of the three words comprising the Destination Register |
+
 # Instruction set
 
-### Summary
+## Summary
 
 | Instruction | Mnemonic | Opcode | Operation |
 | ----------- | -------- | ------ | --------- |
 | Load RR | LD | 0000 | RR = Data |
 | Store RR | STR | 0001 | DB1[3:0] = RR; F_WRITE = 1 |
 | Set I | SEI | 0010 | F_I = 1 |
-| Load MAR Lower | LML | 0011 | IF I: MARB[3:0] = Data; ELSE: MARB[3:0] = RR; DB0 = MARB; F_MAR = 1 |
+| Load MAR Lower | LML | 0011 | IF I: MABR[3:0] = Data; ELSE: MABR[3:0] = RR; DB0 = MARB; F_MAR = 1 |
 | Jump, unconditional | JMP | 0100 | DB0 = DR[7:0]; DB1[3:0] = DR[11:8]; F_JMP = 1 |
 | Jump if Carry | JC | 0101 | IF CAR: DB0 = DR[7:0]; DB1[3:0] = DR[11:8]; F_JMP = 1; ELSE: nop |
 | Jump if Zero | JZ | 0110 | IF RR == 0: DB0 = DR[7:0]; DB1[3:0] = DR[11:8]; F_JMP = 1; ELSE: nop |
@@ -93,4 +105,45 @@ Flag I, also called the Immediate Flag, indicates to the control logic that the 
 | Logic OR with RR | OR | 1100 | RR = RR \| data |
 | Logic AND with RR | AND | 1101 | RR = RR & data |
 | Logic XOR with RR | XOR | 1110 | RR = RR ^ data |
-| Load MAR Higher | LMH | 1111 | IF I: MARB[7:4] = Data; ELSE: MARB[7:4] = RR; DB0 = MARB; F_MAR = 1 |
+| Load MAR Higher | LMH | 1111 | IF I: MABR[7:4] = Data; ELSE: MABR[7:4] = RR; DB0 = MARB; F_MAR = 1 |
+
+## Instruction details
+
+### LD
+
+This instruction will load the contents of the data bus into the Result Register.
+
+### STR
+
+The value of the Result Register will be written to memory.
+
+### SEI
+
+The I-flag will be set both internally and externally. With the exception of LDR, the completion of the following instruction will automatically clear the flag. It also modified the behaviour of the LML, LMH and LDR instructions.
+
+### LML / LMH
+
+These instructions will set one nibble of the Memory Address Register at a time. Both instructions write to the Memory Address Buffer Register first, before the full contents of this register are sent out to the control logic, to become the new value of the Memory Address Register.
+By default, both instructions will load the value of the Result Register into the MABR, but if the I-flag is set, they will instead fetch a value from the data bus, allowing constant values to be loaded.
+
+### JMP / JC / JZ
+
+This group of instructions will take the contents of the Destination Register, and send them out to the control logic to become the new Program Counter value, effectively moving program execution to a new location. JC and JZ do this conditionally, with the instruction being skipped if their condition is not met. JC will check the current value of the Carry Flag, and not branch if it is 0, and JZ will check the current value of the Result Register, and only branch of it is equal to 0.
+
+### LDR
+
+Part of the value of the Destination Register will be loaded. As the Destination Register is 12 bits wide, it cannot be loaded all at once. Instead, it is segmented into three words of 4 bits each. A pointer is stored in the Destination Register Pointer register, pointing to one of these three words. The word currently pointed to by the DRP will be set, and the DRP is advanced. The DRP cycles back around to 0 after the third word has been written.
+A full load of the entire Destination Register thus requires three executions of the LDR instruction.
+By default, the instruction will load the value of the Result Register into the DR, but if the I-flag is set, it will instead fetch a value from the data bus, allowing constant values to be loaded. Additionally, this instruction will inhibit the I-flag from being reset at its completion, meaning the flag stays active for the next instructions. This allows the entire DR to be rapidly loaded with constant data by executing SEI once, followed by three times LDR.
+
+### ADD, ADC
+
+A value from the data bus will be added onto the Result Register. The carry flag will be set if the result overflows the RR, but cleared otherwise. In the case of ADC, the previous carry flag will also be added onto the result.
+
+### SUB,SUC
+
+A value form the data bus will be substracted from the Result Register. The carry flag will be cleared if the result underflows the RR, but set otherwise. In the case of ADC, the inverse of the previous carry flag will also be substracted from the result.
+
+### OR, AND, XOR
+
+A logical operation will be performed between the Result Register and a value from the data bus. The carry flag will not be updated.
