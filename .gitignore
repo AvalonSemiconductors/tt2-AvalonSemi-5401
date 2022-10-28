@@ -5,6 +5,7 @@
 
 __pycache__/
 sim_build/
+gds_out/
 
 # Unit test results
 *.xml
