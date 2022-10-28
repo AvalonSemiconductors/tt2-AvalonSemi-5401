@@ -35,6 +35,9 @@ async def reset_cpu(dut):
 	dut.RST.value = 0
 	await Timer(250, units="us")
 
+# Executed an instruction with the given data word provided on the bus after the instruction word.
+# Also tests if the flags in t1 are in a specific state
+# If data is < 0, a random data word will be presented on the bus
 async def exec_instr(dut, instr, data=-1, expect_flag=0):
 	dut._log.info(instr_names[instr])
 	dut.data_in.value = instr
@@ -53,15 +56,18 @@ async def exec_instr(dut, instr, data=-1, expect_flag=0):
 		assert (t1 & 0b11110000) == 0
 	return t0,t1
 	
+# Executes SEI followed by LD to set the Result Register to a specific value
 async def set_rr(dut, value):
 	await exec_instr(dut, I_SEI, -1, FLAG_I)
 	await exec_instr(dut, I_LD, value)
 	await assert_rr(dut, value)
 	
+# Gets the value of the Result Register by executing STR, and checks its value
 async def assert_rr(dut, expected):
 	_, t1 = await exec_instr(dut, I_STR, -1, FLAG_WRITE)
 	assert (t1 & 0b1111) == expected
 	
+# Executes SEI, asserting the I-flag as well
 async def sei(dut):
 	await exec_instr(dut, I_SEI, -1, FLAG_I)
 	

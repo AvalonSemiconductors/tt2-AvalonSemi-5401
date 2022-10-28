@@ -4,19 +4,9 @@ project:
   wokwi_id:    0        # If using wokwi, set this to your project's ID
   source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
     - toplevel/logisimTopLevelShell.v
-    - circuit/main.v
-    - circuit/clock_gen.v
-    - circuit/CPU.v
-    - circuit/dest_reg_sel.v
-    - circuit/eq_0.v
-    - circuit/inst_dec.v
-    - circuit/output_logic.v
-    - gates/NAND_GATE.v
-    - gates/AND_GATE.v
-    - gates/OR_GATE.v
-    - gates/NOR_GATE.v
-    - gates/XOR_GATE_ONEHOT.v
-    - memory/D_FLIPFLOP.v
+    - circuit/*.v
+    - gates/*.v
+    - memory/*.v
   top_module:  "tholin_avalonsemi_5401"      # put the name of your top module here, make it unique by prepending your github username
 
 # As everyone will have access to all designs, try to make it easy for someone new to your design to know what
