@@ -3,6 +3,10 @@
 # Avalon Semiconductors 5401
 This is a submission for TinyTapeout 2.
 
+```
+Author's note: I thought I'd give this a bit of a nostalgic feel by calling it the '5401', like it's some old microprocessor from the 70s or 80s. Of course had to complete with a made-up brand name, which is where the 'Avalon Semiconductors' comes from. Documentation for this is quite long, but I hope it will be a informative as well as enjoyable read.
+```
+
 The 5401 is a 4-bit hybrid Harvard architecture microprocessor capable of addressing up to 4096 bytes of program memory, and 256 words of data memory. This is possible through multiplexing on both the input and output ports.
 
 ![block diagram](https://raw.githubusercontent.com/89Mods/tt2-AvalonSemi-5401/main/assets/block_diag.png)
