@@ -150,3 +150,9 @@ A value form the data bus will be substracted from the Result Register. The carr
 ### OR, AND, XOR
 
 A logical operation will be performed between the Result Register and a value from the data bus. The carry flag will not be updated.
+
+# Example system diagram
+
+This circuit diagram shows a functional computer using the 5401 capable of executing all instructions as intended. It is implemented using only 74-series logic, though the design could be simplified through the use of a GAL.
+
+![computer schematic](https://raw.githubusercontent.com/89Mods/tt2-AvalonSemi-5401/main/assets/example_system.png)
