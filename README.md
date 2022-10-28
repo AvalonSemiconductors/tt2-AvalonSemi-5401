@@ -78,6 +78,7 @@ The following registers are present inside the 5401:
 
 | Name | Mnemonic | Size (bits) | Description |
 | ---- | -------- | ----------- | ----------- |
+| Instruction Register| IR | 4 | Holds the instruction currently being executed |
 | Result Register | RR | 4 | Accumulator register |
 | Carry flag | CAR | 1 | Stores the carry bit after an addition or substraction operation |
 | Destination Register | DR | 12 | Buffers the branch target for jump instructions |
@@ -134,7 +135,7 @@ This group of instructions will take the contents of the Destination Register, a
 
 Part of the value of the Destination Register will be loaded. As the Destination Register is 12 bits wide, it cannot be loaded all at once. Instead, it is segmented into three words of 4 bits each. A pointer is stored in the Destination Register Pointer register, pointing to one of these three words. The word currently pointed to by the DRP will be set, and the DRP is advanced. The DRP cycles back around to 0 after the third word has been written.
 A full load of the entire Destination Register thus requires three executions of the LDR instruction.
-By default, the instruction will load the value of the Result Register into the DR, but if the I-flag is set, it will instead fetch a value from the data bus, allowing constant values to be loaded. Additionally, this instruction will inhibit the I-flag from being reset at its completion, meaning the flag stays active for the next instructions. This allows the entire DR to be rapidly loaded with constant data by executing SEI once, followed by three times LDR.
+By default, the instruction will load the value of the Result Register into the DR, but if the I-flag is set, it will instead fetch a value from the data bus, allowing constant values to be loaded. Additionally, this instruction will inhibit the I-flag from being reset at its completion, meaning the flag stays active for the next instruction. This allows the entire DR to be rapidly loaded with constant data by executing SEI once, followed by three times LDR.
 
 ### ADD, ADC
 
