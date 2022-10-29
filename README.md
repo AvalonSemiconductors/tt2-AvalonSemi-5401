@@ -104,7 +104,7 @@ The following registers are present inside the 5401:
 | Jump, unconditional | JMP | 0100 | DB0 = DR[7:0]; DB1[3:0] = DR[11:8]; F_JMP = 1 |
 | Jump if Carry | JC | 0101 | IF CAR: DB0 = DR[7:0]; DB1[3:0] = DR[11:8]; F_JMP = 1; ELSE: nop |
 | Jump if Zero | JZ | 0110 | IF RR == 0: DB0 = DR[7:0]; DB1[3:0] = DR[11:8]; F_JMP = 1; ELSE: nop |
-| Load Destination Register | LDR | 0111 | IF I: DR[DRP\*8+7:DRP\*8] = Data; ELSE: DR[DRP\*8+7:DRP\*8] = RR; DRP = (DRP + 1) % 3 |
+| Load Destination Register | LDR | 0111 | IF I: DR[DRP\*4+3:DRP\*4] = Data; ELSE: DR[DRP\*4+3:DRP\*4] = RR; DRP = (DRP + 1) % 3 |
 | Add to RR | ADD | 1000 | RR, CAR = RR + data |
 | Substract from RR | SUB | 1001 | RR, CAR = RR - data |
 | Add to RR with carry | ADC | 1010 | RR, CAR = RR + data + CAR |
