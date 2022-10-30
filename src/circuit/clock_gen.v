@@ -52,89 +52,92 @@ module clock_gen( CLK,
    /*******************************************************************************
    ** Here all input connections are defined                                     **
    *******************************************************************************/
-   assign s_logisimNet4 = CLK;
-   assign s_logisimNet6 = RST;
+   assign s_logisimNet3 = CLK;
+   assign s_logisimNet5 = RST;
 
    /*******************************************************************************
    ** Here all output connections are defined                                    **
    *******************************************************************************/
-   assign CLK1 = s_logisimNet7;
-   assign CLK2 = s_logisimNet9;
-   assign O_S  = s_logisimNet5;
+   assign CLK1 = s_logisimNet8;
+   assign CLK2 = s_logisimNet6;
+   assign O_S  = s_logisimNet7;
 
    /*******************************************************************************
    ** Here all in-lined components are defined                                   **
    *******************************************************************************/
 
    // NOT Gate
-   assign s_logisimNet10 = ~s_logisimNet15;
+   assign s_logisimNet10 = ~s_logisimNet14;
 
    // NOT Gate
-   assign s_logisimNet12 = ~s_logisimNet0;
+   assign s_logisimNet11 = ~s_logisimNet0;
 
    // NOT Gate
-   assign s_logisimNet8 = ~s_logisimNet14;
+   assign s_logisimNet9 = ~s_logisimNet13;
 
    // NOT Gate
-   assign s_logisimNet13 = ~s_logisimNet3;
+   assign s_logisimNet12 = ~s_logisimNet2;
+
+   // Constant
+   assign  s_logisimNet4  =  1'b1;
+
 
    /*******************************************************************************
    ** Here all normal components are defined                                     **
    *******************************************************************************/
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_1 (.input1(s_logisimNet6),
-               .input2(s_logisimNet4),
-               .result(s_logisimNet2));
-
-   OR_GATE #(.BubblesMask(2'b00))
-      GATES_2 (.input1(s_logisimNet2),
-               .input2(s_logisimNet7),
+      GATES_1 (.input1(s_logisimNet5),
+               .input2(s_logisimNet3),
                .result(s_logisimNet1));
 
-   NOR_GATE #(.BubblesMask(2'b00))
-      GATES_3 (.input1(s_logisimNet11),
-               .input2(s_logisimNet1),
-               .result(s_logisimNet5));
-
-   NOR_GATE #(.BubblesMask(2'b00))
-      GATES_4 (.input1(s_logisimNet9),
-               .input2(s_logisimNet5),
-               .result(s_logisimNet11));
-
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_5 (.clock(s_logisimNet4),
+      MEMORY_2 (.clock(s_logisimNet3),
                 .d(s_logisimNet10),
-                .preset(s_logisimNet2),
+                .preset(s_logisimNet1),
                 .q(),
                 .qBar(s_logisimNet0),
                 .reset(1'b0),
                 .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_6 (.clock(s_logisimNet4),
-                .d(s_logisimNet12),
+      MEMORY_3 (.clock(s_logisimNet3),
+                .d(s_logisimNet11),
                 .preset(1'b0),
-                .q(s_logisimNet7),
-                .qBar(s_logisimNet14),
-                .reset(s_logisimNet2),
+                .q(s_logisimNet8),
+                .qBar(s_logisimNet13),
+                .reset(s_logisimNet1),
                 .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_7 (.clock(s_logisimNet4),
-                .d(s_logisimNet8),
+      MEMORY_4 (.clock(s_logisimNet3),
+                .d(s_logisimNet9),
                 .preset(1'b0),
                 .q(),
-                .qBar(s_logisimNet3),
-                .reset(s_logisimNet2),
+                .qBar(s_logisimNet2),
+                .reset(s_logisimNet1),
                 .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_8 (.clock(s_logisimNet4),
-                .d(s_logisimNet13),
+      MEMORY_5 (.clock(s_logisimNet3),
+                .d(s_logisimNet12),
                 .preset(1'b0),
-                .q(s_logisimNet9),
-                .qBar(s_logisimNet15),
-                .reset(s_logisimNet2),
+                .q(s_logisimNet6),
+                .qBar(s_logisimNet14),
+                .reset(s_logisimNet1),
+                .tick(1'b1));
+
+   OR_GATE #(.BubblesMask(2'b00))
+      GATES_6 (.input1(s_logisimNet8),
+               .input2(s_logisimNet6),
+               .result(s_logisimNet15));
+
+   T_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_7 (.clock(s_logisimNet15),
+                .preset(s_logisimNet1),
+                .q(s_logisimNet7),
+                .qBar(),
+                .reset(1'b0),
+                .t(s_logisimNet4),
                 .tick(1'b1));
 
 
