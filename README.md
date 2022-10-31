@@ -21,8 +21,8 @@ The 5401 is a 4-bit hybrid Harvard architecture microprocessor capable of addres
 | I1 / D1 - |     | - MAR3 / DR3 / DR11 / RR3 |
 | I2 / D2 - |     | - MAR4 / DR4 / F_MAR      |
 | I3 / D3 - |     | - MAR5 / DR5 / F_WRITE    |
-| NC -      |     | - MAR6 / DR6 / F_JMP      |
-| NC -      |     | - MAR7 / DR7 / F_I        |
+| EF0 -     |     | - MAR6 / DR6 / F_JMP      |
+| EF1 -     |     | - MAR7 / DR7 / F_I        |
 
 # Signal descriptions
 
@@ -32,7 +32,7 @@ The 5401 is a 4-bit hybrid Harvard architecture microprocessor capable of addres
 | RST  | Reset input |
 | I0 - I3 | Instruction input |
 | D0 - D3 | Data input |
-| NC | No connect |
+| EF0 - EF1 | Event flag general-purpose inputs |
 | MAR0 - MAR7 | New value of Memory Address Register, valid when F_MAR = 1 |
 | DR0 - DR11 | Value of Destination Register, to be loaded into PC when F_JMP = 1 |
 | RR0 - RR3 | Value of Result Register, to be written to memory  when F_WRITE = 1 |
@@ -90,6 +90,10 @@ The following registers are present inside the 5401:
 | Destination Register | DR | 12 | Buffers the branch target for jump instructions |
 | Memory Address Buffer Register | MABR | 8 | Internal buffer of the Memory Address Register |
 | Destination Register Pointer | DRP | 3 | Pointer to one of the three words comprising the Destination Register |
+
+## Input ports
+
+The 5401 has two, general-purpose input ports, EF0 and EF1. They are memory mapped. If the MABR is set to FFh and any instruction fetching data from memory is executed, bits 0 and 1 of the data word will be overriden by the states of EF0 and EF1. Bit 0 will be 1 if EF0 is at a high logic level (0 otherwise), while bit 1 will be 1 if EF1 is at a high logic level (0 otherwise). Note that bits 2 and 3 are not overriden, and will contain data from memory.
 
 # Instruction set
 
