@@ -195,6 +195,7 @@ jobs:
           path: |
             src/*
             runs/wokwi/results/final/*
+            runs/wokwi/logs
             runs/wokwi/reports/metrics.csv
             runs/wokwi/reports/synthesis/1-synthesis.AREA 0.stat.rpt
 
