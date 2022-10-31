@@ -92,20 +92,65 @@ def get_top_module(yaml):
 
 def get_stats():
     cells = 0
-    with open('runs/wokwi/reports/synthesis/1-synthesis.AREA 0.stat.rpt') as f:
-        for line in f.readlines():
-            m = re.search(r'Number of cells:\s+(\d+)', line)
-            if m is not None:
-                print(line)
-                cells = m.group(1)
+    stats = {}
     with open('runs/wokwi/reports/metrics.csv') as f:
         report = list(csv.DictReader(f))[0]
-        report['cell_count'] = cells  # cell count is broken ATM
-        keys = ['OpenDP_Util', 'cell_count', 'wire_length', 'AND', 'DFF', 'NAND', 'NOR', 'OR', 'XOR', 'XNOR', 'MUX']
-        print(f'| { "|".join(keys) } |')
-        print(f'| { "|".join(["-----"] * len(keys)) } |')
-        print(f'| { "|".join(report[k] for k in keys) } |')
+        keys = ['OpenDP_Util', 'wire_length']
+        for k in keys:
+            stats[k] = report[k]
 
+    types = {}
+    type_counts = {}
+    cell_types = {}
+    with open('cell_types.txt') as f:
+        while(True):
+            l = f.readline()
+            if(l.startswith('-')):
+                break
+            l = l.split(',')
+            types[l[0]] = l[1][0] == '1'
+            type_counts[l[0]] = 0
+        while(True):
+            l = f.readline()
+            if(l == ''):
+                break
+            l = l.split(',')
+            l2 = l[1].strip()
+            if(l2 in types):
+                cell_types[l[0]] = l2
+            else:
+                print(f'Invalid cell type for {l[0]}')
+    with open('runs/wokwi/logs/synthesis/1-synthesis.log') as fl:
+        lines = fl.readlines();
+        last_occurance = 0
+        for i in range(len(lines)):
+            m = re.search(r'Number of cells:\s+(\d+)', lines[i]);
+            if m is not None:
+                last_occurance = i
+                stats['cell_count'] = m.group(1)
+        print(lines[last_occurance].strip())
+        print()
+        for i in range(last_occurance + 1,len(lines)):
+            line = lines[i].strip()
+            if(not line.startswith('sky130')):
+                break
+            line = line.partition('sky130_fd_sc_hd__')[2]
+            line = re.split(r'_[0-9]\s+', line)
+            if(line[0] in cell_types):
+                type_counts[cell_types[line[0]]] += int(line[1])
+            else:
+                type_count['UNK'] += int(line[1])
+
+    for i in types:
+        if(type_counts[i] > 0 or types[i]):
+            if(i == 'UNK' and not types[i]):
+                continue
+            stats[i] = type_counts[i]
+
+    keys = stats.keys()
+    print(f'| { "|".join(keys) } |')
+    print(f'| { "|".join(["-----"] * len(keys)) } |')
+    print(f'| { "|".join(str(stats[k]) for k in keys) } |')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="TT setup")
