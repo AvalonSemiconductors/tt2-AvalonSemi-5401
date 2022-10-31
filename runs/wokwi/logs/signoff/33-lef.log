@@ -1,0 +1,317 @@
+Netgen 1.5.219 compiled on Wed Feb  9 05:50:10 UTC 2022
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Generating JSON file result
+Reading netlist file /work/runs/wokwi/results/signoff/tholin_avalonsemi_5401.spice
+Reading netlist file /work/runs/wokwi/tmp/signoff/30-powered_netlist.v
+Warning:  A case-insensitive file has been read and so the	verilog file must be treated case-insensitive to match.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_3.
+Creating placeholder cell definition for module sky130_ef_sc_hd__decap_12.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_8.
+Creating placeholder cell definition for module sky130_fd_sc_hd__fill_2.
+Creating placeholder cell definition for module sky130_fd_sc_hd__fill_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_4.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_6.
+Creating placeholder cell definition for module sky130_fd_sc_hd__tapvpwrvgnd_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__inv_2.
+Creating placeholder cell definition for module sky130_fd_sc_hd__dlymetal6s2s_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__clkbuf_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__nand2_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__or3b_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__and2_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__or2_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__nor2_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__clkbuf_2.
+Creating placeholder cell definition for module sky130_fd_sc_hd__or4_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__a221o_2.
+Creating placeholder cell definition for module sky130_fd_sc_hd__mux4_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__a21oi_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__mux2_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__a21bo_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__o21ba_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__a31o_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__or4_2.
+Creating placeholder cell definition for module sky130_fd_sc_hd__nand4_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__xnor2_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__nand3b_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__xor2_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__nand3_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__o41a_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__and3b_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__a21o_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__a22o_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__o211a_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__o21a_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__a2bb2o_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__a31oi_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__and3_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__and2b_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__nor3_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__dfrtp_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__dfstp_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__dfrtp_2.
+Creating placeholder cell definition for module sky130_fd_sc_hd__dfxtp_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__buf_2.
+Reading setup file /home/runner/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl
+Comparison output logged to file /work/runs/wokwi/logs/signoff/33-tholin_avalonsemi_5401.lef.log
+Logging to file "/work/runs/wokwi/logs/signoff/33-tholin_avalonsemi_5401.lef.log" enabled
+Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains no devices.
+Circuit sky130_ef_sc_hd__decap_12 contains no devices.
+Circuit sky130_fd_sc_hd__dfxtp_1 contains no devices.
+Circuit sky130_fd_sc_hd__decap_4 contains no devices.
+Circuit sky130_fd_sc_hd__nand2_1 contains no devices.
+Circuit sky130_fd_sc_hd__a31o_1 contains no devices.
+Circuit sky130_fd_sc_hd__decap_3 contains no devices.
+Circuit sky130_fd_sc_hd__fill_1 contains no devices.
+Circuit sky130_fd_sc_hd__decap_6 contains no devices.
+Circuit sky130_fd_sc_hd__clkbuf_1 contains no devices.
+Circuit sky130_fd_sc_hd__fill_2 contains no devices.
+Circuit sky130_fd_sc_hd__a21bo_1 contains no devices.
+Circuit sky130_fd_sc_hd__decap_8 contains no devices.
+Circuit sky130_fd_sc_hd__a21o_1 contains no devices.
+Circuit sky130_fd_sc_hd__dfrtp_2 contains no devices.
+Circuit sky130_fd_sc_hd__mux2_1 contains no devices.
+Circuit sky130_fd_sc_hd__or4_2 contains no devices.
+Circuit sky130_fd_sc_hd__dfrtp_1 contains no devices.
+Circuit sky130_fd_sc_hd__buf_2 contains no devices.
+Circuit sky130_fd_sc_hd__nor2_1 contains no devices.
+Circuit sky130_fd_sc_hd__o21a_1 contains no devices.
+Circuit sky130_fd_sc_hd__dlymetal6s2s_1 contains no devices.
+Circuit sky130_fd_sc_hd__and3b_1 contains no devices.
+Circuit sky130_fd_sc_hd__a21oi_1 contains no devices.
+Circuit sky130_fd_sc_hd__xor2_1 contains no devices.
+Circuit sky130_fd_sc_hd__mux4_1 contains no devices.
+Circuit sky130_fd_sc_hd__o21ba_1 contains no devices.
+Circuit sky130_fd_sc_hd__and3_1 contains no devices.
+Circuit sky130_fd_sc_hd__nor3_1 contains no devices.
+Circuit sky130_fd_sc_hd__nand3b_1 contains no devices.
+Circuit sky130_fd_sc_hd__inv_2 contains no devices.
+Circuit sky130_fd_sc_hd__or4_1 contains no devices.
+Circuit sky130_fd_sc_hd__a22o_1 contains no devices.
+Circuit sky130_fd_sc_hd__a31oi_1 contains no devices.
+Circuit sky130_fd_sc_hd__or2_1 contains no devices.
+Circuit sky130_fd_sc_hd__a221o_2 contains no devices.
+Circuit sky130_fd_sc_hd__a2bb2o_1 contains no devices.
+Circuit sky130_fd_sc_hd__or3b_1 contains no devices.
+Circuit sky130_fd_sc_hd__and2_1 contains no devices.
+Circuit sky130_fd_sc_hd__dfstp_1 contains no devices.
+Circuit sky130_fd_sc_hd__o211a_1 contains no devices.
+Circuit sky130_fd_sc_hd__o41a_1 contains no devices.
+Circuit sky130_fd_sc_hd__nand3_1 contains no devices.
+Circuit sky130_fd_sc_hd__xnor2_1 contains no devices.
+Circuit sky130_fd_sc_hd__nand4_1 contains no devices.
+Circuit sky130_fd_sc_hd__clkbuf_2 contains no devices.
+Circuit sky130_fd_sc_hd__and2b_1 contains no devices.
+
+Contents of circuit 1:  Circuit: 'tholin_avalonsemi_5401'
+Circuit tholin_avalonsemi_5401 contains 1046 device instances.
+  Class: sky130_fd_sc_hd__a31o_1 instances:   3
+  Class: sky130_fd_sc_hd__a21o_1 instances:   6
+  Class: sky130_fd_sc_hd__dfxtp_1 instances:  26
+  Class: sky130_fd_sc_hd__or4_1 instances:   2
+  Class: sky130_fd_sc_hd__or4_2 instances:   1
+  Class: sky130_fd_sc_hd__a31oi_1 instances:   2
+  Class: sky130_fd_sc_hd__nand4_1 instances:   1
+  Class: sky130_fd_sc_hd__buf_2 instances:   8
+  Class: sky130_fd_sc_hd__a2bb2o_1 instances:   2
+  Class: sky130_fd_sc_hd__and3b_1 instances:   3
+  Class: sky130_fd_sc_hd__xor2_1 instances:   3
+  Class: sky130_fd_sc_hd__mux4_1 instances:   4
+  Class: sky130_fd_sc_hd__dfstp_1 instances:   3
+  Class: sky130_ef_sc_hd__decap_12 instances: 294
+  Class: sky130_fd_sc_hd__dfrtp_1 instances:   9
+  Class: sky130_fd_sc_hd__dfrtp_2 instances:   1
+  Class: sky130_fd_sc_hd__inv_2 instances:   4
+  Class: sky130_fd_sc_hd__clkbuf_1 instances:  37
+  Class: sky130_fd_sc_hd__clkbuf_2 instances:   1
+  Class: sky130_fd_sc_hd__nand3_1 instances:   1
+  Class: sky130_fd_sc_hd__o21ba_1 instances:   1
+  Class: sky130_fd_sc_hd__and2b_1 instances:   1
+  Class: sky130_fd_sc_hd__a21bo_1 instances:   3
+  Class: sky130_fd_sc_hd__and3_1 instances:   4
+  Class: sky130_fd_sc_hd__decap_3 instances: 113
+  Class: sky130_fd_sc_hd__decap_4 instances: 168
+  Class: sky130_fd_sc_hd__decap_6 instances:  56
+  Class: sky130_fd_sc_hd__decap_8 instances:  22
+  Class: sky130_fd_sc_hd__or2_1 instances:   5
+  Class: sky130_fd_sc_hd__nand2_1 instances:  21
+  Class: sky130_fd_sc_hd__nand3b_1 instances:   2
+  Class: sky130_fd_sc_hd__mux2_1 instances:  10
+  Class: sky130_fd_sc_hd__and2_1 instances:   3
+  Class: sky130_fd_sc_hd__xnor2_1 instances:   1
+  Class: sky130_fd_sc_hd__o211a_1 instances:   1
+  Class: sky130_fd_sc_hd__a221o_2 instances:   1
+  Class: sky130_fd_sc_hd__or3b_1 instances:   2
+  Class: sky130_fd_sc_hd__dlymetal6s2s_1 instances:  11
+  Class: sky130_fd_sc_hd__nor3_1 instances:   2
+  Class: sky130_fd_sc_hd__o41a_1 instances:   1
+  Class: sky130_fd_sc_hd__a22o_1 instances:   6
+  Class: sky130_fd_sc_hd__o21a_1 instances:   3
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances: 105
+  Class: sky130_fd_sc_hd__a21oi_1 instances:   4
+  Class: sky130_fd_sc_hd__fill_1 instances:  78
+  Class: sky130_fd_sc_hd__fill_2 instances:   7
+  Class: sky130_fd_sc_hd__nor2_1 instances:   4
+Circuit contains 211 nets, and 2 disconnected pins.
+Contents of circuit 2:  Circuit: 'tholin_avalonsemi_5401'
+Circuit tholin_avalonsemi_5401 contains 1046 device instances.
+  Class: sky130_fd_sc_hd__a31o_1 instances:   3
+  Class: sky130_fd_sc_hd__a21o_1 instances:   6
+  Class: sky130_fd_sc_hd__dfxtp_1 instances:  26
+  Class: sky130_fd_sc_hd__or4_1 instances:   2
+  Class: sky130_fd_sc_hd__or4_2 instances:   1
+  Class: sky130_fd_sc_hd__a31oi_1 instances:   2
+  Class: sky130_fd_sc_hd__nand4_1 instances:   1
+  Class: sky130_fd_sc_hd__buf_2 instances:   8
+  Class: sky130_fd_sc_hd__a2bb2o_1 instances:   2
+  Class: sky130_fd_sc_hd__and3b_1 instances:   3
+  Class: sky130_fd_sc_hd__xor2_1 instances:   3
+  Class: sky130_fd_sc_hd__mux4_1 instances:   4
+  Class: sky130_fd_sc_hd__dfstp_1 instances:   3
+  Class: sky130_ef_sc_hd__decap_12 instances: 294
+  Class: sky130_fd_sc_hd__dfrtp_1 instances:   9
+  Class: sky130_fd_sc_hd__dfrtp_2 instances:   1
+  Class: sky130_fd_sc_hd__inv_2 instances:   4
+  Class: sky130_fd_sc_hd__clkbuf_1 instances:  37
+  Class: sky130_fd_sc_hd__clkbuf_2 instances:   1
+  Class: sky130_fd_sc_hd__nand3_1 instances:   1
+  Class: sky130_fd_sc_hd__o21ba_1 instances:   1
+  Class: sky130_fd_sc_hd__and2b_1 instances:   1
+  Class: sky130_fd_sc_hd__a21bo_1 instances:   3
+  Class: sky130_fd_sc_hd__and3_1 instances:   4
+  Class: sky130_fd_sc_hd__decap_3 instances: 113
+  Class: sky130_fd_sc_hd__decap_4 instances: 168
+  Class: sky130_fd_sc_hd__decap_6 instances:  56
+  Class: sky130_fd_sc_hd__decap_8 instances:  22
+  Class: sky130_fd_sc_hd__or2_1 instances:   5
+  Class: sky130_fd_sc_hd__nand2_1 instances:  21
+  Class: sky130_fd_sc_hd__nand3b_1 instances:   2
+  Class: sky130_fd_sc_hd__mux2_1 instances:  10
+  Class: sky130_fd_sc_hd__and2_1 instances:   3
+  Class: sky130_fd_sc_hd__xnor2_1 instances:   1
+  Class: sky130_fd_sc_hd__o211a_1 instances:   1
+  Class: sky130_fd_sc_hd__a221o_2 instances:   1
+  Class: sky130_fd_sc_hd__or3b_1 instances:   2
+  Class: sky130_fd_sc_hd__dlymetal6s2s_1 instances:  11
+  Class: sky130_fd_sc_hd__nor3_1 instances:   2
+  Class: sky130_fd_sc_hd__o41a_1 instances:   1
+  Class: sky130_fd_sc_hd__a22o_1 instances:   6
+  Class: sky130_fd_sc_hd__o21a_1 instances:   3
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances: 105
+  Class: sky130_fd_sc_hd__a21oi_1 instances:   4
+  Class: sky130_fd_sc_hd__fill_1 instances:  78
+  Class: sky130_fd_sc_hd__fill_2 instances:   7
+  Class: sky130_fd_sc_hd__nor2_1 instances:   4
+Circuit contains 211 nets, and 2 disconnected pins.
+
+Circuit was modified by parallel/series device merging.
+New circuit summary:
+
+Contents of circuit 1:  Circuit: 'tholin_avalonsemi_5401'
+Circuit tholin_avalonsemi_5401 contains 211 device instances.
+  Class: sky130_fd_sc_hd__a31o_1 instances:   3
+  Class: sky130_fd_sc_hd__a21o_1 instances:   6
+  Class: sky130_fd_sc_hd__dfxtp_1 instances:  26
+  Class: sky130_fd_sc_hd__or4_1 instances:   2
+  Class: sky130_fd_sc_hd__or4_2 instances:   1
+  Class: sky130_fd_sc_hd__a31oi_1 instances:   2
+  Class: sky130_fd_sc_hd__nand4_1 instances:   1
+  Class: sky130_fd_sc_hd__buf_2 instances:   8
+  Class: sky130_fd_sc_hd__a2bb2o_1 instances:   2
+  Class: sky130_fd_sc_hd__and3b_1 instances:   3
+  Class: sky130_fd_sc_hd__xor2_1 instances:   3
+  Class: sky130_fd_sc_hd__mux4_1 instances:   4
+  Class: sky130_fd_sc_hd__dfstp_1 instances:   3
+  Class: sky130_ef_sc_hd__decap_12 instances:   1
+  Class: sky130_fd_sc_hd__dfrtp_1 instances:   9
+  Class: sky130_fd_sc_hd__dfrtp_2 instances:   1
+  Class: sky130_fd_sc_hd__inv_2 instances:   4
+  Class: sky130_fd_sc_hd__clkbuf_1 instances:  37
+  Class: sky130_fd_sc_hd__clkbuf_2 instances:   1
+  Class: sky130_fd_sc_hd__nand3_1 instances:   1
+  Class: sky130_fd_sc_hd__o21ba_1 instances:   1
+  Class: sky130_fd_sc_hd__and2b_1 instances:   1
+  Class: sky130_fd_sc_hd__a21bo_1 instances:   3
+  Class: sky130_fd_sc_hd__and3_1 instances:   4
+  Class: sky130_fd_sc_hd__decap_3 instances:   1
+  Class: sky130_fd_sc_hd__decap_4 instances:   1
+  Class: sky130_fd_sc_hd__decap_6 instances:   1
+  Class: sky130_fd_sc_hd__decap_8 instances:   1
+  Class: sky130_fd_sc_hd__or2_1 instances:   5
+  Class: sky130_fd_sc_hd__nand2_1 instances:  21
+  Class: sky130_fd_sc_hd__nand3b_1 instances:   2
+  Class: sky130_fd_sc_hd__mux2_1 instances:  10
+  Class: sky130_fd_sc_hd__and2_1 instances:   3
+  Class: sky130_fd_sc_hd__xnor2_1 instances:   1
+  Class: sky130_fd_sc_hd__o211a_1 instances:   1
+  Class: sky130_fd_sc_hd__a221o_2 instances:   1
+  Class: sky130_fd_sc_hd__or3b_1 instances:   2
+  Class: sky130_fd_sc_hd__dlymetal6s2s_1 instances:  11
+  Class: sky130_fd_sc_hd__nor3_1 instances:   2
+  Class: sky130_fd_sc_hd__o41a_1 instances:   1
+  Class: sky130_fd_sc_hd__a22o_1 instances:   6
+  Class: sky130_fd_sc_hd__o21a_1 instances:   3
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:   1
+  Class: sky130_fd_sc_hd__a21oi_1 instances:   4
+  Class: sky130_fd_sc_hd__fill_1 instances:   1
+  Class: sky130_fd_sc_hd__fill_2 instances:   1
+  Class: sky130_fd_sc_hd__nor2_1 instances:   4
+Circuit contains 211 nets, and 2 disconnected pins.
+Contents of circuit 2:  Circuit: 'tholin_avalonsemi_5401'
+Circuit tholin_avalonsemi_5401 contains 211 device instances.
+  Class: sky130_fd_sc_hd__a31o_1 instances:   3
+  Class: sky130_fd_sc_hd__a21o_1 instances:   6
+  Class: sky130_fd_sc_hd__dfxtp_1 instances:  26
+  Class: sky130_fd_sc_hd__or4_1 instances:   2
+  Class: sky130_fd_sc_hd__or4_2 instances:   1
+  Class: sky130_fd_sc_hd__a31oi_1 instances:   2
+  Class: sky130_fd_sc_hd__nand4_1 instances:   1
+  Class: sky130_fd_sc_hd__buf_2 instances:   8
+  Class: sky130_fd_sc_hd__a2bb2o_1 instances:   2
+  Class: sky130_fd_sc_hd__and3b_1 instances:   3
+  Class: sky130_fd_sc_hd__xor2_1 instances:   3
+  Class: sky130_fd_sc_hd__mux4_1 instances:   4
+  Class: sky130_fd_sc_hd__dfstp_1 instances:   3
+  Class: sky130_ef_sc_hd__decap_12 instances:   1
+  Class: sky130_fd_sc_hd__dfrtp_1 instances:   9
+  Class: sky130_fd_sc_hd__dfrtp_2 instances:   1
+  Class: sky130_fd_sc_hd__inv_2 instances:   4
+  Class: sky130_fd_sc_hd__clkbuf_1 instances:  37
+  Class: sky130_fd_sc_hd__clkbuf_2 instances:   1
+  Class: sky130_fd_sc_hd__nand3_1 instances:   1
+  Class: sky130_fd_sc_hd__o21ba_1 instances:   1
+  Class: sky130_fd_sc_hd__and2b_1 instances:   1
+  Class: sky130_fd_sc_hd__a21bo_1 instances:   3
+  Class: sky130_fd_sc_hd__and3_1 instances:   4
+  Class: sky130_fd_sc_hd__decap_3 instances:   1
+  Class: sky130_fd_sc_hd__decap_4 instances:   1
+  Class: sky130_fd_sc_hd__decap_6 instances:   1
+  Class: sky130_fd_sc_hd__decap_8 instances:   1
+  Class: sky130_fd_sc_hd__or2_1 instances:   5
+  Class: sky130_fd_sc_hd__nand2_1 instances:  21
+  Class: sky130_fd_sc_hd__nand3b_1 instances:   2
+  Class: sky130_fd_sc_hd__mux2_1 instances:  10
+  Class: sky130_fd_sc_hd__and2_1 instances:   3
+  Class: sky130_fd_sc_hd__xnor2_1 instances:   1
+  Class: sky130_fd_sc_hd__o211a_1 instances:   1
+  Class: sky130_fd_sc_hd__a221o_2 instances:   1
+  Class: sky130_fd_sc_hd__or3b_1 instances:   2
+  Class: sky130_fd_sc_hd__dlymetal6s2s_1 instances:  11
+  Class: sky130_fd_sc_hd__nor3_1 instances:   2
+  Class: sky130_fd_sc_hd__o41a_1 instances:   1
+  Class: sky130_fd_sc_hd__a22o_1 instances:   6
+  Class: sky130_fd_sc_hd__o21a_1 instances:   3
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:   1
+  Class: sky130_fd_sc_hd__a21oi_1 instances:   4
+  Class: sky130_fd_sc_hd__fill_1 instances:   1
+  Class: sky130_fd_sc_hd__fill_2 instances:   1
+  Class: sky130_fd_sc_hd__nor2_1 instances:   4
+Circuit contains 211 nets, and 2 disconnected pins.
+
+Circuit 1 contains 211 devices, Circuit 2 contains 211 devices.
+Circuit 1 contains 211 nets,    Circuit 2 contains 211 nets.
+
+Netlists match uniquely.
+Result: Circuits match uniquely.
+Logging to file "/work/runs/wokwi/logs/signoff/33-tholin_avalonsemi_5401.lef.log" disabled
+LVS Done.

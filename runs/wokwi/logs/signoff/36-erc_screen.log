@@ -1,0 +1,55 @@
+Default cvcrc in default.cvcrc
+CVC: Circuit Validation Check  Version 1.1.0
+CVC: Log output to /work/runs/wokwi/reports/signoff/tholin_avalonsemi_5401.rpt
+CVC: Error output to /work/runs/wokwi/reports/signoff/tholin_avalonsemi_5401.rpt.error.gz
+CVC: Debug output to /work/runs/wokwi/reports/signoff/tholin_avalonsemi_5401.rpt.debug.gz
+CVC: Start: Mon Oct 31 00:54:27 2022
+
+Using the following parameters for CVC (Circuit Validation Check) from /openlane/scripts/cvc/sky130A/cvcrc.sky130A
+CVC_TOP = 'tholin_avalonsemi_5401'
+CVC_NETLIST = '/work/runs/wokwi/tmp/signoff/tholin_avalonsemi_5401.cdl'
+CVC_MODE = 'tholin_avalonsemi_5401'
+CVC_MODEL_FILE = '/openlane/scripts/cvc/sky130A/cvc.sky130A.models'
+CVC_POWER_FILE = '/work/runs/wokwi/tmp/signoff/tholin_avalonsemi_5401.power'
+CVC_FUSE_FILE = ''
+CVC_REPORT_FILE = '/work/runs/wokwi/reports/signoff/tholin_avalonsemi_5401.rpt'
+CVC_REPORT_TITLE = 'CVC $CVC_TOP'
+CVC_CIRCUIT_ERROR_LIMIT = '100'
+CVC_SEARCH_LIMIT = '100'
+CVC_LEAK_LIMIT = '0.0002'
+CVC_SOI = 'false'
+CVC_SCRC = 'false'
+CVC_VTH_GATES = 'false'
+CVC_MIN_VTH_GATES = 'false'
+CVC_IGNORE_VTH_FLOATING = 'false'
+CVC_IGNORE_NO_LEAK_FLOATING = 'false'
+CVC_LEAK_OVERVOLTAGE = 'true'
+CVC_LOGIC_DIODES = 'false'
+CVC_ANALOG_GATES = 'true'
+CVC_BACKUP_RESULTS = 'false'
+CVC_MOS_DIODE_ERROR_THRESHOLD = '0'
+CVC_SHORT_ERROR_THRESHOLD = '0'
+CVC_BIAS_ERROR_THRESHOLD = '0'
+CVC_FORWARD_ERROR_THRESHOLD = '0'
+CVC_FLOATING_ERROR_THRESHOLD = '0'
+CVC_GATE_ERROR_THRESHOLD = '0'
+CVC_LEAK?_ERROR_THRESHOLD = '0'
+CVC_EXPECTED_ERROR_THRESHOLD = '0'
+CVC_OVERVOLTAGE_ERROR_THRESHOLD = '0'
+CVC_PARALLEL_CIRCUIT_PORT_LIMIT = '0'
+CVC_CELL_ERROR_LIMIT_FILE = ''
+CVC_CELL_CHECKSUM_FILE = ''
+CVC_LARGE_CIRCUIT_SIZE = '10000000'
+CVC_NET_CHECK_FILE = ''
+CVC_MODEL_CHECK_FILE = ''
+End of parameters
+
+CVC: Reading device model settings...
+CVC: Reading power settings...
+CVC: Parsing netlist /work/runs/wokwi/tmp/signoff/tholin_avalonsemi_5401.cdl
+
+Cdl fixed data size 30239
+Usage CDL: Time: 0  Memory: 6940  I/O: 408  Swap: 0
+CVC: Counting and linking...
+Fatal error:could not find subcircuit: XFILLER_26_85(sky130_ef_sc_hd__decap_12) in tholin_avalonsemi_5401
+

@@ -33,8 +33,8 @@ documentation:
     - D1
     - D2
     - D3
-    - none
-    - none
+    - EF0
+    - EF1
   outputs:
     - D0_RR0         # a description of what the outputs do
     - D1_RR1

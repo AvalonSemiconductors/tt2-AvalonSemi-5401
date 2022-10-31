@@ -4,6 +4,8 @@
 module tb (
 	input CLK,
 	input RST,
+	input EF0,
+	input EF1,
 	input [3:0] data_in,
 	output [7:0] data_out
 	);
@@ -14,7 +16,7 @@ module tb (
 		#1;
 	end
 
-	wire [7:0] inputs = {data_in, RST, CLK};
+	wire [7:0] inputs = {EF1, EF0, data_in, RST, CLK};
 	wire [7:0] outputs;
 	assign data_out = outputs[7:0];
 

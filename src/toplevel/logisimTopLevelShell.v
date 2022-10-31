@@ -10,6 +10,8 @@ module tholin_avalonsemi_5401(
    wire s_D1 = io_in[3];
    wire s_D2 = io_in[4];
    wire s_D3 = io_in[5];
+   wire s_EF0 = io_in[6];
+   wire s_EF1 = io_in[7];
    
    wire s_O_D0_RR0;
    wire s_O_D1_RR1;
@@ -33,6 +35,8 @@ module tholin_avalonsemi_5401(
                     .D1(s_D1),
                     .D2(s_D2),
                     .D3(s_D3),
+                    .EF0(s_EF0),
+                    .EF1(s_EF1),
                     .O_4_MAR(s_O_4_MAR),
                     .O_5_WRITE(s_O_5_WRITE),
                     .O_6_JMP(s_O_6_JMP),

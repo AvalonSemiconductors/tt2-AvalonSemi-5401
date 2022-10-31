@@ -216,3 +216,27 @@ async def test_cpu(dut):
 	t0,t1 = await exec_instr(dut, I_JZ, -1, FLAG_JMP)
 	assert t0 == 0b10101111
 	assert (t1 & 0b1111) == 0b1100
+
+	# Test event flag inputs
+
+	await set_rr(dut, 15)
+	await exec_instr(dut, I_LMH, -1, FLAG_MAR)
+	t0, _ = await exec_instr(dut, I_LML, -1, FLAG_MAR)
+	assert t0 == 0b11111111
+
+	dut.EF0.value = dut.EF1.value = 0
+	await exec_instr(dut, I_LD, 0)
+	await assert_rr(dut, 0)
+
+	dut.EF0.value = 1
+	await exec_instr(dut, I_LD, 0)
+	await assert_rr(dut, 1)
+	dut.EF0.value = 0
+
+	dut.EF1.value = 1
+	await exec_instr(dut, I_LD, 0)
+	await assert_rr(dut, 2)
+
+	dut.EF0.value = dut.EF1.value = 1
+	await exec_instr(dut, I_LD, 0)
+	await assert_rr(dut, 3)
