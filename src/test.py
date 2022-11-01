@@ -70,6 +70,45 @@ async def assert_rr(dut, expected):
 # Executes SEI, asserting the I-flag as well
 async def sei(dut):
 	await exec_instr(dut, I_SEI, -1, FLAG_I)
+
+async def test_ef(dut, EF0, EF1):
+	await set_rr(dut, 15)
+	await exec_instr(dut, I_LMH, -1, FLAG_MAR)
+	t0, _ = await exec_instr(dut, I_LML, -1, FLAG_MAR)
+	assert t0 == 0b11111111
+	dut.EF0.value = EF0
+	dut.EF1.value = EF1
+	await exec_instr(dut, I_LD, 0)
+	await exec_instr(dut, I_LMH, -1, FLAG_MAR)
+	comp = 0
+	if EF0 == 1:
+		comp = 1
+	if EF1 == 1:
+		comp += 2
+	await assert_rr(dut, comp)
+
+async def test_mul(dut, a, b):
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 0, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_STR, a)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 1, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_STR, b)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 2, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	res = a * b
+	await assert_rr(dut, res >> 4)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 3, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	await assert_rr(dut, res & 0b1111)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
 	
 @cocotb.test()
 async def test_cpu(dut):
@@ -219,24 +258,59 @@ async def test_cpu(dut):
 
 	# Test event flag inputs
 
+	await test_ef(dut, 0, 0)
+	await test_ef(dut, 1, 0)
+	await test_ef(dut, 0, 1)
+	await test_ef(dut, 1, 1)
+
+	# Test hardware multiply
+
+	# Not using test_mul here. Gotta ensure both input regs can read from the RR (test_mul uses SEI).
+	await set_rr(dut, 5)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 0, FLAG_MAR)
+	await exec_instr(dut, I_STR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 1, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_STR, 6)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 2, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	await assert_rr(dut, 0b0001)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 3, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	await assert_rr(dut, 0b1110)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
+
 	await set_rr(dut, 15)
-	await exec_instr(dut, I_LMH, -1, FLAG_MAR)
-	t0, _ = await exec_instr(dut, I_LML, -1, FLAG_MAR)
-	assert t0 == 0b11111111
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 0, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_STR, 15)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 1, FLAG_MAR)
+	await exec_instr(dut, I_STR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 2, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	await assert_rr(dut, 0b1110)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 3, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	await assert_rr(dut, 0b0001)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
 
-	dut.EF0.value = dut.EF1.value = 0
-	await exec_instr(dut, I_LD, 0)
-	await assert_rr(dut, 0)
-
-	dut.EF0.value = 1
-	await exec_instr(dut, I_LD, 0)
-	await assert_rr(dut, 1)
-	dut.EF0.value = 0
-
-	dut.EF1.value = 1
-	await exec_instr(dut, I_LD, 0)
-	await assert_rr(dut, 2)
-
-	dut.EF0.value = dut.EF1.value = 1
-	await exec_instr(dut, I_LD, 0)
-	await assert_rr(dut, 3)
+	await test_mul(dut, 8, 0)
+	await test_mul(dut, 0, 8)
+	await test_mul(dut, 8, 8)
+	await test_mul(dut, 1, 6)
+	await test_mul(dut, 3, 10)
+	await test_mul(dut, 15, 9)
