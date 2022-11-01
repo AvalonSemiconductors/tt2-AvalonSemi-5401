@@ -635,7 +635,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet73),
                  .qBar(),
-                 .reset(s_logisimNet37),
+                 .reset(1'b0),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
@@ -653,7 +653,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet7),
                  .qBar(),
-                 .reset(s_logisimNet37),
+                 .reset(1'b0),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
@@ -662,7 +662,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet0),
                  .qBar(),
-                 .reset(s_logisimNet37),
+                 .reset(1'b0),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
@@ -671,7 +671,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet10),
                  .qBar(),
-                 .reset(s_logisimNet37),
+                 .reset(1'b0),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
