@@ -141,6 +141,9 @@ module multiply( DIN0,
    assign s_logisimNet0 = ~s_logisimNet7;
 
    // NOT Gate
+   assign s_logisimNet47 = ~s_logisimNet23;
+
+   // NOT Gate
    assign s_logisimNet13 = ~s_logisimNet7;
 
    // NOT Gate
@@ -148,9 +151,6 @@ module multiply( DIN0,
 
    // NOT Gate
    assign s_logisimNet62 = ~s_logisimNet30;
-
-   // NOT Gate
-   assign s_logisimNet48 = ~s_logisimNet23;
 
    /*******************************************************************************
    ** Here all normal components are defined                                     **
@@ -203,7 +203,7 @@ module multiply( DIN0,
    AND_GATE #(.BubblesMask(2'b00))
       GATES_10 (.input1(s_logisimNet3),
                 .input2(s_logisimNet7),
-                .result(s_logisimNet47));
+                .result(s_logisimNet48));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_11 (.input1(s_logisimNet31),
@@ -241,7 +241,7 @@ module multiply( DIN0,
                 .result(s_logisimNet16));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_18 (.input1(s_logisimNet47),
+      GATES_18 (.input1(s_logisimNet48),
                 .input2(s_logisimNet32),
                 .result(s_logisimNet63));
 
@@ -261,17 +261,22 @@ module multiply( DIN0,
                 .result(s_logisimNet18));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_22 (.input1(s_logisimNet64),
+      GATES_22 (.input1(s_logisimNet47),
+                .input2(s_logisimNet36),
+                .result(s_logisimNet64));
+
+   AND_GATE #(.BubblesMask(2'b00))
+      GATES_23 (.input1(s_logisimNet64),
                 .input2(s_logisimNet46),
                 .result(s_logisimNet30));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_23 (.input1(s_logisimNet17),
+      GATES_24 (.input1(s_logisimNet17),
                 .input2(s_logisimNet7),
                 .result(s_logisimNet23));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_24 (.clock(s_logisimNet30),
+      MEMORY_25 (.clock(s_logisimNet30),
                  .d(s_logisimNet37),
                  .preset(1'b0),
                  .q(s_logisimNet3),
@@ -280,7 +285,7 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_25 (.clock(s_logisimNet30),
+      MEMORY_26 (.clock(s_logisimNet30),
                  .d(s_logisimNet60),
                  .preset(1'b0),
                  .q(s_logisimNet31),
@@ -289,7 +294,7 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_26 (.clock(s_logisimNet30),
+      MEMORY_27 (.clock(s_logisimNet30),
                  .d(s_logisimNet40),
                  .preset(1'b0),
                  .q(s_logisimNet29),
@@ -298,7 +303,7 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_27 (.clock(s_logisimNet30),
+      MEMORY_28 (.clock(s_logisimNet30),
                  .d(s_logisimNet22),
                  .preset(1'b0),
                  .q(s_logisimNet2),
@@ -307,7 +312,7 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_28 (.clock(s_logisimNet30),
+      MEMORY_29 (.clock(s_logisimNet30),
                  .d(s_logisimNet41),
                  .preset(1'b0),
                  .q(s_logisimNet28),
@@ -316,7 +321,7 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_29 (.clock(s_logisimNet30),
+      MEMORY_30 (.clock(s_logisimNet30),
                  .d(s_logisimNet45),
                  .preset(1'b0),
                  .q(s_logisimNet8),
@@ -325,7 +330,7 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_30 (.clock(s_logisimNet30),
+      MEMORY_31 (.clock(s_logisimNet30),
                  .d(s_logisimNet44),
                  .preset(1'b0),
                  .q(s_logisimNet27),
@@ -334,7 +339,7 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_31 (.clock(s_logisimNet30),
+      MEMORY_32 (.clock(s_logisimNet30),
                  .d(s_logisimNet56),
                  .preset(1'b0),
                  .q(s_logisimNet15),
@@ -343,7 +348,7 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    T_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_32 (.clock(s_logisimNet59),
+      MEMORY_33 (.clock(s_logisimNet59),
                  .preset(s_logisimNet23),
                  .q(s_logisimNet51),
                  .qBar(),
@@ -352,7 +357,7 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    T_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_33 (.clock(s_logisimNet51),
+      MEMORY_34 (.clock(s_logisimNet51),
                  .preset(s_logisimNet23),
                  .q(s_logisimNet4),
                  .qBar(),
@@ -361,18 +366,13 @@ module multiply( DIN0,
                  .tick(1'b1));
 
    T_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_34 (.clock(s_logisimNet4),
+      MEMORY_35 (.clock(s_logisimNet4),
                  .preset(s_logisimNet23),
                  .q(s_logisimNet46),
                  .qBar(),
                  .reset(1'b0),
                  .t(s_logisimNet35),
                  .tick(1'b1));
-
-   AND_GATE #(.BubblesMask(2'b00))
-      GATES_35 (.input1(s_logisimNet48),
-                .input2(s_logisimNet36),
-                .result(s_logisimNet64));
 
 
    /*******************************************************************************
