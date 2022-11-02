@@ -93,6 +93,7 @@ The following registers are present inside the 5401:
 | Factor A register\* | FA | 4 | First factor input of the hardware multiply unit |
 | Factor B register\* | FB | 4 | Second factor input of the hardware multiply unit |
 | Product Register\* | PR | 8 | Output of the hardware multiply unit |
+
 \* = Memory-mapped
 
 ## Memory-mapped peripherals
@@ -115,7 +116,7 @@ Using SEI with LD while addressing a memory-mapped location will cause RR to sti
 
 ## Input ports
 
-The 5401 has two, general-purpose input ports, EF0 and EF1. They are memory mapped. If the MABR is set to FFh and any instruction fetching data from memory is executed, bits 0 and 1 of the data word will be overriden by the states of EF0 and EF1. Bit 0 will be 1 if EF0 is at a high logic level (0 otherwise), while bit 1 will be 1 if EF1 is at a high logic level (0 otherwise). Note that bits 2 and 3 are not overriden, and will contain data from memory.
+The 5401 has two, general-purpose input ports, EF0 and EF1. They are memory mapped. If the MABR is set to FFh and the LD instruction is executed, bits 0 and 1 of the loaded data word will defined by the states of EF0 and EF1. Bit 0 will be 1 if EF0 is at a high logic level (0 otherwise), while bit 1 will be 1 if EF1 is at a high logic level (0 otherwise). Bits 2 and 3 will be 0.
 
 ## Hardware multiply unit
 
