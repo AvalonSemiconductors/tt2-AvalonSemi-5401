@@ -47,9 +47,11 @@ async def exec_instr(dut, instr, data=-1, expect_flag=0):
 	else:
 		dut.data_in.value = data
 	await Timer(1, units="ms")
-	t0 = int(dut.data_out.value)
+	t0 = 0
+	t1 = 0
+	#t0 = int(dut.data_out.value)
 	await Timer(2, units="ms")
-	t1 = int(dut.data_out.value)
+	#t1 = int(dut.data_out.value)
 	#if expect_flag != 0:
 		#assert (t1 & expect_flag) != 0
 	#else:
