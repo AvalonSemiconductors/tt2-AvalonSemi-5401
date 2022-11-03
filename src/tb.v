@@ -1,4 +1,4 @@
-`default_nettype none
+#`default_nettype none
 `timescale 1ns/1ps
 
 module tb (
@@ -21,6 +21,10 @@ module tb (
 	assign data_out = outputs[7:0];
 
 	tholin_avalonsemi_5401 tholin_avalonsemi_5401 (
+		`ifdef GL_TEST
+			.vccd1( 1'b1),
+			.vssd1( 1'b0),
+		`endif
 		.io_in (inputs),
 		.io_out (outputs)
 	);
