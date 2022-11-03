@@ -130,6 +130,8 @@ jobs:
           cd src
           make clean
           GATES=yes make
+          pwd
+          ls
           # make will return success even if the test fails, so check for failure in the results.xml
           #! grep failure results.xml
       - uses: actions/upload-artifact@v3
