@@ -49,13 +49,13 @@ async def exec_instr(dut, instr, data=-1, expect_flag=0):
 	await Timer(1, units="ms")
 	t0 = 0
 	t1 = 0
-	#t0 = int(dut.data_out.value)
+	t0 = int(dut.data_out.value)
 	await Timer(2, units="ms")
-	#t1 = int(dut.data_out.value)
-	#if expect_flag != 0:
-		#assert (t1 & expect_flag) != 0
-	#else:
-		#assert (t1 & 0b11110000) == 0
+	t1 = int(dut.data_out.value)
+	if expect_flag != 0:
+		assert (t1 & expect_flag) != 0
+	else:
+		assert (t1 & 0b11110000) == 0
 	return t0,t1
 	
 # Executes SEI followed by LD to set the Result Register to a specific value
@@ -67,7 +67,7 @@ async def set_rr(dut, value):
 # Gets the value of the Result Register by executing STR, and checks its value
 async def assert_rr(dut, expected):
 	_, t1 = await exec_instr(dut, I_STR, -1, FLAG_WRITE)
-	#assert (t1 & 0b1111) == expected
+	assert (t1 & 0b1111) == expected
 	
 # Executes SEI, asserting the I-flag as well
 async def sei(dut):
@@ -77,7 +77,7 @@ async def test_ef(dut, EF0, EF1):
 	await set_rr(dut, 15)
 	await exec_instr(dut, I_LMH, -1, FLAG_MAR)
 	t0, _ = await exec_instr(dut, I_LML, -1, FLAG_MAR)
-	#assert t0 == 0b11111111
+	assert t0 == 0b11111111
 	dut.EF0.value = EF0
 	dut.EF1.value = EF1
 	await exec_instr(dut, I_LD, 0)
@@ -208,17 +208,17 @@ async def test_cpu(dut):
 	
 	await sei(dut)
 	t0,_ = await exec_instr(dut, I_LML, 0b0101, FLAG_MAR)
-	#assert t0 == 0b00000101
+	assert t0 == 0b00000101
 	await sei(dut)
 	t0,_ = await exec_instr(dut, I_LMH, 0b1010, FLAG_MAR)
-	#assert t0 == 0b10100101
+	assert t0 == 0b10100101
 	
 	await set_rr(dut, 0b0101)
 	t0,_ = await exec_instr(dut, I_LMH, -1, FLAG_MAR)
-	#assert t0 == 0b01010101
+	assert t0 == 0b01010101
 	await set_rr(dut, 0b1010)
 	t0,_ = await exec_instr(dut, I_LML, -1, FLAG_MAR)
-	#assert t0 == 0b01011010
+	assert t0 == 0b01011010
 	
 	# Test setting the DR and jumping
 	
@@ -227,8 +227,8 @@ async def test_cpu(dut):
 	await exec_instr(dut, I_LDD, 0b0101, FLAG_I)
 	await exec_instr(dut, I_LDD, 0b1000, FLAG_I)
 	t0,t1 = await exec_instr(dut, I_JMP, -1, FLAG_JMP)
-	#assert t0 == 0b01010001
-	#assert (t1 & 0b1111) == 0b1000
+	assert t0 == 0b01010001
+	assert (t1 & 0b1111) == 0b1000
 	
 	await set_rr(dut, 0b1111)
 	await exec_instr(dut, I_LDD, -1)
@@ -238,8 +238,8 @@ async def test_cpu(dut):
 	await exec_instr(dut, I_LDD, -1)
 	await sei(dut)
 	t0,t1 = await exec_instr(dut, I_JMP, -1, FLAG_JMP)
-	#assert t0 == 0b10101111
-	#assert (t1 & 0b1111) == 0b1100
+	assert t0 == 0b10101111
+	assert (t1 & 0b1111) == 0b1100
 	
 	# Test conditional jumps
 	
@@ -251,8 +251,8 @@ async def test_cpu(dut):
 	await exec_instr(dut, I_ADD, 10)
 	await assert_rr(dut, 2)
 	t0,t1 = await exec_instr(dut, I_JC, -1, FLAG_JMP)
-	#assert t0 == 0b10101111
-	#assert (t1 & 0b1111) == 0b1100
+	assert t0 == 0b10101111
+	assert (t1 & 0b1111) == 0b1100
 	
 	await exec_instr(dut, I_JZ, -1)
 	
@@ -260,8 +260,8 @@ async def test_cpu(dut):
 	await assert_rr(dut, 0)
 	
 	t0,t1 = await exec_instr(dut, I_JZ, -1, FLAG_JMP)
-	#assert t0 == 0b10101111
-	#assert (t1 & 0b1111) == 0b1100
+	assert t0 == 0b10101111
+	assert (t1 & 0b1111) == 0b1100
 
 	# Test event flag inputs
 
