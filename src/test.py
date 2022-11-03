@@ -117,7 +117,12 @@ async def test_cpu(dut):
 	cocotb.start_soon(clock.start())
 
 	await reset_cpu(dut)
-	
+	dut._log.info('SEI')
+	dut.data_in.value = I_SEI
+	await Timer(1, units="ms")
+	dut.data_in.value = 0
+	await Timer(3, units="ms")
+
 	# Test Arithmatic instrs
 	
 	await set_rr(dut, 6)
