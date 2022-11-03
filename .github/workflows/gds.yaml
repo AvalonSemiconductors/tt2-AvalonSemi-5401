@@ -121,10 +121,12 @@ jobs:
           git clone https://github.com/efabless/caravel_user_project.git -b mpw-7a
           cd caravel_user_project
           make install pdk-with-volare
-      - name: install oss-cad-suite
-        uses: YosysHQ/setup-oss-cad-suite@v1
-        with:
-          python-override: true
+      - name: install required packages
+        run: |
+          sudo apt-get install -y iverilog python3 python3-pip
+          pip3 install cocotb pytest
+          cocotb-config --libpython
+          cocotb-config --python-bin
       - name: test
         run: |
           cd src
