@@ -15,7 +15,7 @@ VERILOG_SOURCES += $(PDK_ROOT)/sky130B/libs.ref/sky130_fd_sc_hd/verilog/primitiv
 VERILOG_SOURCES += $(PDK_ROOT)/sky130B/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v
 
 # gatelevel verilog from /runs/wokwi/results/final/verilog/gl/
-VERILOG_SOURCES += $(PWD)/tb.v $(PWD)/tholin_avalonsemi_5401.gl.v
+VERILOG_SOURCES += $(PWD)/tb.v $(PWD)/tholin_avalonsemi_5401.v
 endif
 
 # TOPLEVEL is the name of the toplevel module in your Verilog or VHDL file
