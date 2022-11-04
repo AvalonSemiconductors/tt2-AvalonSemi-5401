@@ -236,6 +236,10 @@ module CPU( CLK,
    ** Here all in-lined components are defined                                   **
    *******************************************************************************/
 
+   // Do not connect
+
+   // Do not connect
+
    // NOT Gate
    assign s_logisimNet70 = ~s_logisimNet120;
 
@@ -253,10 +257,6 @@ module CPU( CLK,
 
    // NOT Gate
    assign s_logisimNet143 = ~s_logisimNet2;
-
-   // Do not connect
-
-   // Do not connect
 
    /*******************************************************************************
    ** Here all normal components are defined                                     **
@@ -896,13 +896,6 @@ module CPU( CLK,
                           .STR(s_logisimNet33),
                           .W_CAR(s_logisimNet30));
 
-   clock_gen   clock_gen_1 (.CLK(s_logisimNet14),
-                            .CLK1(s_logisimNet56),
-                            .CLK2(s_logisimNet6),
-                            .DEBUG(),
-                            .O_S(s_logisimNet96),
-                            .RST(s_logisimNet35));
-
    main   main_1 (.CAR_I(s_logisimNet114),
                   .CAR_O(s_logisimNet92),
                   .D_0(s_logisimNet5),
@@ -987,5 +980,11 @@ module CPU( CLK,
                           .R2(s_logisimNet117),
                           .R3(s_logisimNet85),
                           .RSEL(s_logisimNet67));
+
+   toggle   toggle_1 (.CLK(s_logisimNet14),
+                      .CLK1(s_logisimNet56),
+                      .CLK2(s_logisimNet6),
+                      .O_S(s_logisimNet96),
+                      .RST(s_logisimNet35));
 
 endmodule
