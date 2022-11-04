@@ -113,6 +113,9 @@ async def test_mul(dut, a, b):
 @cocotb.test()
 async def test_cpu(dut):
 	dut._log.info("start")
+	dut.EF0.value = dut.EF1.value = 0
+	dut.RST.value = 1
+	dut.data_in.value = 0
 	clock = Clock(dut.CLK, 1, units="ms")
 	cocotb.start_soon(clock.start())
 
