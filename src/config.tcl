@@ -45,8 +45,8 @@ set ::env(DECAP_CELL) "\
     sky130_ef_sc_hd__decap_12"
 
 # clock
-set ::env(CLOCK_TREE_SYNTH) 0
-set ::env(CLOCK_PORT) ""
+set ::env(CLOCK_PERIOD) "10000"
+set ::env(CLOCK_PORT) {io_in[0]}
 
 # don't use power rings or met5
 set ::env(DESIGN_IS_CORE) 0
