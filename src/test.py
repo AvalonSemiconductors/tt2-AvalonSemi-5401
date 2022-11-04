@@ -119,9 +119,29 @@ async def test_cpu(dut):
 	clock = Clock(dut.CLK, 1, units="ms")
 	cocotb.start_soon(clock.start())
 
+	# Reset and clear RR, MABR
+
 	await reset_cpu(dut)
 	dut._log.info('SEI')
 	dut.data_in.value = I_SEI
+	await Timer(1, units="ms")
+	dut.data_in.value = 0
+	await Timer(3, units="ms")
+
+	dut._log.info('LD')
+	dut.data_in.value = I_LD
+	await Timer(1, units="ms")
+	dut.data_in.value = 0
+	await Timer(3, units="ms")
+
+	dut._log.info('LML')
+	dut.data_in.value = I_LML
+	await Timer(1, units="ms")
+	dut.data_in.value = 0
+	await Timer(3, units="ms")
+
+	dut._log.info('LMH')
+	dut.data_in.value = I_LMH
 	await Timer(1, units="ms")
 	dut.data_in.value = 0
 	await Timer(3, units="ms")
