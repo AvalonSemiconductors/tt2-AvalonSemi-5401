@@ -34,6 +34,8 @@ module clock_gen( CLK,
    wire s_logisimNet11;
    wire s_logisimNet12;
    wire s_logisimNet13;
+   wire s_logisimNet14;
+   wire s_logisimNet15;
    wire s_logisimNet2;
    wire s_logisimNet3;
    wire s_logisimNet4;
@@ -68,18 +70,6 @@ module clock_gen( CLK,
    assign  s_logisimNet2  =  1'b1;
 
 
-   // Buffer
-   assign s_logisimNet8 = s_logisimNet6;
-
-   // Buffer
-   assign s_logisimNet11 = s_logisimNet13;
-
-   // Buffer
-   assign s_logisimNet10 = s_logisimNet4;
-
-   // Buffer
-   assign s_logisimNet9 = s_logisimNet7;
-
    /*******************************************************************************
    ** Here all normal components are defined                                     **
    *******************************************************************************/
@@ -91,37 +81,37 @@ module clock_gen( CLK,
    OR_GATE #(.BubblesMask(2'b00))
       GATES_2 (.input1(s_logisimNet6),
                .input2(s_logisimNet4),
-               .result(s_logisimNet12));
+               .result(s_logisimNet15));
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_3 (.clock(s_logisimNet1),
-                .d(s_logisimNet10),
+                .d(s_logisimNet13),
                 .preset(s_logisimNet0),
-                .q(s_logisimNet7),
-                .qBar(),
+                .q(),
+                .qBar(s_logisimNet11),
                 .reset(1'b0),
                 .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_4 (.clock(s_logisimNet1),
-                .d(s_logisimNet9),
+                .d(s_logisimNet12),
                 .preset(1'b0),
                 .q(s_logisimNet6),
-                .qBar(),
+                .qBar(s_logisimNet8),
                 .reset(s_logisimNet0),
                 .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_5 (.clock(s_logisimNet1),
-                .d(s_logisimNet8),
+                .d(s_logisimNet7),
                 .preset(1'b0),
-                .q(s_logisimNet13),
-                .qBar(),
+                .q(),
+                .qBar(s_logisimNet9),
                 .reset(s_logisimNet0),
                 .tick(1'b1));
 
    T_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_6 (.clock(s_logisimNet12),
+      MEMORY_6 (.clock(s_logisimNet15),
                 .preset(s_logisimNet0),
                 .q(s_logisimNet5),
                 .qBar(),
@@ -131,12 +121,32 @@ module clock_gen( CLK,
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_7 (.clock(s_logisimNet1),
-                .d(s_logisimNet11),
+                .d(s_logisimNet14),
                 .preset(1'b0),
                 .q(s_logisimNet4),
-                .qBar(),
+                .qBar(s_logisimNet10),
                 .reset(s_logisimNet0),
                 .tick(1'b1));
+
+   NAND_GATE #(.BubblesMask(2'b00))
+      GATES_8 (.input1(s_logisimNet8),
+               .input2(s_logisimNet8),
+               .result(s_logisimNet7));
+
+   NAND_GATE #(.BubblesMask(2'b00))
+      GATES_9 (.input1(s_logisimNet9),
+               .input2(s_logisimNet9),
+               .result(s_logisimNet14));
+
+   NAND_GATE #(.BubblesMask(2'b00))
+      GATES_10 (.input1(s_logisimNet10),
+                .input2(s_logisimNet10),
+                .result(s_logisimNet13));
+
+   NAND_GATE #(.BubblesMask(2'b00))
+      GATES_11 (.input1(s_logisimNet11),
+                .input2(s_logisimNet11),
+                .result(s_logisimNet12));
 
 
 endmodule

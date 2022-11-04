@@ -1793,14 +1793,14 @@
       <a name="label" val="CLK2"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="1" loc="(1070,430)" name="Buffer"/>
-    <comp lib="1" loc="(1090,550)" name="Buffer">
+    <comp lib="1" loc="(1080,450)" name="NAND Gate"/>
+    <comp lib="1" loc="(1090,550)" name="NAND Gate">
       <a name="facing" val="west"/>
     </comp>
     <comp lib="1" loc="(580,170)" name="AND Gate"/>
-    <comp lib="1" loc="(700,430)" name="Buffer"/>
+    <comp lib="1" loc="(700,450)" name="NAND Gate"/>
     <comp lib="1" loc="(790,230)" name="OR Gate"/>
-    <comp lib="1" loc="(880,430)" name="Buffer"/>
+    <comp lib="1" loc="(880,450)" name="NAND Gate"/>
     <comp lib="4" loc="(1120,420)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
@@ -1816,12 +1816,18 @@
     <comp lib="4" loc="(920,420)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
-    <wire from="(1070,430)" to="(1110,430)"/>
+    <wire from="(1010,430)" to="(1010,470)"/>
+    <wire from="(1010,430)" to="(1020,430)"/>
+    <wire from="(1010,470)" to="(1020,470)"/>
+    <wire from="(1080,430)" to="(1080,450)"/>
+    <wire from="(1080,430)" to="(1110,430)"/>
     <wire from="(1110,470)" to="(1110,500)"/>
-    <wire from="(1110,550)" to="(1190,550)"/>
     <wire from="(1140,400)" to="(1140,420)"/>
-    <wire from="(1170,430)" to="(1190,430)"/>
-    <wire from="(1190,430)" to="(1190,550)"/>
+    <wire from="(1150,530)" to="(1160,530)"/>
+    <wire from="(1150,570)" to="(1160,570)"/>
+    <wire from="(1160,530)" to="(1160,570)"/>
+    <wire from="(1160,530)" to="(1170,530)"/>
+    <wire from="(1170,470)" to="(1170,530)"/>
     <wire from="(410,400)" to="(430,400)"/>
     <wire from="(410,500)" to="(420,500)"/>
     <wire from="(420,190)" to="(420,500)"/>
@@ -1839,7 +1845,7 @@
     <wire from="(570,210)" to="(570,320)"/>
     <wire from="(570,210)" to="(740,210)"/>
     <wire from="(570,320)" to="(570,430)"/>
-    <wire from="(570,430)" to="(680,430)"/>
+    <wire from="(570,470)" to="(630,470)"/>
     <wire from="(580,170)" to="(610,170)"/>
     <wire from="(610,130)" to="(610,170)"/>
     <wire from="(610,130)" to="(890,130)"/>
@@ -1847,7 +1853,12 @@
     <wire from="(610,400)" to="(1140,400)"/>
     <wire from="(610,400)" to="(610,520)"/>
     <wire from="(610,520)" to="(750,520)"/>
-    <wire from="(700,430)" to="(720,430)"/>
+    <wire from="(630,430)" to="(630,470)"/>
+    <wire from="(630,430)" to="(640,430)"/>
+    <wire from="(630,470)" to="(640,470)"/>
+    <wire from="(700,450)" to="(710,450)"/>
+    <wire from="(710,430)" to="(710,450)"/>
+    <wire from="(710,430)" to="(720,430)"/>
     <wire from="(720,470)" to="(720,500)"/>
     <wire from="(720,500)" to="(910,500)"/>
     <wire from="(730,250)" to="(730,290)"/>
@@ -1855,9 +1866,13 @@
     <wire from="(730,290)" to="(970,290)"/>
     <wire from="(750,480)" to="(750,520)"/>
     <wire from="(750,520)" to="(940,520)"/>
-    <wire from="(780,430)" to="(860,430)"/>
+    <wire from="(780,470)" to="(810,470)"/>
     <wire from="(790,230)" to="(860,230)"/>
+    <wire from="(810,430)" to="(810,470)"/>
+    <wire from="(810,430)" to="(820,430)"/>
+    <wire from="(810,470)" to="(820,470)"/>
     <wire from="(820,190)" to="(860,190)"/>
+    <wire from="(880,430)" to="(880,450)"/>
     <wire from="(880,430)" to="(910,430)"/>
     <wire from="(890,130)" to="(890,180)"/>
     <wire from="(910,470)" to="(910,500)"/>
@@ -1866,7 +1881,7 @@
     <wire from="(940,480)" to="(940,520)"/>
     <wire from="(970,290)" to="(970,380)"/>
     <wire from="(970,380)" to="(970,430)"/>
-    <wire from="(970,430)" to="(1050,430)"/>
+    <wire from="(970,470)" to="(1010,470)"/>
   </circuit>
   <circuit name="eq_0">
     <a name="appearance" val="logisim_evolution"/>
