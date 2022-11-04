@@ -893,6 +893,7 @@ module CPU( CLK,
    clock_gen   clock_gen_1 (.CLK(s_logisimNet33),
                             .CLK1(s_logisimNet57),
                             .CLK2(s_logisimNet6),
+                            .DEBUG(),
                             .O_S(s_logisimNet97),
                             .RST(s_logisimNet35));
 
