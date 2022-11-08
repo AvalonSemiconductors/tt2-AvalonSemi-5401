@@ -2,6 +2,7 @@
 .idea
 .vscode
 *.vcd
+run/
 
 __pycache__/
 sim_build/
