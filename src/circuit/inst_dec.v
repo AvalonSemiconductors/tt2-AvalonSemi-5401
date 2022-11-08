@@ -7,7 +7,6 @@
  *****************************************************************************/
 
 module inst_dec( ARI,
-                 CLK,
                  CLK1,
                  D0,
                  D1,
@@ -21,7 +20,7 @@ module inst_dec( ARI,
                  LD,
                  LDD,
                  LOG,
-                 RST,
+                 RST_C,
                  SEI,
                  SMH,
                  SML,
@@ -31,13 +30,12 @@ module inst_dec( ARI,
    /*******************************************************************************
    ** The inputs are defined here                                                **
    *******************************************************************************/
-   input CLK;
    input CLK1;
    input D0;
    input D1;
    input D2;
    input D3;
-   input RST;
+   input RST_C;
 
    /*******************************************************************************
    ** The outputs are defined here                                               **
@@ -90,8 +88,6 @@ module inst_dec( ARI,
    wire s_logisimNet33;
    wire s_logisimNet34;
    wire s_logisimNet35;
-   wire s_logisimNet36;
-   wire s_logisimNet37;
    wire s_logisimNet4;
    wire s_logisimNet5;
    wire s_logisimNet6;
@@ -106,11 +102,10 @@ module inst_dec( ARI,
    /*******************************************************************************
    ** Here all input connections are defined                                     **
    *******************************************************************************/
+   assign s_logisimNet0  = RST_C;
    assign s_logisimNet20 = D0;
    assign s_logisimNet27 = D1;
    assign s_logisimNet31 = D2;
-   assign s_logisimNet34 = CLK;
-   assign s_logisimNet35 = RST;
    assign s_logisimNet5  = D3;
    assign s_logisimNet6  = CLK1;
 
@@ -193,10 +188,10 @@ module inst_dec( ARI,
    AND_GATE #(.BubblesMask(2'b00))
       GATES_10 (.input1(s_logisimNet21),
                 .input2(s_logisimNet12),
-                .result(s_logisimNet37));
+                .result(s_logisimNet35));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_11 (.input1(s_logisimNet37),
+      GATES_11 (.input1(s_logisimNet35),
                 .input2(s_logisimNet1),
                 .result(s_logisimNet3));
 
@@ -213,10 +208,10 @@ module inst_dec( ARI,
    AND_GATE #(.BubblesMask(2'b00))
       GATES_14 (.input1(s_logisimNet21),
                 .input2(s_logisimNet2),
-                .result(s_logisimNet36));
+                .result(s_logisimNet34));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_15 (.input1(s_logisimNet36),
+      GATES_15 (.input1(s_logisimNet34),
                 .input2(s_logisimNet1),
                 .result(s_logisimNet17));
 
@@ -231,27 +226,22 @@ module inst_dec( ARI,
                 .result(s_logisimNet30));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_18 (.input1(s_logisimNet35),
-                .input2(s_logisimNet34),
-                .result(s_logisimNet0));
-
-   AND_GATE #(.BubblesMask(2'b00))
-      GATES_19 (.input1(s_logisimNet4),
+      GATES_18 (.input1(s_logisimNet4),
                 .input2(s_logisimNet2),
                 .result(s_logisimNet10));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_20 (.input1(s_logisimNet14),
+      GATES_19 (.input1(s_logisimNet14),
                 .input2(s_logisimNet18),
                 .result(s_logisimNet26));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_21 (.input1(s_logisimNet11),
+      GATES_20 (.input1(s_logisimNet11),
                 .input2(s_logisimNet9),
                 .result(s_logisimNet7));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_22 (.clock(s_logisimNet6),
+      MEMORY_21 (.clock(s_logisimNet6),
                  .d(s_logisimNet20),
                  .preset(1'b0),
                  .q(s_logisimNet4),
@@ -260,7 +250,7 @@ module inst_dec( ARI,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_23 (.clock(s_logisimNet6),
+      MEMORY_22 (.clock(s_logisimNet6),
                  .d(s_logisimNet27),
                  .preset(1'b0),
                  .q(s_logisimNet2),
@@ -269,7 +259,7 @@ module inst_dec( ARI,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_24 (.clock(s_logisimNet6),
+      MEMORY_23 (.clock(s_logisimNet6),
                  .d(s_logisimNet31),
                  .preset(1'b0),
                  .q(s_logisimNet18),
@@ -278,7 +268,7 @@ module inst_dec( ARI,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_25 (.clock(s_logisimNet6),
+      MEMORY_24 (.clock(s_logisimNet6),
                  .d(s_logisimNet5),
                  .preset(1'b0),
                  .q(s_logisimNet9),

@@ -6,10 +6,9 @@
  **                                                                          **
  *****************************************************************************/
 
-module dest_reg_sel( CLK,
-                     CLK1,
+module dest_reg_sel( CLK1,
                      LDD,
-                     RST,
+                     RST_C,
                      S0,
                      S1,
                      S2 );
@@ -17,10 +16,9 @@ module dest_reg_sel( CLK,
    /*******************************************************************************
    ** The inputs are defined here                                                **
    *******************************************************************************/
-   input CLK;
    input CLK1;
    input LDD;
-   input RST;
+   input RST_C;
 
    /*******************************************************************************
    ** The outputs are defined here                                               **
@@ -38,8 +36,6 @@ module dest_reg_sel( CLK,
    wire s_logisimNet11;
    wire s_logisimNet12;
    wire s_logisimNet13;
-   wire s_logisimNet14;
-   wire s_logisimNet15;
    wire s_logisimNet2;
    wire s_logisimNet3;
    wire s_logisimNet4;
@@ -56,72 +52,66 @@ module dest_reg_sel( CLK,
    /*******************************************************************************
    ** Here all input connections are defined                                     **
    *******************************************************************************/
-   assign s_logisimNet1  = LDD;
-   assign s_logisimNet13 = CLK;
-   assign s_logisimNet2  = CLK1;
-   assign s_logisimNet7  = RST;
+   assign s_logisimNet2 = LDD;
+   assign s_logisimNet3 = CLK1;
+   assign s_logisimNet7 = RST_C;
 
    /*******************************************************************************
    ** Here all output connections are defined                                    **
    *******************************************************************************/
-   assign S0 = s_logisimNet9;
+   assign S0 = s_logisimNet13;
    assign S1 = s_logisimNet11;
-   assign S2 = s_logisimNet4;
+   assign S2 = s_logisimNet5;
 
    /*******************************************************************************
    ** Here all in-lined components are defined                                   **
    *******************************************************************************/
 
    // NOT Gate
-   assign s_logisimNet5 = ~s_logisimNet3;
+   assign s_logisimNet6 = ~s_logisimNet4;
 
    // NOT Gate
-   assign s_logisimNet0 = ~s_logisimNet6;
+   assign s_logisimNet1 = ~s_logisimNet8;
 
    // NOT Gate
-   assign s_logisimNet12 = ~s_logisimNet15;
+   assign s_logisimNet0 = ~s_logisimNet10;
 
    // NOT Gate
-   assign s_logisimNet14 = ~s_logisimNet2;
+   assign s_logisimNet9 = ~s_logisimNet3;
 
    /*******************************************************************************
    ** Here all normal components are defined                                     **
    *******************************************************************************/
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_1 (.input1(s_logisimNet14),
-               .input2(s_logisimNet1),
-               .result(s_logisimNet10));
-
-   AND_GATE #(.BubblesMask(2'b00))
-      GATES_2 (.input1(s_logisimNet13),
-               .input2(s_logisimNet7),
-               .result(s_logisimNet8));
+      GATES_1 (.input1(s_logisimNet9),
+               .input2(s_logisimNet2),
+               .result(s_logisimNet12));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_3 (.clock(s_logisimNet10),
-                .d(s_logisimNet0),
-                .preset(s_logisimNet8),
-                .q(s_logisimNet4),
-                .qBar(s_logisimNet3),
+      MEMORY_2 (.clock(s_logisimNet12),
+                .d(s_logisimNet1),
+                .preset(s_logisimNet7),
+                .q(s_logisimNet5),
+                .qBar(s_logisimNet4),
                 .reset(1'b0),
                 .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_4 (.clock(s_logisimNet10),
-                .d(s_logisimNet5),
+      MEMORY_3 (.clock(s_logisimNet12),
+                .d(s_logisimNet6),
                 .preset(1'b0),
-                .q(s_logisimNet9),
-                .qBar(s_logisimNet15),
-                .reset(s_logisimNet8),
+                .q(s_logisimNet13),
+                .qBar(s_logisimNet10),
+                .reset(s_logisimNet7),
                 .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_5 (.clock(s_logisimNet10),
-                .d(s_logisimNet12),
+      MEMORY_4 (.clock(s_logisimNet12),
+                .d(s_logisimNet0),
                 .preset(1'b0),
                 .q(s_logisimNet11),
-                .qBar(s_logisimNet6),
-                .reset(s_logisimNet8),
+                .qBar(s_logisimNet8),
+                .reset(s_logisimNet7),
                 .tick(1'b1));
 
 

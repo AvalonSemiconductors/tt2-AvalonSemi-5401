@@ -1,3 +1,6 @@
-set ::env(DESIGN_NAME) logisim_demo
+set ::env(DESIGN_NAME) tholin_avalonsemi_5401
 set ::env(VERILOG_FILES) "\
-    $::env(DESIGN_DIR)/logisimTopLevelShell.v"
+    $::env(DESIGN_DIR)/toplevel/logisimTopLevelShell.v \
+    $::env(DESIGN_DIR)/circuit/*.v \
+    $::env(DESIGN_DIR)/gates/*.v \
+    $::env(DESIGN_DIR)/memory/*.v"

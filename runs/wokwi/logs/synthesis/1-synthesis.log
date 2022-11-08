@@ -1,0 +1,2171 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.12+45 (git sha1 UNKNOWN, gcc 8.3.1 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+Reading /work/runs/wokwi/tmp/synthesis/1-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib as a blackbox
+
+1. Executing Liberty frontend.
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /work/src/toplevel/logisimTopLevelShell.v
+Parsing SystemVerilog input from `/work/src/toplevel/logisimTopLevelShell.v' to AST representation.
+Generating RTLIL representation for module `\tholin_avalonsemi_5401'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /work/src/circuit/Adder.v
+Parsing SystemVerilog input from `/work/src/circuit/Adder.v' to AST representation.
+Generating RTLIL representation for module `\Adder'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /work/src/circuit/CPU.v
+Parsing SystemVerilog input from `/work/src/circuit/CPU.v' to AST representation.
+Generating RTLIL representation for module `\CPU'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /work/src/circuit/adder_8bit.v
+Parsing SystemVerilog input from `/work/src/circuit/adder_8bit.v' to AST representation.
+Generating RTLIL representation for module `\adder_8bit'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /work/src/circuit/dest_reg_sel.v
+Parsing SystemVerilog input from `/work/src/circuit/dest_reg_sel.v' to AST representation.
+Generating RTLIL representation for module `\dest_reg_sel'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /work/src/circuit/eq_0.v
+Parsing SystemVerilog input from `/work/src/circuit/eq_0.v' to AST representation.
+Generating RTLIL representation for module `\eq_0'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /work/src/circuit/inst_dec.v
+Parsing SystemVerilog input from `/work/src/circuit/inst_dec.v' to AST representation.
+Generating RTLIL representation for module `\inst_dec'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /work/src/circuit/main.v
+Parsing SystemVerilog input from `/work/src/circuit/main.v' to AST representation.
+Generating RTLIL representation for module `\main'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /work/src/circuit/multiply.v
+Parsing SystemVerilog input from `/work/src/circuit/multiply.v' to AST representation.
+Generating RTLIL representation for module `\multiply'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /work/src/circuit/output_logic.v
+Parsing SystemVerilog input from `/work/src/circuit/output_logic.v' to AST representation.
+Generating RTLIL representation for module `\output_logic'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /work/src/circuit/shift_reg.v
+Parsing SystemVerilog input from `/work/src/circuit/shift_reg.v' to AST representation.
+Generating RTLIL representation for module `\shift_reg'.
+Successfully finished Verilog frontend.
+
+13. Executing Verilog-2005 frontend: /work/src/circuit/shift_reg_8.v
+Parsing SystemVerilog input from `/work/src/circuit/shift_reg_8.v' to AST representation.
+Generating RTLIL representation for module `\shift_reg_8'.
+Successfully finished Verilog frontend.
+
+14. Executing Verilog-2005 frontend: /work/src/circuit/toggle.v
+Parsing SystemVerilog input from `/work/src/circuit/toggle.v' to AST representation.
+Generating RTLIL representation for module `\toggle'.
+Successfully finished Verilog frontend.
+
+15. Executing Verilog-2005 frontend: /work/src/gates/AND_GATE.v
+Parsing SystemVerilog input from `/work/src/gates/AND_GATE.v' to AST representation.
+Generating RTLIL representation for module `\AND_GATE'.
+Successfully finished Verilog frontend.
+
+16. Executing Verilog-2005 frontend: /work/src/gates/NAND_GATE.v
+Parsing SystemVerilog input from `/work/src/gates/NAND_GATE.v' to AST representation.
+Generating RTLIL representation for module `\NAND_GATE'.
+Successfully finished Verilog frontend.
+
+17. Executing Verilog-2005 frontend: /work/src/gates/NOR_GATE.v
+Parsing SystemVerilog input from `/work/src/gates/NOR_GATE.v' to AST representation.
+Generating RTLIL representation for module `\NOR_GATE'.
+Successfully finished Verilog frontend.
+
+18. Executing Verilog-2005 frontend: /work/src/gates/OR_GATE.v
+Parsing SystemVerilog input from `/work/src/gates/OR_GATE.v' to AST representation.
+Generating RTLIL representation for module `\OR_GATE'.
+Successfully finished Verilog frontend.
+
+19. Executing Verilog-2005 frontend: /work/src/gates/XOR_GATE_ONEHOT.v
+Parsing SystemVerilog input from `/work/src/gates/XOR_GATE_ONEHOT.v' to AST representation.
+Generating RTLIL representation for module `\XOR_GATE_ONEHOT'.
+Successfully finished Verilog frontend.
+
+20. Executing Verilog-2005 frontend: /work/src/memory/D_FLIPFLOP.v
+Parsing SystemVerilog input from `/work/src/memory/D_FLIPFLOP.v' to AST representation.
+Generating RTLIL representation for module `\D_FLIPFLOP'.
+Successfully finished Verilog frontend.
+
+21. Executing Verilog-2005 frontend: /work/src/memory/Shift_Register.v
+Parsing SystemVerilog input from `/work/src/memory/Shift_Register.v' to AST representation.
+Generating RTLIL representation for module `\Shift_Register'.
+Generating RTLIL representation for module `\singleBitShiftReg'.
+/work/src/memory/Shift_Register.v:99: Warning: Range [0:-1] select out of bounds on signal `\s_stateReg': Setting 1 LSB bits to undef.
+Successfully finished Verilog frontend.
+
+22. Executing Verilog-2005 frontend: /work/src/memory/T_FLIPFLOP.v
+Parsing SystemVerilog input from `/work/src/memory/T_FLIPFLOP.v' to AST representation.
+Generating RTLIL representation for module `\T_FLIPFLOP'.
+Successfully finished Verilog frontend.
+
+23. Generating Graphviz representation of design.
+Writing dot description to `/work/runs/wokwi/tmp/synthesis/hierarchy.dot'.
+Dumping module tholin_avalonsemi_5401 to page 1.
+
+24. Executing HIERARCHY pass (managing design hierarchy).
+
+24.1. Analyzing design hierarchy..
+Top module:  \tholin_avalonsemi_5401
+Used module:     \CPU
+Used module:         \multiply
+Used module:             \adder_8bit
+Used module:                 \Adder
+Used module:             \shift_reg
+Used module:                 \D_FLIPFLOP
+Used module:                 \AND_GATE
+Used module:             \shift_reg_8
+Used module:             \OR_GATE
+Used module:         \output_logic
+Used module:         \dest_reg_sel
+Used module:         \eq_0
+Used module:             \NOR_GATE
+Used module:         \main
+Used module:             \XOR_GATE_ONEHOT
+Used module:         \toggle
+Used module:             \T_FLIPFLOP
+Used module:         \inst_dec
+Used module:             \NAND_GATE
+Parameter \invertClockEnable = 0
+
+24.2. Executing AST frontend in derive mode using pre-parsed AST for module `\D_FLIPFLOP'.
+Parameter \invertClockEnable = 0
+Generating RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \BubblesMask = 2'00
+
+24.3. Executing AST frontend in derive mode using pre-parsed AST for module `\AND_GATE'.
+Parameter \BubblesMask = 2'00
+Generating RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+
+24.4. Executing AST frontend in derive mode using pre-parsed AST for module `\NAND_GATE'.
+Parameter \BubblesMask = 2'00
+Generating RTLIL representation for module `$paramod\NAND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+
+24.5. Executing AST frontend in derive mode using pre-parsed AST for module `\OR_GATE'.
+Parameter \BubblesMask = 2'00
+Generating RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+
+24.6. Executing AST frontend in derive mode using pre-parsed AST for module `\NOR_GATE'.
+Parameter \BubblesMask = 2'00
+Generating RTLIL representation for module `$paramod\NOR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\NOR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\NOR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\NAND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \invertClockEnable = 0
+
+24.7. Executing AST frontend in derive mode using pre-parsed AST for module `\T_FLIPFLOP'.
+Parameter \invertClockEnable = 0
+Generating RTLIL representation for module `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+
+24.8. Executing AST frontend in derive mode using pre-parsed AST for module `\XOR_GATE_ONEHOT'.
+Parameter \BubblesMask = 2'00
+Generating RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\XOR_GATE_ONEHOT\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\NOR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\OR_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \extendedBits = 9
+Parameter \nrOfBits = 8
+
+24.9. Executing AST frontend in derive mode using pre-parsed AST for module `\Adder'.
+Parameter \extendedBits = 9
+Parameter \nrOfBits = 8
+Generating RTLIL representation for module `$paramod$b70b4e79f66f2f43338a4882341375a82643c9bf\Adder'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \invertClockEnable = 0
+Found cached RTLIL representation for module `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+Parameter \BubblesMask = 2'00
+Found cached RTLIL representation for module `$paramod\AND_GATE\BubblesMask=2'00'.
+
+24.10. Analyzing design hierarchy..
+Top module:  \tholin_avalonsemi_5401
+Used module:     \CPU
+Used module:         \multiply
+Used module:             \adder_8bit
+Used module:                 $paramod$b70b4e79f66f2f43338a4882341375a82643c9bf\Adder
+Used module:             \shift_reg
+Used module:                 $paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000
+Used module:                 $paramod\AND_GATE\BubblesMask=2'00
+Used module:             \shift_reg_8
+Used module:             $paramod\OR_GATE\BubblesMask=2'00
+Used module:         \output_logic
+Used module:         \dest_reg_sel
+Used module:         \eq_0
+Used module:             $paramod\NOR_GATE\BubblesMask=2'00
+Used module:         \main
+Used module:             $paramod\XOR_GATE_ONEHOT\BubblesMask=2'00
+Used module:         \toggle
+Used module:             $paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000
+Used module:         \inst_dec
+Used module:             $paramod\NAND_GATE\BubblesMask=2'00
+
+24.11. Analyzing design hierarchy..
+Top module:  \tholin_avalonsemi_5401
+Used module:     \CPU
+Used module:         \multiply
+Used module:             \adder_8bit
+Used module:                 $paramod$b70b4e79f66f2f43338a4882341375a82643c9bf\Adder
+Used module:             \shift_reg
+Used module:                 $paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000
+Used module:                 $paramod\AND_GATE\BubblesMask=2'00
+Used module:             \shift_reg_8
+Used module:             $paramod\OR_GATE\BubblesMask=2'00
+Used module:         \output_logic
+Used module:         \dest_reg_sel
+Used module:         \eq_0
+Used module:             $paramod\NOR_GATE\BubblesMask=2'00
+Used module:         \main
+Used module:             $paramod\XOR_GATE_ONEHOT\BubblesMask=2'00
+Used module:         \toggle
+Used module:             $paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000
+Used module:         \inst_dec
+Used module:             $paramod\NAND_GATE\BubblesMask=2'00
+Removing unused module `\T_FLIPFLOP'.
+Removing unused module `\singleBitShiftReg'.
+Removing unused module `\Shift_Register'.
+Removing unused module `\D_FLIPFLOP'.
+Removing unused module `\XOR_GATE_ONEHOT'.
+Removing unused module `\OR_GATE'.
+Removing unused module `\NOR_GATE'.
+Removing unused module `\NAND_GATE'.
+Removing unused module `\AND_GATE'.
+Removing unused module `\Adder'.
+Removed 10 unused modules.
+
+25. Executing TRIBUF pass.
+
+26. Executing SYNTH pass.
+
+26.1. Executing HIERARCHY pass (managing design hierarchy).
+
+26.1.1. Analyzing design hierarchy..
+Top module:  \tholin_avalonsemi_5401
+Used module:     \CPU
+Used module:         \multiply
+Used module:             \adder_8bit
+Used module:                 $paramod$b70b4e79f66f2f43338a4882341375a82643c9bf\Adder
+Used module:             \shift_reg
+Used module:                 $paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000
+Used module:                 $paramod\AND_GATE\BubblesMask=2'00
+Used module:             \shift_reg_8
+Used module:             $paramod\OR_GATE\BubblesMask=2'00
+Used module:         \output_logic
+Used module:         \dest_reg_sel
+Used module:         \eq_0
+Used module:             $paramod\NOR_GATE\BubblesMask=2'00
+Used module:         \main
+Used module:             $paramod\XOR_GATE_ONEHOT\BubblesMask=2'00
+Used module:         \toggle
+Used module:             $paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000
+Used module:         \inst_dec
+Used module:             $paramod\NAND_GATE\BubblesMask=2'00
+
+26.1.2. Analyzing design hierarchy..
+Top module:  \tholin_avalonsemi_5401
+Used module:     \CPU
+Used module:         \multiply
+Used module:             \adder_8bit
+Used module:                 $paramod$b70b4e79f66f2f43338a4882341375a82643c9bf\Adder
+Used module:             \shift_reg
+Used module:                 $paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000
+Used module:                 $paramod\AND_GATE\BubblesMask=2'00
+Used module:             \shift_reg_8
+Used module:             $paramod\OR_GATE\BubblesMask=2'00
+Used module:         \output_logic
+Used module:         \dest_reg_sel
+Used module:         \eq_0
+Used module:             $paramod\NOR_GATE\BubblesMask=2'00
+Used module:         \main
+Used module:             $paramod\XOR_GATE_ONEHOT\BubblesMask=2'00
+Used module:         \toggle
+Used module:             $paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000
+Used module:         \inst_dec
+Used module:             $paramod\NAND_GATE\BubblesMask=2'00
+Removed 0 unused modules.
+
+26.2. Executing PROC pass (convert processes to netlists).
+
+26.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+26.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/work/src/memory/T_FLIPFLOP.v:75$93 in module $paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.
+Marked 2 switch rules as full_case in process $proc$/work/src/memory/D_FLIPFLOP.v:75$83 in module $paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.
+Removed a total of 0 dead cases.
+
+26.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 2 assignments to connections.
+
+26.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/T_FLIPFLOP.v:0$94'.
+  Set init value: \s_currentState = 1'0
+Found init rule in `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/D_FLIPFLOP.v:0$84'.
+  Set init value: \s_currentState = 1'0
+
+26.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/T_FLIPFLOP.v:75$93'.
+Found async reset \preset in `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/T_FLIPFLOP.v:75$93'.
+Found async reset \reset in `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/D_FLIPFLOP.v:75$83'.
+Found async reset \preset in `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/D_FLIPFLOP.v:75$83'.
+
+26.2.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/T_FLIPFLOP.v:0$94'.
+Creating decoders for process `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/T_FLIPFLOP.v:75$93'.
+     1/1: $0\s_currentState[0:0]
+Creating decoders for process `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/D_FLIPFLOP.v:0$84'.
+Creating decoders for process `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/D_FLIPFLOP.v:75$83'.
+     1/1: $0\s_currentState[0:0]
+
+26.2.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+26.2.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.\s_currentState' using process `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/T_FLIPFLOP.v:75$93'.
+Warning: Complex async reset for dff `\s_currentState'.
+  created $dffsr cell `$procdff$118' with positive edge clock and multiple level-sensitive resets.
+Creating register for signal `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.\s_currentState' using process `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/D_FLIPFLOP.v:75$83'.
+Warning: Complex async reset for dff `\s_currentState'.
+  created $dffsr cell `$procdff$131' with positive edge clock and multiple level-sensitive resets.
+
+26.2.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+26.2.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/T_FLIPFLOP.v:0$94'.
+Found and cleaned up 1 empty switch in `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/T_FLIPFLOP.v:75$93'.
+Removing empty process `$paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/T_FLIPFLOP.v:75$93'.
+Removing empty process `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/D_FLIPFLOP.v:0$84'.
+Found and cleaned up 1 empty switch in `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/D_FLIPFLOP.v:75$83'.
+Removing empty process `$paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.$proc$/work/src/memory/D_FLIPFLOP.v:75$83'.
+Cleaned up 2 empty switches.
+
+26.2.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.
+<suppressed ~3 debug messages>
+Optimizing module $paramod\NOR_GATE\BubblesMask=2'00.
+Optimizing module $paramod\OR_GATE\BubblesMask=2'00.
+Optimizing module $paramod\NAND_GATE\BubblesMask=2'00.
+Optimizing module $paramod\AND_GATE\BubblesMask=2'00.
+Optimizing module $paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.
+<suppressed ~3 debug messages>
+Optimizing module $paramod$b70b4e79f66f2f43338a4882341375a82643c9bf\Adder.
+Optimizing module toggle.
+Optimizing module shift_reg_8.
+Optimizing module shift_reg.
+Optimizing module output_logic.
+Optimizing module multiply.
+Optimizing module main.
+Optimizing module inst_dec.
+Optimizing module eq_0.
+Optimizing module dest_reg_sel.
+Optimizing module adder_8bit.
+Optimizing module CPU.
+Optimizing module $paramod\XOR_GATE_ONEHOT\BubblesMask=2'00.
+Optimizing module tholin_avalonsemi_5401.
+
+26.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod\T_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.
+Deleting now unused module $paramod\NOR_GATE\BubblesMask=2'00.
+Deleting now unused module $paramod\OR_GATE\BubblesMask=2'00.
+Deleting now unused module $paramod\NAND_GATE\BubblesMask=2'00.
+Deleting now unused module $paramod\AND_GATE\BubblesMask=2'00.
+Deleting now unused module $paramod\D_FLIPFLOP\invertClockEnable=s32'00000000000000000000000000000000.
+Deleting now unused module $paramod$b70b4e79f66f2f43338a4882341375a82643c9bf\Adder.
+Deleting now unused module toggle.
+Deleting now unused module shift_reg_8.
+Deleting now unused module shift_reg.
+Deleting now unused module output_logic.
+Deleting now unused module multiply.
+Deleting now unused module main.
+Deleting now unused module inst_dec.
+Deleting now unused module eq_0.
+Deleting now unused module dest_reg_sel.
+Deleting now unused module adder_8bit.
+Deleting now unused module CPU.
+Deleting now unused module $paramod\XOR_GATE_ONEHOT\BubblesMask=2'00.
+<suppressed ~359 debug messages>
+
+26.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+<suppressed ~220 debug messages>
+
+26.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+Removed 53 unused cells and 1018 unused wires.
+<suppressed ~129 debug messages>
+
+26.6. Executing CHECK pass (checking for obvious problems).
+Checking module tholin_avalonsemi_5401...
+Warning: found logic loop in module tholin_avalonsemi_5401:
+    cell $flatten\CIRCUIT_0.\toggle_1.$not$/work/src/circuit/toggle.v:100$47 ($not)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_1.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_13.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_15.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_16.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_2.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_3.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_4.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_9.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    wire \CIRCUIT_0.toggle_1.GATES_1.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_10.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_12.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_15.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_16.s_realInput2
+    wire \CIRCUIT_0.toggle_1.GATES_2.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_3.s_realInput2
+    wire \CIRCUIT_0.toggle_1.GATES_4.s_realInput2
+    wire \CIRCUIT_0.toggle_1.GATES_9.s_realInput1
+Warning: found logic loop in module tholin_avalonsemi_5401:
+    cell $flatten\CIRCUIT_0.\toggle_1.$not$/work/src/circuit/toggle.v:100$47 ($not)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_1.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_14.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_15.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_2.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_3.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_4.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_9.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    wire \CIRCUIT_0.toggle_1.GATES_1.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_10.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_12.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_15.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_2.s_realInput2
+    wire \CIRCUIT_0.toggle_1.GATES_3.s_realInput2
+    wire \CIRCUIT_0.toggle_1.GATES_4.s_realInput2
+    wire \CIRCUIT_0.toggle_1.GATES_9.s_realInput1
+Warning: found logic loop in module tholin_avalonsemi_5401:
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_1.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_10.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_15.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_3.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    wire \CIRCUIT_0.toggle_1.GATES_1.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_10.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_15.s_realInput2
+    wire \CIRCUIT_0.toggle_1.GATES_3.s_realInput2
+Warning: found logic loop in module tholin_avalonsemi_5401:
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_1.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_11.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_3.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    wire \CIRCUIT_0.toggle_1.GATES_1.s_realInput2
+    wire \CIRCUIT_0.toggle_1.GATES_10.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_3.s_realInput2
+Warning: found logic loop in module tholin_avalonsemi_5401:
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_12.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_16.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_2.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_4.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    wire \CIRCUIT_0.toggle_1.GATES_12.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_16.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_2.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_4.s_realInput2
+Warning: found logic loop in module tholin_avalonsemi_5401:
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_14.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_2.$or$/work/src/gates/OR_GATE.v:48$88 ($or)
+    cell $flatten\CIRCUIT_0.\toggle_1.\GATES_4.$and$/work/src/gates/AND_GATE.v:48$85 ($and)
+    wire \CIRCUIT_0.toggle_1.GATES_12.s_realInput1
+    wire \CIRCUIT_0.toggle_1.GATES_2.s_realInput2
+    wire \CIRCUIT_0.toggle_1.GATES_4.s_realInput2
+Found and reported 6 problems.
+
+26.7. Executing OPT pass (performing simple optimizations).
+
+26.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+26.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+<suppressed ~102 debug messages>
+Removed a total of 34 cells.
+
+26.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tholin_avalonsemi_5401..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~40 debug messages>
+
+26.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tholin_avalonsemi_5401.
+Performed a total of 0 changes.
+
+26.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+<suppressed ~63 debug messages>
+Removed a total of 21 cells.
+
+26.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+Removing never-active CLR on $flatten\CIRCUIT_0.\toggle_1.\MEMORY_18.$procdff$118 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\toggle_1.\MEMORY_18.$procdff$118 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\toggle_1.\MEMORY_17.$procdff$118 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\shift_reg_8_1.\MEMORY_9.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\shift_reg_8_1.\MEMORY_12.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\shift_reg_8_1.\MEMORY_11.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\shift_reg_8_1.\MEMORY_10.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_35.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_34.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_33.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_32.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_31.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_30.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_29.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_28.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_27.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_26.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\multiply_1.\MEMORY_25.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\inst_dec_1.\MEMORY_24.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\inst_dec_1.\MEMORY_23.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\inst_dec_1.\MEMORY_22.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\inst_dec_1.\MEMORY_21.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\dest_reg_sel_1.\MEMORY_4.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\dest_reg_sel_1.\MEMORY_3.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\dest_reg_sel_1.\MEMORY_2.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_99.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_99.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_98.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_98.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_97.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_97.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_96.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_96.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_95.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_95.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_94.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_94.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_93.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_93.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_92.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_92.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_91.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_91.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_90.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_90.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_89.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_89.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_88.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_88.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_87.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_87.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_86.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_86.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_85.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_85.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_84.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_84.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_83.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_83.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_82.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_82.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_81.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_81.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_80.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_80.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_79.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_79.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_78.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_78.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_77.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_77.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_76.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_76.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_75.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_75.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active SET on $flatten\CIRCUIT_0.\MEMORY_74.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active CLR on $flatten\CIRCUIT_0.\MEMORY_100.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+Removing never-active ARST on $flatten\CIRCUIT_0.\MEMORY_100.$procdff$131 ($dffsr) from module tholin_avalonsemi_5401.
+
+26.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+Removed 0 unused cells and 82 unused wires.
+<suppressed ~50 debug messages>
+
+26.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+26.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+26.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tholin_avalonsemi_5401..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~19 debug messages>
+
+26.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tholin_avalonsemi_5401.
+Performed a total of 0 changes.
+
+26.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+
+26.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+26.7.16. Finished OPT passes. (There is nothing left to do.)
+
+26.8. Executing FSM pass (extract and optimize FSM).
+
+26.8.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+26.8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+26.8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+26.8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+
+26.8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+26.8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+26.8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+26.8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+26.9. Executing OPT pass (performing simple optimizations).
+
+26.9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+26.9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tholin_avalonsemi_5401..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~19 debug messages>
+
+26.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tholin_avalonsemi_5401.
+Performed a total of 0 changes.
+
+26.9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.9.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+
+26.9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+26.9.9. Finished OPT passes. (There is nothing left to do.)
+
+26.10. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 9) from port Y of cell tholin_avalonsemi_5401.$flatten\CIRCUIT_0.\multiply_1.\adder_8bit_1.\ARITH_1.$add$/work/src/circuit/Adder.v:44$100 ($add).
+
+26.11. Executing PEEPOPT pass (run peephole optimizers).
+
+26.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+26.13. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module tholin_avalonsemi_5401:
+  creating $macc model for $flatten\CIRCUIT_0.\multiply_1.\adder_8bit_1.\ARITH_1.$add$/work/src/circuit/Adder.v:44$100 ($add).
+  creating $alu model for $macc $flatten\CIRCUIT_0.\multiply_1.\adder_8bit_1.\ARITH_1.$add$/work/src/circuit/Adder.v:44$100.
+  creating $alu cell for $flatten\CIRCUIT_0.\multiply_1.\adder_8bit_1.\ARITH_1.$add$/work/src/circuit/Adder.v:44$100: $auto$alumacc.cc:485:replace_alu$136
+  created 1 $alu and 0 $macc cells.
+
+26.14. Executing SHARE pass (SAT-based resource sharing).
+
+26.15. Executing OPT pass (performing simple optimizations).
+
+26.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+26.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tholin_avalonsemi_5401..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~19 debug messages>
+
+26.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tholin_avalonsemi_5401.
+Performed a total of 0 changes.
+
+26.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+
+26.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+26.15.9. Finished OPT passes. (There is nothing left to do.)
+
+26.16. Executing MEMORY pass.
+
+26.16.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+26.16.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+26.16.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+26.16.4. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+26.16.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+
+26.16.6. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+26.16.7. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+26.16.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+
+26.16.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+26.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+
+26.18. Executing OPT pass (performing simple optimizations).
+
+26.18.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+<suppressed ~19 debug messages>
+
+26.18.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.18.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~1 debug messages>
+
+26.18.5. Finished fast OPT passes.
+
+26.19. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+26.20. Executing OPT pass (performing simple optimizations).
+
+26.20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+26.20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tholin_avalonsemi_5401..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+26.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tholin_avalonsemi_5401.
+Performed a total of 0 changes.
+
+26.20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.20.6. Executing OPT_SHARE pass.
+
+26.20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+
+26.20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+26.20.10. Finished OPT passes. (There is nothing left to do.)
+
+26.21. Executing TECHMAP pass (map to technology primitives).
+
+26.21.1. Executing Verilog-2005 frontend: /build/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/build/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+26.21.2. Continuing TECHMAP pass.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $dffsr.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~666 debug messages>
+
+26.22. Executing OPT pass (performing simple optimizations).
+
+26.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+<suppressed ~12 debug messages>
+
+26.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.22.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+Removed 17 unused cells and 32 unused wires.
+<suppressed ~18 debug messages>
+
+26.22.5. Finished fast OPT passes.
+
+26.23. Executing ABC pass (technology mapping using ABC).
+
+26.23.1. Extracting gate netlist of module `\tholin_avalonsemi_5401' to `<abc-temp-dir>/input.blif'..
+Breaking loop using new signal $abcloop$756: \CIRCUIT_0.multiply_1.MEMORY_33.reset -> \CIRCUIT_0.multiply_1.shift_reg_8_1.MEMORY_16.preset
+                                             \CIRCUIT_0.multiply_1.MEMORY_33.reset -> \CIRCUIT_0.multiply_1.shift_reg_8_1.MEMORY_16.reset
+                                             \CIRCUIT_0.multiply_1.MEMORY_33.reset -> \CIRCUIT_0.multiply_1.shift_reg_8_1.MEMORY_15.preset
+                                             \CIRCUIT_0.multiply_1.MEMORY_33.reset -> \CIRCUIT_0.multiply_1.shift_reg_8_1.MEMORY_15.reset
+                                             \CIRCUIT_0.multiply_1.MEMORY_33.reset -> \CIRCUIT_0.multiply_1.shift_reg_8_1.MEMORY_14.preset
+                                             \CIRCUIT_0.multiply_1.MEMORY_33.reset -> \CIRCUIT_0.multiply_1.shift_reg_8_1.MEMORY_14.reset
+                                             \CIRCUIT_0.multiply_1.MEMORY_33.reset -> \CIRCUIT_0.multiply_1.shift_reg_8_1.MEMORY_13.preset
+                                             \CIRCUIT_0.multiply_1.MEMORY_33.reset -> \CIRCUIT_0.multiply_1.shift_reg_8_1.MEMORY_13.reset
+                                             \CIRCUIT_0.multiply_1.MEMORY_33.reset -> \CIRCUIT_0.multiply_1.GATES_22.s_realInput1
+Breaking loop using new signal $abcloop$757: \CIRCUIT_0.GATES_10.s_realInput1 -> \CIRCUIT_0.s_logisimNet8
+                                             \CIRCUIT_0.GATES_10.s_realInput1 -> \CIRCUIT_0.multiply_1.GATES_1.s_realInput1
+                                             \CIRCUIT_0.GATES_10.s_realInput1 -> \CIRCUIT_0.toggle_1.MEMORY_17.s_clock
+                                             \CIRCUIT_0.GATES_10.s_realInput1 -> \CIRCUIT_0.MEMORY_96.s_clock
+                                             \CIRCUIT_0.GATES_10.s_realInput1 -> \CIRCUIT_0.MEMORY_92.s_clock
+                                             \CIRCUIT_0.GATES_10.s_realInput1 -> \CIRCUIT_0.MEMORY_88.s_clock
+                                             \CIRCUIT_0.GATES_10.s_realInput1 -> \CIRCUIT_0.MEMORY_76.s_clock
+                                             \CIRCUIT_0.GATES_10.s_realInput1 -> \CIRCUIT_0.MEMORY_75.s_clock
+Breaking loop using new signal $abcloop$758: \CIRCUIT_0.toggle_1.GATES_10.s_realInput1 -> \CIRCUIT_0.toggle_1.GATES_6.s_realInput2
+                                             \CIRCUIT_0.toggle_1.GATES_10.s_realInput1 -> \CIRCUIT_0.dest_reg_sel_1.s_logisimNet3
+                                             \CIRCUIT_0.toggle_1.GATES_10.s_realInput1 -> \CIRCUIT_0.toggle_1.GATES_2.s_realInput2
+                                             \CIRCUIT_0.toggle_1.GATES_10.s_realInput1 -> \CIRCUIT_0.toggle_1.GATES_15.s_realInput2
+Breaking loop using new signal $abcloop$759: \CIRCUIT_0.toggle_1.GATES_12.s_realInput1 -> \CIRCUIT_0.toggle_1.GATES_11.s_realInput2
+                                             \CIRCUIT_0.toggle_1.GATES_12.s_realInput1 -> \CIRCUIT_0.toggle_1.GATES_2.s_realInput2
+                                             \CIRCUIT_0.toggle_1.GATES_12.s_realInput1 -> \CIRCUIT_0.GATES_10.s_realInput1
+                                             \CIRCUIT_0.toggle_1.GATES_12.s_realInput1 -> \CIRCUIT_0.toggle_1.GATES_16.s_realInput1
+Extracted 414 gates and 483 wires to a netlist network with 68 inputs and 66 outputs.
+
+26.23.1.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+26.23.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       19
+ABC RESULTS:            ANDNOT cells:       81
+ABC RESULTS:               MUX cells:       35
+ABC RESULTS:              NAND cells:       10
+ABC RESULTS:               NOR cells:       24
+ABC RESULTS:               NOT cells:       30
+ABC RESULTS:                OR cells:       33
+ABC RESULTS:             ORNOT cells:       14
+ABC RESULTS:              XNOR cells:        1
+ABC RESULTS:               XOR cells:       30
+ABC RESULTS:        internal signals:      349
+ABC RESULTS:           input signals:       68
+ABC RESULTS:          output signals:       66
+Removing temp directory.
+
+26.24. Executing OPT pass (performing simple optimizations).
+
+26.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+<suppressed ~15 debug messages>
+
+26.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+26.24.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+Removed 2 unused cells and 1600 unused wires.
+<suppressed ~1391 debug messages>
+
+26.24.5. Finished fast OPT passes.
+
+26.25. Executing HIERARCHY pass (managing design hierarchy).
+
+26.25.1. Analyzing design hierarchy..
+Top module:  \tholin_avalonsemi_5401
+
+26.25.2. Analyzing design hierarchy..
+Top module:  \tholin_avalonsemi_5401
+Removed 0 unused modules.
+
+26.26. Printing statistics.
+
+=== tholin_avalonsemi_5401 ===
+
+   Number of wires:               1509
+   Number of wire bits:           1551
+   Number of public wires:        1292
+   Number of public wire bits:    1334
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                334
+     $_ANDNOT_                      81
+     $_AND_                         19
+     $_DFFSR_NPP_                    8
+     $_DFF_NP0_                      7
+     $_DFF_PP0_                     15
+     $_DFF_PP1_                      2
+     $_DFF_P_                       27
+     $_MUX_                         35
+     $_NAND_                        10
+     $_NOR_                         24
+     $_NOT_                         28
+     $_ORNOT_                       14
+     $_OR_                          33
+     $_XNOR_                         1
+     $_XOR_                         30
+
+26.27. Executing CHECK pass (checking for obvious problems).
+Checking module tholin_avalonsemi_5401...
+Warning: found logic loop in module tholin_avalonsemi_5401:
+    cell $abc$755$auto$blifparse.cc:381:parse_blif$845 ($_NOT_)
+    cell $abc$755$auto$blifparse.cc:381:parse_blif$846 ($_MUX_)
+    cell $abc$755$auto$blifparse.cc:381:parse_blif$847 ($_ANDNOT_)
+    cell $abc$755$auto$blifparse.cc:381:parse_blif$848 ($_MUX_)
+    cell $abc$755$auto$blifparse.cc:381:parse_blif$849 ($_ANDNOT_)
+    wire $abc$755$new_n220_
+    wire $abc$755$new_n221_
+    wire $abc$755$new_n223_
+    wire \CIRCUIT_0.toggle_1.GATES_10.input1
+    wire \CIRCUIT_0.toggle_1.GATES_12.input1
+Warning: found logic loop in module tholin_avalonsemi_5401:
+    cell $abc$755$auto$blifparse.cc:381:parse_blif$846 ($_MUX_)
+    cell $abc$755$auto$blifparse.cc:381:parse_blif$847 ($_ANDNOT_)
+    wire $abc$755$new_n221_
+    wire \CIRCUIT_0.toggle_1.GATES_10.input1
+Warning: found logic loop in module tholin_avalonsemi_5401:
+    cell $abc$755$auto$blifparse.cc:381:parse_blif$848 ($_MUX_)
+    cell $abc$755$auto$blifparse.cc:381:parse_blif$849 ($_ANDNOT_)
+    wire $abc$755$new_n223_
+    wire \CIRCUIT_0.toggle_1.GATES_12.input1
+Found and reported 3 problems.
+
+27. Generating Graphviz representation of design.
+Writing dot description to `/work/runs/wokwi/tmp/synthesis/post_techmap.dot'.
+Dumping module tholin_avalonsemi_5401 to page 1.
+
+28. Executing SHARE pass (SAT-based resource sharing).
+
+29. Executing OPT pass (performing simple optimizations).
+
+29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tholin_avalonsemi_5401..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tholin_avalonsemi_5401.
+Performed a total of 0 changes.
+
+29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tholin_avalonsemi_5401'.
+Removed a total of 0 cells.
+
+29.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+
+29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tholin_avalonsemi_5401.
+
+29.9. Finished OPT passes. (There is nothing left to do.)
+
+30. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+Removed 0 unused cells and 1173 unused wires.
+<suppressed ~1173 debug messages>
+
+31. Printing statistics.
+
+=== tholin_avalonsemi_5401 ===
+
+   Number of wires:                336
+   Number of wire bits:            350
+   Number of public wires:         119
+   Number of public wire bits:     133
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                334
+     $_ANDNOT_                      81
+     $_AND_                         19
+     $_DFFSR_NPP_                    8
+     $_DFF_NP0_                      7
+     $_DFF_PP0_                     15
+     $_DFF_PP1_                      2
+     $_DFF_P_                       27
+     $_MUX_                         35
+     $_NAND_                        10
+     $_NOR_                         24
+     $_NOT_                         28
+     $_ORNOT_                       14
+     $_OR_                          33
+     $_XNOR_                         1
+     $_XOR_                         30
+
+mapping tbuf
+
+32. Executing TECHMAP pass (map to technology primitives).
+
+32.1. Executing Verilog-2005 frontend: /home/tholin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/tholin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+32.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+33. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+34. Executing TECHMAP pass (map to technology primitives).
+
+34.1. Executing Verilog-2005 frontend: /home/tholin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/tholin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+34.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+35. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+36. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+36.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\tholin_avalonsemi_5401':
+  mapped 8 $_DFFSR_NNN_ cells to \sky130_fd_sc_hd__dfbbn_2 cells.
+  mapped 22 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+  mapped 2 $_DFF_PN1_ cells to \sky130_fd_sc_hd__dfstp_2 cells.
+  mapped 27 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+
+37. Printing statistics.
+
+=== tholin_avalonsemi_5401 ===
+
+   Number of wires:                391
+   Number of wire bits:            405
+   Number of public wires:         119
+   Number of public wire bits:     133
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                381
+     $_ANDNOT_                      81
+     $_AND_                         19
+     $_MUX_                         35
+     $_NAND_                        10
+     $_NOR_                         24
+     $_NOT_                         75
+     $_ORNOT_                       14
+     $_OR_                          33
+     $_XNOR_                         1
+     $_XOR_                         30
+     sky130_fd_sc_hd__dfbbn_2        8
+     sky130_fd_sc_hd__dfrtp_2       22
+     sky130_fd_sc_hd__dfstp_2        2
+     sky130_fd_sc_hd__dfxtp_2       27
+
+[INFO]: USING STRATEGY AREA 0
+
+38. Executing ABC pass (technology mapping using ABC).
+
+38.1. Extracting gate netlist of module `\tholin_avalonsemi_5401' to `/tmp/yosys-abc-Y53MJs/input.blif'..
+Breaking loop using new signal $abcloop$1141: \CIRCUIT_0.multiply_1.GATES_24.result -> $auto$rtlil.cc:2506:NotGate$1095
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $auto$rtlil.cc:2506:NotGate$1091
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $auto$rtlil.cc:2506:NotGate$1087
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $auto$rtlil.cc:2506:NotGate$1083
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> \CIRCUIT_0.multiply_1.shift_reg_8_1.GATES_2.result
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> \CIRCUIT_0.multiply_1.shift_reg_8_1.GATES_4.result
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> \CIRCUIT_0.multiply_1.shift_reg_8_1.GATES_6.result
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> \CIRCUIT_0.multiply_1.shift_reg_8_1.GATES_8.result
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $auto$rtlil.cc:2506:NotGate$1063
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $auto$rtlil.cc:2506:NotGate$1059
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $auto$rtlil.cc:2506:NotGate$1055
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $abc$755$flatten\CIRCUIT_0.\multiply_1.\shift_reg_8_1.\MEMORY_16.$auto$proc_dff.cc:117:gen_dffsr_complex$128
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $abc$755$flatten\CIRCUIT_0.\multiply_1.\shift_reg_8_1.\MEMORY_15.$auto$proc_dff.cc:117:gen_dffsr_complex$128
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $abc$755$flatten\CIRCUIT_0.\multiply_1.\shift_reg_8_1.\MEMORY_14.$auto$proc_dff.cc:117:gen_dffsr_complex$128
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $abc$755$flatten\CIRCUIT_0.\multiply_1.\shift_reg_8_1.\MEMORY_13.$auto$proc_dff.cc:117:gen_dffsr_complex$128
+                                              \CIRCUIT_0.multiply_1.GATES_24.result -> $abc$755$new_n231_
+Breaking loop using new signal $abcloop$1142: \CIRCUIT_0.GATES_59.result -> \CIRCUIT_0.multiply_1.GATES_24.result
+                                              \CIRCUIT_0.GATES_59.result -> $abc$755$new_n202_
+                                              \CIRCUIT_0.GATES_59.result -> $auto$rtlil.cc:2506:NotGate$1039
+                                              \CIRCUIT_0.GATES_59.result -> $auto$rtlil.cc:2506:NotGate$1041
+                                              \CIRCUIT_0.GATES_59.result -> $auto$rtlil.cc:2506:NotGate$1043
+                                              \CIRCUIT_0.GATES_59.result -> $auto$rtlil.cc:2506:NotGate$1045
+                                              \CIRCUIT_0.GATES_59.result -> $auto$rtlil.cc:2506:NotGate$1047
+                                              \CIRCUIT_0.GATES_59.result -> $auto$rtlil.cc:2506:NotGate$1049
+                                              \CIRCUIT_0.GATES_59.result -> $auto$rtlil.cc:2506:NotGate$1051
+                                              \CIRCUIT_0.GATES_59.result -> $auto$rtlil.cc:2506:NotGate$1053
+Breaking loop using new signal $abcloop$1143: \CIRCUIT_0.GATES_10.input1 -> \CIRCUIT_0.GATES_59.result
+                                              \CIRCUIT_0.GATES_10.input1 -> \CIRCUIT_0.GATES_65.result
+                                              \CIRCUIT_0.GATES_10.input1 -> \CIRCUIT_0.toggle_1.GATES_8.result
+                                              \CIRCUIT_0.GATES_10.input1 -> \CIRCUIT_0.GATES_43.result
+                                              \CIRCUIT_0.GATES_10.input1 -> \CIRCUIT_0.GATES_41.result
+                                              \CIRCUIT_0.GATES_10.input1 -> \CIRCUIT_0.GATES_40.result
+                                              \CIRCUIT_0.GATES_10.input1 -> \CIRCUIT_0.GATES_11.result
+                                              \CIRCUIT_0.GATES_10.input1 -> \CIRCUIT_0.GATES_10.result
+Breaking loop using new signal $abcloop$1144: \CIRCUIT_0.dest_reg_sel_1.CLK1 -> \CIRCUIT_0.dest_reg_sel_1.GATES_1.result
+                                              \CIRCUIT_0.dest_reg_sel_1.CLK1 -> \CIRCUIT_0.toggle_1.GATES_8.result
+                                              \CIRCUIT_0.dest_reg_sel_1.CLK1 -> \CIRCUIT_0.GATES_42.result
+                                              \CIRCUIT_0.dest_reg_sel_1.CLK1 -> \CIRCUIT_0.GATES_39.result
+Breaking loop using new signal $abcloop$1145: \CIRCUIT_0.toggle_1.GATES_10.input1 -> \CIRCUIT_0.GATES_10.input1
+                                              \CIRCUIT_0.toggle_1.GATES_10.input1 -> $abc$755$new_n221_
+                                              \CIRCUIT_0.toggle_1.GATES_10.input1 -> $abc$755$new_n223_
+                                              \CIRCUIT_0.toggle_1.GATES_10.input1 -> \CIRCUIT_0.dest_reg_sel_1.CLK1
+Breaking loop using new signal $abcloop$1146: \CIRCUIT_0.toggle_1.GATES_12.input1 -> \CIRCUIT_0.GATES_10.input1
+                                              \CIRCUIT_0.toggle_1.GATES_12.input1 -> $abc$755$new_n220_
+                                              \CIRCUIT_0.toggle_1.GATES_12.input1 -> $abc$755$new_n223_
+                                              \CIRCUIT_0.toggle_1.GATES_12.input1 -> \CIRCUIT_0.dest_reg_sel_1.CLK1
+Extracted 322 gates and 392 wires to a netlist network with 70 inputs and 96 outputs.
+
+38.1.1. Executing ABC.
+Running ABC command: /build/bin/yosys-abc -s -f /tmp/yosys-abc-Y53MJs/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-Y53MJs/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-Y53MJs/input.blif 
+ABC: + read_lib -w /work/runs/wokwi/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.17 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/work/runs/wokwi/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.23 sec
+ABC: Memory =    7.77 MB. Time =     0.23 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /work/runs/wokwi/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /work/runs/wokwi/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + retime -D -D 10000000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 5 -S 750.0 
+ABC: + upsize -D 10000000 
+ABC: Current delay (2478.66 ps) does not exceed the target delay (10000000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 10000000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =    277 ( 33.2 %)   Cap = 14.5 ff (  7.6 %)   Area =     2038.20 ( 65.3 %)   Delay =  2512.65 ps  (  4.7 %)               
+ABC: Path  0 --      22 : 0    4 pi                        A =   0.00  Df =  33.8  -19.3 ps  S =  52.4 ps  Cin =  0.0 ff  Cout =   9.9 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     172 : 4    5 sky130_fd_sc_hd__and4bb_2 A =  12.51  Df = 344.2  -43.2 ps  S = 112.2 ps  Cin =  1.5 ff  Cout =  14.0 ff  Cmax = 270.1 ff  G =  898  
+ABC: Path  2 --     175 : 4    4 sky130_fd_sc_hd__and4_2   A =  10.01  Df = 604.7  -56.5 ps  S =  86.9 ps  Cin =  1.5 ff  Cout =  10.0 ff  Cmax = 300.3 ff  G =  619  
+ABC: Path  3 --     200 : 5    3 sky130_fd_sc_hd__a221o_2  A =  11.26  Df = 919.0 -129.9 ps  S =  84.2 ps  Cin =  2.3 ff  Cout =  12.8 ff  Cmax = 299.4 ff  G =  530  
+ABC: Path  4 --     339 : 2    2 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =1134.5 -175.6 ps  S = 228.7 ps  Cin =  8.5 ff  Cout =  13.9 ff  Cmax = 121.8 ff  G =  158  
+ABC: Path  5 --     342 : 2    3 sky130_fd_sc_hd__xor2_2   A =  16.27  Df =1393.6 -239.2 ps  S = 169.7 ps  Cin =  8.6 ff  Cout =   9.5 ff  Cmax = 130.0 ff  G =  106  
+ABC: Path  6 --     345 : 2    3 sky130_fd_sc_hd__nand2_2  A =   6.26  Df =1477.7 -244.0 ps  S =  70.8 ps  Cin =  4.4 ff  Cout =   9.8 ff  Cmax = 295.7 ff  G =  209  
+ABC: Path  7 --     348 : 3    3 sky130_fd_sc_hd__a21o_2   A =   8.76  Df =1710.6 -266.4 ps  S =  61.6 ps  Cin =  2.4 ff  Cout =   9.6 ff  Cmax = 309.5 ff  G =  390  
+ABC: Path  8 --     351 : 3    3 sky130_fd_sc_hd__a21o_2   A =   8.76  Df =1936.8 -349.9 ps  S =  61.6 ps  Cin =  2.4 ff  Cout =   9.6 ff  Cmax = 309.5 ff  G =  390  
+ABC: Path  9 --     354 : 3    2 sky130_fd_sc_hd__a21o_2   A =   8.76  Df =2156.8 -435.3 ps  S =  51.9 ps  Cin =  2.4 ff  Cout =   7.5 ff  Cmax = 309.5 ff  G =  304  
+ABC: Path 10 --     358 : 3    1 sky130_fd_sc_hd__a21boi_2 A =  11.26  Df =2512.7 -665.8 ps  S = 412.9 ps  Cin =  3.6 ff  Cout =  33.4 ff  Cmax = 129.1 ff  G =  930  
+ABC: Start-point = pi21 (\CIRCUIT_0.inst_dec_1.MEMORY_23.s_currentState).  End-point = po47 (\CIRCUIT_0.MEMORY_76.d).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =   70/   96  lat =    0  nd =   277  edge =    607  area =2038.27  delay =10.00  lev = 10
+ABC: + write_blif /tmp/yosys-abc-Y53MJs/output.blif 
+
+38.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__and4b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4bb_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:       61
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:       31
+ABC RESULTS:   sky130_fd_sc_hd__mux2_2 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       34
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nand4b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:        5
+ABC RESULTS:        internal signals:      226
+ABC RESULTS:           input signals:       70
+ABC RESULTS:          output signals:       96
+Removing temp directory.
+
+39. Executing SETUNDEF pass (replace undef values with defined constants).
+
+40. Executing HILOMAP pass (mapping to constant drivers).
+
+41. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+42. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tholin_avalonsemi_5401..
+Removed 0 unused cells and 398 unused wires.
+<suppressed ~10 debug messages>
+
+43. Executing INSBUF pass (insert buffer cells for connected wires).
+Added tholin_avalonsemi_5401.$auto$insbuf.cc:79:execute$1428: \CIRCUIT_0.O_D0_RR0 -> \io_out [0]
+Added tholin_avalonsemi_5401.$auto$insbuf.cc:79:execute$1429: \CIRCUIT_0.O_D1_RR1 -> \io_out [1]
+Added tholin_avalonsemi_5401.$auto$insbuf.cc:79:execute$1430: \CIRCUIT_0.O_D2_RR2 -> \io_out [2]
+Added tholin_avalonsemi_5401.$auto$insbuf.cc:79:execute$1431: \CIRCUIT_0.O_D3_RR3 -> \io_out [3]
+Added tholin_avalonsemi_5401.$auto$insbuf.cc:79:execute$1432: \CIRCUIT_0.O_4_MAR -> \io_out [4]
+Added tholin_avalonsemi_5401.$auto$insbuf.cc:79:execute$1433: \CIRCUIT_0.O_5_WRITE -> \io_out [5]
+Added tholin_avalonsemi_5401.$auto$insbuf.cc:79:execute$1434: \CIRCUIT_0.O_6_JMP -> \io_out [6]
+Added tholin_avalonsemi_5401.$auto$insbuf.cc:79:execute$1435: \CIRCUIT_0.O_7_I -> \io_out [7]
+
+44. Executing CHECK pass (checking for obvious problems).
+Checking module tholin_avalonsemi_5401...
+Found and reported 0 problems.
+
+45. Printing statistics.
+
+=== tholin_avalonsemi_5401 ===
+
+   Number of wires:                348
+   Number of wire bits:            362
+   Number of public wires:         110
+   Number of public wire bits:     124
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                346
+     sky130_fd_sc_hd__a21boi_2       1
+     sky130_fd_sc_hd__a21o_2        13
+     sky130_fd_sc_hd__a21oi_2        7
+     sky130_fd_sc_hd__a221o_2        2
+     sky130_fd_sc_hd__a22o_2         2
+     sky130_fd_sc_hd__a31o_2         6
+     sky130_fd_sc_hd__a32o_2         1
+     sky130_fd_sc_hd__and2_2         6
+     sky130_fd_sc_hd__and2b_2        1
+     sky130_fd_sc_hd__and3_2        13
+     sky130_fd_sc_hd__and3b_2        3
+     sky130_fd_sc_hd__and4_2         5
+     sky130_fd_sc_hd__and4b_2        1
+     sky130_fd_sc_hd__and4bb_2       1
+     sky130_fd_sc_hd__buf_1         61
+     sky130_fd_sc_hd__buf_2          8
+     sky130_fd_sc_hd__conb_1         2
+     sky130_fd_sc_hd__dfbbn_2        8
+     sky130_fd_sc_hd__dfrtp_2       22
+     sky130_fd_sc_hd__dfstp_2        2
+     sky130_fd_sc_hd__dfxtp_2       27
+     sky130_fd_sc_hd__inv_2         31
+     sky130_fd_sc_hd__mux2_2        15
+     sky130_fd_sc_hd__mux4_2         4
+     sky130_fd_sc_hd__nand2_2       34
+     sky130_fd_sc_hd__nand3_2        5
+     sky130_fd_sc_hd__nand4b_2       1
+     sky130_fd_sc_hd__nor2_2        16
+     sky130_fd_sc_hd__nor3_2         2
+     sky130_fd_sc_hd__o211a_2        1
+     sky130_fd_sc_hd__o21a_2         2
+     sky130_fd_sc_hd__o21ba_2        4
+     sky130_fd_sc_hd__o21bai_2       2
+     sky130_fd_sc_hd__o221a_2        3
+     sky130_fd_sc_hd__o22a_2         1
+     sky130_fd_sc_hd__or2_2         13
+     sky130_fd_sc_hd__or3b_2         6
+     sky130_fd_sc_hd__or4_2          1
+     sky130_fd_sc_hd__xnor2_2        8
+     sky130_fd_sc_hd__xor2_2         5
+
+   Chip area for module '\tholin_avalonsemi_5401': 3570.924800
+
+46. Executing Verilog backend.
+Dumping module `\tholin_avalonsemi_5401'.
+
+Warnings: 11 unique messages, 12 total
+End of script. Logfile hash: 464c08d06b, CPU: user 4.85s system 0.08s, MEM: 45.19 MB peak
+Yosys 0.12+45 (git sha1 UNKNOWN, gcc 8.3.1 -fPIC -Os)
+Time spent: 23% 2x abc (1 sec), 15% 18x opt_clean (0 sec), ...
