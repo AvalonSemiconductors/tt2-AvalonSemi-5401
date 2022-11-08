@@ -114,8 +114,8 @@ module multiply( DIN0,
    *******************************************************************************/
    assign s_logisimNet10 = DIN2;
    assign s_logisimNet17 = LOAD;
-   assign s_logisimNet37 = MUL_CLK;
    assign s_logisimNet5  = DIN1;
+   assign s_logisimNet50 = MUL_CLK;
    assign s_logisimNet57 = DIN0;
    assign s_logisimNet7  = RSEL;
    assign s_logisimNet9  = DIN3;
@@ -125,8 +125,8 @@ module multiply( DIN0,
    *******************************************************************************/
    assign R0 = s_logisimNet62;
    assign R1 = s_logisimNet55;
-   assign R2 = s_logisimNet43;
-   assign R3 = s_logisimNet20;
+   assign R2 = s_logisimNet42;
+   assign R3 = s_logisimNet19;
 
    /*******************************************************************************
    ** Here all in-lined components are defined                                   **
@@ -136,7 +136,7 @@ module multiply( DIN0,
    assign s_logisimNet0 = ~s_logisimNet7;
 
    // NOT Gate
-   assign s_logisimNet47 = ~s_logisimNet24;
+   assign s_logisimNet46 = ~s_logisimNet24;
 
    // NOT Gate
    assign s_logisimNet13 = ~s_logisimNet7;
@@ -157,48 +157,48 @@ module multiply( DIN0,
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_2 (.input1(s_logisimNet52),
-               .input2(s_logisimNet19),
+               .input2(s_logisimNet20),
                .result(s_logisimNet1));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_3 (.input1(s_logisimNet12),
-               .input2(s_logisimNet19),
+               .input2(s_logisimNet20),
                .result(s_logisimNet21));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_4 (.input1(s_logisimNet44),
-               .input2(s_logisimNet19),
+      GATES_4 (.input1(s_logisimNet43),
+               .input2(s_logisimNet20),
                .result(s_logisimNet25));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_5 (.input1(s_logisimNet26),
-               .input2(s_logisimNet19),
+               .input2(s_logisimNet20),
                .result(s_logisimNet54));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_6 (.input1(s_logisimNet60),
-               .input2(s_logisimNet19),
+               .input2(s_logisimNet20),
                .result(s_logisimNet35));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_7 (.input1(s_logisimNet49),
-               .input2(s_logisimNet19),
+      GATES_7 (.input1(s_logisimNet48),
+               .input2(s_logisimNet20),
                .result(s_logisimNet58));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_8 (.input1(s_logisimNet14),
-               .input2(s_logisimNet19),
+               .input2(s_logisimNet20),
                .result(s_logisimNet27));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_9 (.input1(s_logisimNet6),
-               .input2(s_logisimNet19),
+               .input2(s_logisimNet20),
                .result(s_logisimNet22));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_10 (.input1(s_logisimNet3),
                 .input2(s_logisimNet7),
-                .result(s_logisimNet48));
+                .result(s_logisimNet47));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_11 (.input1(s_logisimNet32),
@@ -208,7 +208,7 @@ module multiply( DIN0,
    AND_GATE #(.BubblesMask(2'b00))
       GATES_12 (.input1(s_logisimNet30),
                 .input2(s_logisimNet7),
-                .result(s_logisimNet39));
+                .result(s_logisimNet38));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_13 (.input1(s_logisimNet2),
@@ -223,12 +223,12 @@ module multiply( DIN0,
    AND_GATE #(.BubblesMask(2'b00))
       GATES_15 (.input1(s_logisimNet8),
                 .input2(s_logisimNet13),
-                .result(s_logisimNet50));
+                .result(s_logisimNet49));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_16 (.input1(s_logisimNet28),
                 .input2(s_logisimNet13),
-                .result(s_logisimNet40));
+                .result(s_logisimNet39));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_17 (.input1(s_logisimNet15),
@@ -236,28 +236,28 @@ module multiply( DIN0,
                 .result(s_logisimNet16));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_18 (.input1(s_logisimNet48),
+      GATES_18 (.input1(s_logisimNet47),
                 .input2(s_logisimNet33),
                 .result(s_logisimNet62));
 
    OR_GATE #(.BubblesMask(2'b00))
       GATES_19 (.input1(s_logisimNet36),
-                .input2(s_logisimNet50),
+                .input2(s_logisimNet49),
                 .result(s_logisimNet55));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_20 (.input1(s_logisimNet39),
-                .input2(s_logisimNet40),
-                .result(s_logisimNet43));
+      GATES_20 (.input1(s_logisimNet38),
+                .input2(s_logisimNet39),
+                .result(s_logisimNet42));
 
    OR_GATE #(.BubblesMask(2'b00))
       GATES_21 (.input1(s_logisimNet11),
                 .input2(s_logisimNet16),
-                .result(s_logisimNet20));
+                .result(s_logisimNet19));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_22 (.input1(s_logisimNet47),
-                .input2(s_logisimNet37),
+      GATES_22 (.input1(s_logisimNet46),
+                .input2(s_logisimNet50),
                 .result(s_logisimNet63));
 
    AND_GATE #(.BubblesMask(2'b00))
@@ -272,7 +272,7 @@ module multiply( DIN0,
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_25 (.clock(s_logisimNet31),
-                 .d(s_logisimNet38),
+                 .d(s_logisimNet37),
                  .preset(1'b0),
                  .q(s_logisimNet3),
                  .qBar(),
@@ -290,7 +290,7 @@ module multiply( DIN0,
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_27 (.clock(s_logisimNet31),
-                 .d(s_logisimNet41),
+                 .d(s_logisimNet40),
                  .preset(1'b0),
                  .q(s_logisimNet30),
                  .qBar(),
@@ -308,7 +308,7 @@ module multiply( DIN0,
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_29 (.clock(s_logisimNet31),
-                 .d(s_logisimNet42),
+                 .d(s_logisimNet41),
                  .preset(1'b0),
                  .q(s_logisimNet29),
                  .qBar(),
@@ -317,7 +317,7 @@ module multiply( DIN0,
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_30 (.clock(s_logisimNet31),
-                 .d(s_logisimNet46),
+                 .d(s_logisimNet45),
                  .preset(1'b0),
                  .q(s_logisimNet8),
                  .qBar(),
@@ -326,7 +326,7 @@ module multiply( DIN0,
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_31 (.clock(s_logisimNet31),
-                 .d(s_logisimNet45),
+                 .d(s_logisimNet44),
                  .preset(1'b0),
                  .q(s_logisimNet28),
                  .qBar(),
@@ -374,17 +374,18 @@ module multiply( DIN0,
    ** Here all sub-circuits are defined                                          **
    *******************************************************************************/
 
-   shift_reg_8   shift_reg_8_1 (.D0(s_logisimNet57),
+   shift_reg_8   shift_reg_8_1 (.CLK(s_logisimNet50),
+                                .D0(s_logisimNet57),
                                 .D1(s_logisimNet5),
                                 .D2(s_logisimNet10),
                                 .D3(s_logisimNet9),
                                 .LOAD(s_logisimNet24),
                                 .Q0(s_logisimNet52),
                                 .Q1(s_logisimNet12),
-                                .Q2(s_logisimNet44),
+                                .Q2(s_logisimNet43),
                                 .Q3(s_logisimNet26),
                                 .Q4(s_logisimNet60),
-                                .Q5(s_logisimNet49),
+                                .Q5(s_logisimNet48),
                                 .Q6(s_logisimNet14),
                                 .Q7(s_logisimNet6),
                                 .SHIFT(s_logisimNet61));
@@ -394,7 +395,10 @@ module multiply( DIN0,
                             .D2(s_logisimNet5),
                             .D3(s_logisimNet57),
                             .LOAD(s_logisimNet51),
-                            .Q3(s_logisimNet19),
+                            .Q0(),
+                            .Q1(),
+                            .Q2(),
+                            .Q3(s_logisimNet20),
                             .SHIFT(s_logisimNet61));
 
    adder_8bit   adder_8bit_1 (.A0(s_logisimNet1),
@@ -413,13 +417,13 @@ module multiply( DIN0,
                               .B5(s_logisimNet8),
                               .B6(s_logisimNet28),
                               .B7(s_logisimNet15),
-                              .R0(s_logisimNet38),
+                              .R0(s_logisimNet37),
                               .R1(s_logisimNet59),
-                              .R2(s_logisimNet41),
+                              .R2(s_logisimNet40),
                               .R3(s_logisimNet23),
-                              .R4(s_logisimNet42),
-                              .R5(s_logisimNet46),
-                              .R6(s_logisimNet45),
+                              .R4(s_logisimNet41),
+                              .R5(s_logisimNet45),
+                              .R6(s_logisimNet44),
                               .R7(s_logisimNet56));
 
 endmodule
