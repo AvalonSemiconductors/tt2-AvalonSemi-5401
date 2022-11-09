@@ -1,13 +1,13 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/tests/badge.svg)
 
-# Avalon Semiconductors 5401 - 4 bit Microprocessor with hardware multiply
+# Avalon Semiconductors 5401 - 4 bit Microprocessor with on-chip RAM
 This is a submission for TinyTapeout 2.
 
 ```
 Author's note: I thought I'd give this a bit of a nostalgic feel by calling it the '5401', like it's some old microprocessor from the 70s or 80s. Of course had to be complete with a made-up brand name, which is where the 'Avalon Semiconductors' comes from. Documentation for this is quite long, but I hope it will be a informative as well as enjoyable read.
 ```
 
-The 5401 is a 4-bit hybrid Harvard architecture microprocessor capable of addressing up to 4096 bytes of program memory, and 256 words of data memory. This is possible through multiplexing on both the input and output ports. The processor also contains a hardware multiply unit and general-purpose inputs, accessible through memory-mapped registers.
+The 5401 is a 4-bit hybrid Harvard architecture microprocessor capable of addressing up to 4096 bytes of program memory, and 254 words of data memory. This is possible through multiplexing on both the input and output ports. The processor also contains a hardware multiply unit and general-purpose inputs, accessible through memory-mapped registers.
 
 ![block diagram](https://raw.githubusercontent.com/89Mods/tt2-AvalonSemi-5401/main/assets/block_diag.png)
 
@@ -90,40 +90,14 @@ The following registers are present inside the 5401:
 | Destination Register | DR | 12 | Buffers the branch target for jump instructions |
 | Memory Address Buffer Register | MABR | 8 | Internal buffer of the Memory Address Register |
 | Destination Register Pointer | DRP | 3 | Pointer to one of the three words comprising the Destination Register |
-| Factor A register\* | FA | 4 | First factor input of the hardware multiply unit |
-| Factor B register\* | FB | 4 | Second factor input of the hardware multiply unit |
-| Product Register\* | PR | 8 | Output of the hardware multiply unit |
-
-\* = Memory-mapped
-
-## Memory-mapped peripherals
-
-The 5401 posseses several memory-mapped registers and devices. These are accessible by reading or writing to specific memory locations. The following addresses are reserved for this functionality:
-
-| Address | Destination | Direction |
-| ------- | ----------- | --------- |
-| F0h | FA | Write-only |
-| F1h | FB | Write-only |
-| F2h | High word of PR | Read-only |
-| F3h | Low word of PR | Read-only |
-| FFh | EF0 - EF1 | Read-only |
-
-Any locations marked as "Read-only" can only be read from using the LD instruction, while all locations marked as "Write-only" can only be loaded using the STR instruction. If any instruction other than LD or STR are executed, memory-mappings are disabled for the duration of that instruction.
-
-Although the STR instruction will still write the value of the RR if used to access a memory-mapped location, it has the added functionality of being able to write a constant to a memory-mapped register if preceded by a SEI instruction, in which case the data word accompanying the STR instruction will be what gets loaded into the register. This functionality is unique to memory-mapped locations, and SEI otherwise has no effect on STR.
-
-Using SEI with LD while addressing a memory-mapped location will cause RR to still be loaded with the value from the memory-mapped location. The memory-mapping takes priority over the I flag.
 
 ## Input ports
 
 The 5401 has two, general-purpose input ports, EF0 and EF1. They are memory mapped. If the MABR is set to FFh and the LD instruction is executed, bits 0 and 1 of the loaded data word will defined by the states of EF0 and EF1. Bit 0 will be 1 if EF0 is at a high logic level (0 otherwise), while bit 1 will be 1 if EF1 is at a high logic level (0 otherwise). Bits 2 and 3 will be 0.
 
-## Hardware multiply unit
+## Built-in RAM
 
-The 5401 contains a hardware multiply unit accessible through memory-mapped registers, capable of multiplying two 4-bit numbers and returning a 8-bit result. This way, none of the result is lost.
-
-The inputs to the multiply unit are the FA and FB registers. Multiplication starts automatically after FB is loaded, meaning FA must be loaded before FB. Also note that the multiplication process will clear both FA and FB. FA is writeable at memory location F0h, and FB at F1h.
-Once FB is loaded, multiplication will take 4 regular clock cycles, the exact duration of one CPU instruction, to complete. The result will then be available in the PR. The PR can be read on word at a time through memory locations F2h (high) and F3h (low). Loading either FA or FB will clear PR.
+The 5401 has 6 words of built-in RAM, accessible at memory locations F8h - FDh. Any memory reads and writes to those addresses will be served by the internal RAM. The WRITE flag is supressed during a STR instruction on these addresses. As a consequence of the implementation of this component, address FEh will always read as 0, and data written to this location will be lost.
 
 # Instruction set
 
