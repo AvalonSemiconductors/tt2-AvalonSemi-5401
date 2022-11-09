@@ -3,7 +3,7 @@ TOPLEVEL_LANG ?= verilog
 
 ifneq ($(GATES),yes)
 # normal simulation
-VERILOG_SOURCES += $(PWD)/tb.v $(PWD)/toplevel/logisimTopLevelShell.v $(PWD)/circuit/*.v $(PWD)/gates/*.v $(PWD)/memory/*.v
+VERILOG_SOURCES += $(PWD)/tb.v $(PWD)/toplevel/logisimTopLevelShell.v $(PWD)/circuit/*.v $(PWD)/gates/*.v $(PWD)/memory/*.v $(PWD)/plexers/*.v
 else
 # gate level simulation requires some extra setup
 COMPILE_ARGS += -DGL_TEST

@@ -6,6 +6,7 @@ PDK_ROOT = $(PWD)/pdk
 PDK = "sky130B"
 
 build:
+	python3 configure.py --create-user-config
 	docker run --rm -v $OPENLANE_ROOT:/openlane -v $(PDK_ROOT):$(PDK_ROOT) -v $(PWD):/work -e PDK_ROOT=$(PDK_ROOT) -u $(id -u $(USER)):$(id -g $(USER)) $(OPENLANE_IMAGE_NAME) /bin/bash -c "./flow.tcl -verbose 2 -overwrite -design /work/src -run_path /work/runs -tag wokwi"
 	cp runs/wokwi/results/final/verilog/gl/tholin_avalonsemi_5401.v src
 
