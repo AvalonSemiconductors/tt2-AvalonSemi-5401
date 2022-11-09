@@ -41,11 +41,12 @@ async def reset_cpu(dut):
 async def exec_instr(dut, instr, data=-1, expect_flag=0):
 	dut._log.info(instr_names[instr])
 	dut.data_in.value = instr
-	await Timer(1, units="ms")
+	await Timer(500, units="us")
 	if data < 0:
 		dut.data_in.value = random.randint(0, 15)
 	else:
 		dut.data_in.value = data
+	await Timer(500, units="us")
 	await Timer(1, units="ms")
 	t0 = int(dut.data_out.value)
 	await Timer(2, units="ms")
@@ -223,10 +224,11 @@ async def test_cpu(dut):
 	# Test setting the MAR
 	
 	await sei(dut)
-	await exec_instr(dut, I_LML, 0, FLAG_MAR)
+	t0, _ = await exec_instr(dut, I_LML, 0, FLAG_MAR)
 	await sei(dut)
-	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
-	
+	t0, _ = await exec_instr(dut, I_LMH, 0, FLAG_MAR)
+	assert t0 == 0
+
 	await sei(dut)
 	t0,_ = await exec_instr(dut, I_LML, 0b0101, FLAG_MAR)
 	assert t0 == 0b00000101

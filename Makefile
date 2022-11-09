@@ -1,0 +1,24 @@
+.PHONY = build
+
+OPENLANE_IMAGE_NAME = "efabless/openlane:2022.07.02_01.38.08"
+OPENLANE_ROOT = $(PWD)/openlane
+PDK_ROOT = $(PWD)/pdk
+PDK = "sky130B"
+
+build:
+	docker run --rm -v $OPENLANE_ROOT:/openlane -v $(PDK_ROOT):$(PDK_ROOT) -v $(PWD):/work -e PDK_ROOT=$(PDK_ROOT) -u $(id -u $(USER)):$(id -g $(USER)) $(OPENLANE_IMAGE_NAME) /bin/bash -c "./flow.tcl -verbose 2 -overwrite -design /work/src -run_path /work/runs -tag wokwi"
+	cp runs/wokwi/results/final/verilog/gl/tholin_avalonsemi_5401.v src
+
+pdk:
+	if not [ -d "caravel_user_project" ]; then git clone "https://github.com/efabless/caravel_user_project.git" -b "mpw-7a"; fi
+	cd caravel_user_project && make setup
+
+tests:
+	cd src
+
+clean:
+	rm -rf runs
+	cd src
+
+distclean:
+	rm -rf runs pdk openlane caravel_user_project

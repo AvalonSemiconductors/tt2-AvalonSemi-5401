@@ -207,7 +207,7 @@ module CPU( CLK,
    assign O_7_I     = s_logisimNet63;
    assign O_D0_RR0  = s_logisimNet121;
    assign O_D1_RR1  = s_logisimNet96;
-   assign O_D2_RR2  = s_logisimNet20;
+   assign O_D2_RR2  = s_logisimNet21;
    assign O_D3_RR3  = s_logisimNet117;
 
    /*******************************************************************************
@@ -225,7 +225,7 @@ module CPU( CLK,
    assign s_logisimNet72 = ~s_logisimNet46;
 
    // NOT Gate
-   assign s_logisimNet19 = ~s_logisimNet47;
+   assign s_logisimNet20 = ~s_logisimNet47;
 
    // NOT Gate
    assign s_logisimNet82 = ~s_logisimNet7;
@@ -487,22 +487,22 @@ module CPU( CLK,
                 .result(s_logisimNet91));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_51 (.input1(s_logisimNet19),
+      GATES_51 (.input1(s_logisimNet20),
                 .input2(s_logisimNet71),
                 .result(s_logisimNet118));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_52 (.input1(s_logisimNet19),
+      GATES_52 (.input1(s_logisimNet20),
                 .input2(s_logisimNet31),
                 .result(s_logisimNet108));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_53 (.input1(s_logisimNet19),
+      GATES_53 (.input1(s_logisimNet20),
                 .input2(s_logisimNet120),
                 .result(s_logisimNet111));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_54 (.input1(s_logisimNet19),
+      GATES_54 (.input1(s_logisimNet20),
                 .input2(s_logisimNet37),
                 .result(s_logisimNet40));
 
@@ -514,7 +514,7 @@ module CPU( CLK,
    AND_GATE #(.BubblesMask(2'b00))
       GATES_56 (.input1(s_logisimNet26),
                 .input2(s_logisimNet39),
-                .result(s_logisimNet21));
+                .result(s_logisimNet19));
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_57 (.clock(s_logisimNet16),
@@ -522,7 +522,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet57),
                  .qBar(s_logisimNet28),
-                 .reset(s_logisimNet21),
+                 .reset(s_logisimNet19),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
@@ -612,7 +612,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet29),
                  .qBar(),
-                 .reset(1'b0),
+                 .reset(s_logisimNet19),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
@@ -621,7 +621,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet3),
                  .qBar(),
-                 .reset(1'b0),
+                 .reset(s_logisimNet19),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
@@ -630,7 +630,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet9),
                  .qBar(),
-                 .reset(1'b0),
+                 .reset(s_logisimNet19),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
@@ -639,7 +639,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet102),
                  .qBar(),
-                 .reset(1'b0),
+                 .reset(s_logisimNet19),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
@@ -778,18 +778,19 @@ module CPU( CLK,
                           .LD(s_logisimNet103),
                           .LDD(s_logisimNet2),
                           .LOG(s_logisimNet15),
-                          .RST_C(s_logisimNet21),
+                          .RST_C(s_logisimNet19),
                           .SEI(s_logisimNet105),
                           .SMH(s_logisimNet1),
                           .SML(s_logisimNet23),
                           .STR(s_logisimNet27),
                           .W_CAR(s_logisimNet25));
 
-   toggle   toggle_1 (.CLK(s_logisimNet39),
-                      .CLK1(s_logisimNet46),
-                      .CLK2(s_logisimNet5),
-                      .O_S(s_logisimNet79),
-                      .RST(s_logisimNet26));
+   clock_gen_2   clock_gen_2_1 (.CLK(s_logisimNet39),
+                                .CLK1(s_logisimNet46),
+                                .CLK2(s_logisimNet5),
+                                .O_S(s_logisimNet79),
+                                .RST(s_logisimNet26),
+                                .RST_C(s_logisimNet19));
 
    main   main_1 (.CAR_I(s_logisimNet97),
                   .CAR_O(s_logisimNet76),
@@ -817,6 +818,13 @@ module CPU( CLK,
                   .D3(s_logisimNet60),
                   .is_zero(s_logisimNet30));
 
+   dest_reg_sel_new   dest_reg_sel_new_1 (.CLK1(s_logisimNet46),
+                                          .LDD(s_logisimNet2),
+                                          .RST(s_logisimNet26),
+                                          .S0(s_logisimNet36),
+                                          .S1(s_logisimNet116),
+                                          .S2(s_logisimNet114));
+
    output_logic   output_logic_1 (.DEST_0(s_logisimNet66),
                                   .DEST_1(s_logisimNet35),
                                   .DEST_10(s_logisimNet87),
@@ -843,7 +851,7 @@ module CPU( CLK,
                                   .MAR_7(s_logisimNet102),
                                   .OUT_0(s_logisimNet121),
                                   .OUT_1(s_logisimNet96),
-                                  .OUT_2(s_logisimNet20),
+                                  .OUT_2(s_logisimNet21),
                                   .OUT_3(s_logisimNet117),
                                   .OUT_4(s_logisimNet80),
                                   .OUT_5(s_logisimNet127),
@@ -855,12 +863,5 @@ module CPU( CLK,
                                   .RR_2(s_logisimNet8),
                                   .RR_3(s_logisimNet60),
                                   .WRITE(s_logisimNet27));
-
-   dest_reg_sel_new   dest_reg_sel_new_1 (.CLK1(s_logisimNet46),
-                                          .LDD(s_logisimNet2),
-                                          .RST(s_logisimNet26),
-                                          .S0(s_logisimNet36),
-                                          .S1(s_logisimNet116),
-                                          .S2(s_logisimNet114));
 
 endmodule

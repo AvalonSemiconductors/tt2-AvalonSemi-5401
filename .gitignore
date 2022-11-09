@@ -3,6 +3,9 @@
 .vscode
 *.vcd
 run/
+openlane/
+pdk/
+caravel_user_project/
 
 __pycache__/
 sim_build/
