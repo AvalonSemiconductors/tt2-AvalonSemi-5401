@@ -93,9 +93,54 @@ jobs:
       with:
         path: runs
         key: ${{ runner.os }}-runs-${{ github.run_id }}
-
-  svg:
+  gltest:
     needs: gds
+    env:
+        OPENLANE_IMAGE_NAME: efabless/openlane:2022.07.02_01.38.08
+        OPENLANE_ROOT: /home/runner/openlane
+        PDK_ROOT: /home/runner/pdk
+        PDK: sky130B
+    runs-on: ubuntu-latest
+    steps:
+      - name: restore src cache
+        uses: actions/cache@v3
+        with:
+          path: src
+          key: ${{ runner.os }}-src-${{ github.run_id }}
+      - name: restore runs cache
+        uses: actions/cache@v3
+        with:
+          path: runs
+          key: ${{ runner.os }}-runs-${{ github.run_id }}
+      - name: get build output
+        run: 'cp runs/wokwi/results/final/verilog/gl/tholin_avalonsemi_5401.v src/tholin_avalonsemi_5401.gl.v'
+      - name: pdk
+        run: |
+          cd $HOME
+          git clone https://github.com/efabless/caravel_user_project.git -b mpw-7a
+          cd caravel_user_project
+          make install pdk-with-volare
+      - name: install required packages
+        run: |
+          sudo apt-get install -y iverilog python3 python3-pip
+          pip3 install cocotb pytest
+          cocotb-config --libpython
+          cocotb-config --python-bin
+      - name: test
+        run: |
+          cd src
+          make clean
+          GATES=yes make
+          # make will return success even if the test fails, so check for failure in the results.xml
+          ! grep failure results.xml
+      - uses: actions/upload-artifact@v3
+        with:
+          name: gate-level-test-results
+          path: |
+            /home/runner/work/tt2-AvalonSemi-5401/tt2-AvalonSemi-5401/src/tb.vcd
+            /home/runner/work/tt2-AvalonSemi-5401/tt2-AvalonSemi-5401/src/results.xml
+  svg:
+    needs: gltest
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo
@@ -132,7 +177,7 @@ jobs:
         key: ${{ runner.os }}-svg-${{ github.run_id }}
 
   viewer:
-    needs: gds
+    needs: gltest
     runs-on: ubuntu-latest
     steps:
     - name: checkout GDS2glTF repo
