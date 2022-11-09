@@ -73,11 +73,10 @@ async def sei(dut):
 	await exec_instr(dut, I_SEI, -1, FLAG_I)
 
 async def test_ef(dut, EF0, EF1):
-	await sei(dut)
-	await exec_instr(dut, I_LML, 7, FLAG_MAR)
-	await sei(dut)
-	t0,_ = await exec_instr(dut, I_LMH, 15, FLAG_MAR)
-	assert t0 == 0b11110111
+	await set_rr(dut, 15)
+	await exec_instr(dut, I_LML, 0, FLAG_MAR)
+	t0,_ = await exec_instr(dut, I_LMH, 0, FLAG_MAR)
+	assert t0 == 0b11111111
 	dut.EF0.value = EF0
 	dut.EF1.value = EF1
 	await exec_instr(dut, I_LD, 0)
