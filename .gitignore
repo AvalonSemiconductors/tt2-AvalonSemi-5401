@@ -2,7 +2,7 @@
 .idea
 .vscode
 *.vcd
-run/
+runs/
 openlane/
 pdk/
 caravel_user_project/
