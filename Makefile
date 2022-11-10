@@ -15,11 +15,14 @@ pdk:
 	cd caravel_user_project && make setup
 
 tests:
-	cd src
+	cd src && make clean && make
+
+gltests:
+	cd src && make clean && GATES=yes make
 
 clean:
 	rm -rf runs
-	cd src
+	rm -f src/tholin_avalonsemi_5401.v
 
 distclean:
 	rm -rf runs pdk openlane caravel_user_project

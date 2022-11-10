@@ -1,0 +1,19 @@
+Design Name: tholin_avalonsemi_5401
+Run Directory: /work/runs/wokwi
+----------------------------------------
+
+Magic DRC Summary:
+Source: /work/runs/wokwi/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /work/runs/wokwi/logs/signoff/35-tholin_avalonsemi_5401.lvs.lef.log
+LVS reports no net, device, pin, or property mismatches.
+Total errors = 0
+----------------------------------------
+
+Antenna Summary:
+Source: /work/runs/wokwi/reports/signoff/37-antenna.rpt
+Number of pins violated: 0
+Number of nets violated: 0

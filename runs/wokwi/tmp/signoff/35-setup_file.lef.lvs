@@ -1,0 +1,1 @@
+lvs {/work/runs/wokwi/results/signoff/tholin_avalonsemi_5401.spice tholin_avalonsemi_5401} {/work/runs/wokwi/tmp/signoff/32-powered_netlist.v tholin_avalonsemi_5401} /home/tholin/tt2-AvalonSemi-5401/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl /work/runs/wokwi/logs/signoff/35-tholin_avalonsemi_5401.lef.log -json

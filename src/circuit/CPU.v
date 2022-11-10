@@ -240,6 +240,9 @@ module CPU( CLK,
    assign s_logisimNet23 = ~s_logisimNet28;
 
    // NOT Gate
+   assign s_logisimNet66 = ~s_logisimNet78;
+
+   // NOT Gate
    assign s_logisimNet135 = ~s_logisimNet55;
 
    // NOT Gate
@@ -247,9 +250,6 @@ module CPU( CLK,
 
    // NOT Gate
    assign s_logisimNet132 = ~s_logisimNet2;
-
-   // NOT Gate
-   assign s_logisimNet66 = ~s_logisimNet78;
 
    /*******************************************************************************
    ** Here all normal components are defined                                     **
@@ -588,7 +588,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet109),
                  .qBar(),
-                 .reset(1'b0),
+                 .reset(s_logisimNet12),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
@@ -804,7 +804,7 @@ module CPU( CLK,
                  .preset(1'b0),
                  .q(s_logisimNet59),
                  .qBar(),
-                 .reset(1'b0),
+                 .reset(s_logisimNet12),
                  .tick(1'b1));
 
 

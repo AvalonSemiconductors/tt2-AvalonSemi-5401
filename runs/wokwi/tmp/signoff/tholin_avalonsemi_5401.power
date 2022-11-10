@@ -1,0 +1,4 @@
+vccd1 power 1.8
+vssd1 power 0.0
+#define std_input min@vssd1 max@vccd1
+io_in[7:0] input std_input
