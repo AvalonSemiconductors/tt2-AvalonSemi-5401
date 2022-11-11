@@ -19,14 +19,14 @@ project:
 documentation: 
   author:       "Tholin"      # Your name
   title:        "Avalon Semiconductors '5401' 4-bit Microprocessor"      # Project title
-  description:  "4-bit CPU capable of addressing 4096 bytes program memory and 256 words data memory. Hopefully capable of more complex computation than previous CPU submissions."      # Short description of what your project does
-  how_it_works: "TODO"      # Longer description of how the project works
-  how_to_test:  "TODO"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
-  external_hw:  "TODO"      # Describe any external hardware needed
+  description:  "4-bit CPU capable of addressing 4096 bytes program memory and 254 words data memory, with 6 words of on-chip RAM. Hopefully capable of more complex computation than previous CPU submissions."      # Short description of what your project does
+  how_it_works: "The chip contains a 4-bit ALU, a 4-bit Accumulator, 8-bit Memory Address Register and 12-bit ˝Destination Register˝, which is used to buffer branch target addresses. It also has two general-purpose input ports. The instruction set consists of 16 instructions, containing arihmatic, logical, load/store, branch and conditional branch instruction. See the full documentation for a complete architectural description."      # Longer description of how the project works
+  how_to_test:  "It is possibly to test the CPU by hard-wiring a LML instruction. Start the clock and set the following on the DIP switches: 01001100. This will reset the CPU and set up the LML instruction. After releasing reset, the following bit sequence should loop on the outputs: 00000011 - xxxx1000 (’x’ means don’t care)."      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "At the very minimum a program memory, and the required glue logic. See ˝Example system diagram˝ in the full documentation."      # Describe any external hardware needed
   language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
-  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
-  clock_hz:     2       # Clock frequency in Hz (if required)
-  picture:      ""      # relative path to a picture in your repository
+  doc_link:     "https://github.com/89Mods/tt2-AvalonSemi-5401/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     6000       # Clock frequency in Hz (if required)
+  picture:      "assets/block_diag.png"      # relative path to a picture in your repository
   inputs:               # a description of what the inputs do
     - CLK
     - RST
