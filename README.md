@@ -11,7 +11,7 @@ The 5401 is a 4-bit hybrid Harvard architecture microprocessor capable of addres
 
 ![block diagram](https://raw.githubusercontent.com/89Mods/tt2-AvalonSemi-5401/main/assets/block_diag.png)
 
-# Pinout Diagram
+# Pin Diagram
 
 | Inputs    | --- | Outputs                   |
 | -----:    | --- | :------                   |
