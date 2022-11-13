@@ -44,21 +44,21 @@ documentation:
   clock_hz:     6000       # Clock frequency in Hz (if required)
   picture:      "assets/block_diag.png"      # relative path to a picture in your repository
   inputs:               # a description of what the inputs do
-    - CLK
-    - RST
-    - D0
-    - D1
-    - D2
-    - D3
-    - EF0
-    - EF1
+    - "CLK"
+    - "RST"
+    - "I0 / D0"
+    - "I1 / D1"
+    - "I2 / D2"
+    - "I3 / D3"
+    - "EF0"
+    - "EF1"
   outputs:
-    - D0_RR0         # a description of what the outputs do
-    - D1_RR1
-    - D2_RR2
-    - D3_RR3
-    - D4_MAR
-    - D5_WRITE
-    - D6_JMP
-    - D7_I
+    - "MAR0 / DR0 / DR8 / RR0"         # a description of what the outputs do
+    - "MAR1 / DR1 / DR9 / RR1"
+    - "MAR2 / DR2 / DR10 / RR2"
+    - "MAR3 / DR3 / DR11 / RR3"
+    - "MAR4 / DR4 / F_MAR"
+    - "MAR5 / DR5 / F_WRITE"
+    - "MAR6 / DR6 / F_JMP"
+    - "MAR7 / DR7 / F_I"
 
