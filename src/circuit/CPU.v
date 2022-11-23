@@ -99,7 +99,6 @@ module CPU( CLK,
    wire s_logisimNet14;
    wire s_logisimNet140;
    wire s_logisimNet141;
-   wire s_logisimNet142;
    wire s_logisimNet15;
    wire s_logisimNet16;
    wire s_logisimNet17;
@@ -202,23 +201,23 @@ module CPU( CLK,
    ** Here all input connections are defined                                     **
    *******************************************************************************/
    assign s_logisimNet130 = D2;
-   assign s_logisimNet138 = EF0;
+   assign s_logisimNet137 = EF0;
    assign s_logisimNet22  = CLK;
-   assign s_logisimNet32  = RST;
-   assign s_logisimNet39  = D1;
-   assign s_logisimNet41  = EF1;
-   assign s_logisimNet45  = D3;
-   assign s_logisimNet81  = D0;
+   assign s_logisimNet31  = RST;
+   assign s_logisimNet37  = D1;
+   assign s_logisimNet40  = EF1;
+   assign s_logisimNet44  = D3;
+   assign s_logisimNet79  = D0;
 
    /*******************************************************************************
    ** Here all output connections are defined                                    **
    *******************************************************************************/
-   assign O_4_MAR   = s_logisimNet91;
-   assign O_5_WRITE = s_logisimNet139;
-   assign O_6_JMP   = s_logisimNet117;
-   assign O_7_I     = s_logisimNet73;
+   assign O_4_MAR   = s_logisimNet89;
+   assign O_5_WRITE = s_logisimNet138;
+   assign O_6_JMP   = s_logisimNet116;
+   assign O_7_I     = s_logisimNet72;
    assign O_D0_RR0  = s_logisimNet131;
-   assign O_D1_RR1  = s_logisimNet107;
+   assign O_D1_RR1  = s_logisimNet106;
    assign O_D2_RR2  = s_logisimNet24;
    assign O_D3_RR3  = s_logisimNet127;
 
@@ -231,22 +230,22 @@ module CPU( CLK,
    // Do not connect
 
    // NOT Gate
-   assign s_logisimNet67 = ~s_logisimNet72;
+   assign s_logisimNet66 = ~s_logisimNet71;
 
    // NOT Gate
-   assign s_logisimNet82 = ~s_logisimNet54;
+   assign s_logisimNet80 = ~s_logisimNet53;
 
    // NOT Gate
    assign s_logisimNet23 = ~s_logisimNet28;
 
    // NOT Gate
-   assign s_logisimNet66 = ~s_logisimNet78;
+   assign s_logisimNet65 = ~s_logisimNet38;
 
    // NOT Gate
-   assign s_logisimNet135 = ~s_logisimNet55;
+   assign s_logisimNet125 = ~s_logisimNet54;
 
    // NOT Gate
-   assign s_logisimNet93 = ~s_logisimNet8;
+   assign s_logisimNet91 = ~s_logisimNet8;
 
    // NOT Gate
    assign s_logisimNet132 = ~s_logisimNet2;
@@ -255,12 +254,12 @@ module CPU( CLK,
    ** Here all normal components are defined                                     **
    *******************************************************************************/
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_1 (.input1(s_logisimNet100),
-               .input2(s_logisimNet35),
-               .result(s_logisimNet102));
+      GATES_1 (.input1(s_logisimNet99),
+               .input2(s_logisimNet34),
+               .result(s_logisimNet101));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_2 (.input1(s_logisimNet47),
+      GATES_2 (.input1(s_logisimNet46),
                .input2(s_logisimNet27),
                .result(s_logisimNet133));
 
@@ -270,329 +269,324 @@ module CPU( CLK,
                .result(s_logisimNet5));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_4 (.input1(s_logisimNet102),
-               .input2(s_logisimNet118),
-               .result(s_logisimNet103));
+      GATES_4 (.input1(s_logisimNet101),
+               .input2(s_logisimNet117),
+               .result(s_logisimNet102));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_5 (.input1(s_logisimNet74),
-               .input2(s_logisimNet108),
-               .result(s_logisimNet121));
+      GATES_5 (.input1(s_logisimNet73),
+               .input2(s_logisimNet107),
+               .result(s_logisimNet120));
 
    OR_GATE #(.BubblesMask(2'b00))
       GATES_6 (.input1(s_logisimNet4),
-               .input2(s_logisimNet92),
-               .result(s_logisimNet83));
+               .input2(s_logisimNet90),
+               .result(s_logisimNet81));
 
    OR_GATE #(.BubblesMask(2'b00))
       GATES_7 (.input1(s_logisimNet26),
                .input2(s_logisimNet1),
-               .result(s_logisimNet68));
+               .result(s_logisimNet67));
 
    OR_GATE #(.BubblesMask(2'b00))
       GATES_8 (.input1(s_logisimNet18),
                .input2(s_logisimNet25),
-               .result(s_logisimNet136));
+               .result(s_logisimNet135));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_9 (.input1(s_logisimNet6),
-               .input2(s_logisimNet136),
-               .result(s_logisimNet56));
+               .input2(s_logisimNet135),
+               .result(s_logisimNet55));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_10 (.input1(s_logisimNet6),
                 .input2(s_logisimNet25),
-                .result(s_logisimNet125));
+                .result(s_logisimNet124));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_11 (.input1(s_logisimNet7),
-                .input2(s_logisimNet67),
-                .result(s_logisimNet62));
+                .input2(s_logisimNet66),
+                .result(s_logisimNet61));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_12 (.input1(s_logisimNet0),
-                .input2(s_logisimNet67),
-                .result(s_logisimNet63));
+                .input2(s_logisimNet66),
+                .result(s_logisimNet62));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_13 (.input1(s_logisimNet10),
-                .input2(s_logisimNet67),
-                .result(s_logisimNet48));
+                .input2(s_logisimNet66),
+                .result(s_logisimNet47));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_14 (.input1(s_logisimNet69),
-                .input2(s_logisimNet67),
-                .result(s_logisimNet119));
+      GATES_14 (.input1(s_logisimNet68),
+                .input2(s_logisimNet66),
+                .result(s_logisimNet118));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_15 (.input1(s_logisimNet61),
-                .input2(s_logisimNet109),
-                .result(s_logisimNet122));
+      GATES_15 (.input1(s_logisimNet60),
+                .input2(s_logisimNet108),
+                .result(s_logisimNet121));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_16 (.input1(s_logisimNet40),
-                .input2(s_logisimNet38),
-                .result(s_logisimNet111));
+      GATES_16 (.input1(s_logisimNet39),
+                .input2(s_logisimNet36),
+                .result(s_logisimNet110));
 
    NOR_GATE #(.BubblesMask(2'b00))
-      GATES_17 (.input1(s_logisimNet61),
-                .input2(s_logisimNet40),
+      GATES_17 (.input1(s_logisimNet60),
+                .input2(s_logisimNet39),
                 .result(s_logisimNet134));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_18 (.input1(s_logisimNet134),
-                .input2(s_logisimNet49),
-                .result(s_logisimNet71));
+                .input2(s_logisimNet48),
+                .result(s_logisimNet70));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_19 (.input1(s_logisimNet49),
-                .input2(s_logisimNet122),
-                .result(s_logisimNet110));
+      GATES_19 (.input1(s_logisimNet48),
+                .input2(s_logisimNet121),
+                .result(s_logisimNet109));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_20 (.input1(s_logisimNet49),
-                .input2(s_logisimNet111),
+      GATES_20 (.input1(s_logisimNet48),
+                .input2(s_logisimNet110),
                 .result(s_logisimNet16));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_21 (.input1(s_logisimNet71),
-                .input2(s_logisimNet110),
-                .result(s_logisimNet140));
+      GATES_21 (.input1(s_logisimNet70),
+                .input2(s_logisimNet109),
+                .result(s_logisimNet139));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_22 (.input1(s_logisimNet10),
-                .input2(s_logisimNet34),
-                .result(s_logisimNet112));
+                .input2(s_logisimNet33),
+                .result(s_logisimNet111));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_23 (.input1(s_logisimNet69),
-                .input2(s_logisimNet34),
-                .result(s_logisimNet95));
+      GATES_23 (.input1(s_logisimNet68),
+                .input2(s_logisimNet33),
+                .result(s_logisimNet93));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_24 (.input1(s_logisimNet7),
-                .input2(s_logisimNet34),
-                .result(s_logisimNet137));
+                .input2(s_logisimNet33),
+                .result(s_logisimNet136));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_25 (.input1(s_logisimNet0),
-                .input2(s_logisimNet34),
-                .result(s_logisimNet80));
+                .input2(s_logisimNet33),
+                .result(s_logisimNet78));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_26 (.input1(s_logisimNet140),
+      GATES_26 (.input1(s_logisimNet139),
                 .input2(s_logisimNet16),
-                .result(s_logisimNet120));
+                .result(s_logisimNet119));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_27 (.input1(s_logisimNet137),
+      GATES_27 (.input1(s_logisimNet136),
                 .input2(s_logisimNet14),
-                .result(s_logisimNet53));
+                .result(s_logisimNet52));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_28 (.input1(s_logisimNet80),
-                .input2(s_logisimNet70),
-                .result(s_logisimNet42));
+      GATES_28 (.input1(s_logisimNet78),
+                .input2(s_logisimNet69),
+                .result(s_logisimNet41));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_29 (.input1(s_logisimNet65),
+      GATES_29 (.input1(s_logisimNet64),
                 .input2(s_logisimNet5),
                 .result(s_logisimNet14));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_30 (.input1(s_logisimNet112),
-                .input2(s_logisimNet79),
+      GATES_30 (.input1(s_logisimNet111),
+                .input2(s_logisimNet77),
                 .result(s_logisimNet15));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_31 (.input1(s_logisimNet65),
-                .input2(s_logisimNet103),
-                .result(s_logisimNet70));
+      GATES_31 (.input1(s_logisimNet64),
+                .input2(s_logisimNet102),
+                .result(s_logisimNet69));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_32 (.input1(s_logisimNet2),
-                .input2(s_logisimNet44),
-                .result(s_logisimNet114));
+                .input2(s_logisimNet43),
+                .result(s_logisimNet113));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_33 (.input1(s_logisimNet2),
                 .input2(s_logisimNet126),
-                .result(s_logisimNet105));
+                .result(s_logisimNet104));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_34 (.input1(s_logisimNet2),
-                .input2(s_logisimNet124),
-                .result(s_logisimNet123));
+                .input2(s_logisimNet123),
+                .result(s_logisimNet122));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_35 (.input1(s_logisimNet95),
+      GATES_35 (.input1(s_logisimNet93),
                 .input2(s_logisimNet29),
-                .result(s_logisimNet58));
+                .result(s_logisimNet57));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_36 (.input1(s_logisimNet65),
-                .input2(s_logisimNet121),
-                .result(s_logisimNet79));
+      GATES_36 (.input1(s_logisimNet64),
+                .input2(s_logisimNet120),
+                .result(s_logisimNet77));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_37 (.input1(s_logisimNet65),
-                .input2(s_logisimNet83),
+      GATES_37 (.input1(s_logisimNet64),
+                .input2(s_logisimNet81),
                 .result(s_logisimNet29));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_38 (.input1(s_logisimNet26),
-                .input2(s_logisimNet82),
+                .input2(s_logisimNet80),
                 .result(s_logisimNet20));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_39 (.input1(s_logisimNet6),
-                .input2(s_logisimNet114),
-                .result(s_logisimNet52));
+                .input2(s_logisimNet113),
+                .result(s_logisimNet51));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_40 (.input1(s_logisimNet6),
-                .input2(s_logisimNet105),
+                .input2(s_logisimNet104),
                 .result(s_logisimNet21));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_41 (.input1(s_logisimNet1),
-                .input2(s_logisimNet82),
-                .result(s_logisimNet64));
+                .input2(s_logisimNet80),
+                .result(s_logisimNet63));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_42 (.input1(s_logisimNet6),
-                .input2(s_logisimNet123),
+                .input2(s_logisimNet122),
                 .result(s_logisimNet17));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_43 (.input1(s_logisimNet33),
-                .input2(s_logisimNet66),
-                .result(s_logisimNet51));
+      GATES_43 (.input1(s_logisimNet32),
+                .input2(s_logisimNet65),
+                .result(s_logisimNet50));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_44 (.input1(s_logisimNet94),
-                .input2(s_logisimNet57),
-                .result(s_logisimNet98));
+      GATES_44 (.input1(s_logisimNet92),
+                .input2(s_logisimNet56),
+                .result(s_logisimNet97));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_45 (.input1(s_logisimNet9),
-                .input2(s_logisimNet31),
-                .result(s_logisimNet88));
-
-   AND_GATE #(.BubblesMask(2'b00))
-      GATES_46 (.input1(s_logisimNet36),
-                .input2(s_logisimNet3),
-                .result(s_logisimNet99));
-
-   AND_GATE #(.BubblesMask(2'b00))
-      GATES_47 (.input1(s_logisimNet11),
-                .input2(s_logisimNet113),
-                .result(s_logisimNet89));
-
-   AND_GATE #(.BubblesMask(2'b00))
-      GATES_48 (.input1(s_logisimNet98),
-                .input2(s_logisimNet88),
+                .input2(s_logisimNet95),
                 .result(s_logisimNet86));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_49 (.input1(s_logisimNet99),
-                .input2(s_logisimNet89),
-                .result(s_logisimNet116));
+      GATES_46 (.input1(s_logisimNet35),
+                .input2(s_logisimNet3),
+                .result(s_logisimNet98));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_50 (.input1(s_logisimNet116),
-                .input2(s_logisimNet34),
+      GATES_47 (.input1(s_logisimNet11),
+                .input2(s_logisimNet112),
+                .result(s_logisimNet87));
+
+   AND_GATE #(.BubblesMask(2'b00))
+      GATES_48 (.input1(s_logisimNet97),
+                .input2(s_logisimNet86),
+                .result(s_logisimNet84));
+
+   AND_GATE #(.BubblesMask(2'b00))
+      GATES_49 (.input1(s_logisimNet98),
+                .input2(s_logisimNet87),
+                .result(s_logisimNet115));
+
+   AND_GATE #(.BubblesMask(2'b00))
+      GATES_50 (.input1(s_logisimNet115),
+                .input2(s_logisimNet33),
                 .result(s_logisimNet28));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_51 (.input1(s_logisimNet86),
+      GATES_51 (.input1(s_logisimNet84),
                 .input2(s_logisimNet28),
-                .result(s_logisimNet55));
+                .result(s_logisimNet54));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_52 (.input1(s_logisimNet135),
-                .input2(s_logisimNet31),
-                .result(s_logisimNet37));
-
-   AND_GATE #(.BubblesMask(2'b00))
-      GATES_53 (.input1(s_logisimNet37),
+      GATES_52 (.input1(s_logisimNet125),
                 .input2(s_logisimNet28),
-                .result(s_logisimNet78));
+                .result(s_logisimNet38));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_54 (.input1(s_logisimNet6),
+      GATES_53 (.input1(s_logisimNet6),
                 .input2(s_logisimNet132),
                 .result(s_logisimNet8));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_55 (.input1(s_logisimNet55),
-                .input2(s_logisimNet138),
+      GATES_54 (.input1(s_logisimNet54),
+                .input2(s_logisimNet137),
                 .result(s_logisimNet27));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_56 (.input1(s_logisimNet55),
-                .input2(s_logisimNet41),
-                .result(s_logisimNet35));
+      GATES_55 (.input1(s_logisimNet54),
+                .input2(s_logisimNet40),
+                .result(s_logisimNet34));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_57 (.input1(s_logisimNet23),
-                .input2(s_logisimNet81),
+      GATES_56 (.input1(s_logisimNet23),
+                .input2(s_logisimNet79),
                 .result(s_logisimNet128));
 
    AND_GATE #(.BubblesMask(2'b00))
+      GATES_57 (.input1(s_logisimNet23),
+                .input2(s_logisimNet37),
+                .result(s_logisimNet117));
+
+   AND_GATE #(.BubblesMask(2'b00))
       GATES_58 (.input1(s_logisimNet23),
-                .input2(s_logisimNet39),
-                .result(s_logisimNet118));
+                .input2(s_logisimNet130),
+                .result(s_logisimNet107));
 
    AND_GATE #(.BubblesMask(2'b00))
       GATES_59 (.input1(s_logisimNet23),
-                .input2(s_logisimNet130),
-                .result(s_logisimNet108));
+                .input2(s_logisimNet44),
+                .result(s_logisimNet90));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_60 (.input1(s_logisimNet23),
-                .input2(s_logisimNet45),
-                .result(s_logisimNet92));
-
-   AND_GATE #(.BubblesMask(2'b00))
-      GATES_61 (.input1(s_logisimNet59),
-                .input2(s_logisimNet93),
+      GATES_60 (.input1(s_logisimNet58),
+                .input2(s_logisimNet91),
                 .result(s_logisimNet19));
 
    AND_GATE #(.BubblesMask(2'b00))
-      GATES_62 (.input1(s_logisimNet32),
+      GATES_61 (.input1(s_logisimNet31),
                 .input2(s_logisimNet22),
                 .result(s_logisimNet12));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_63 (.clock(s_logisimNet19),
-                 .d(s_logisimNet115),
+      MEMORY_62 (.clock(s_logisimNet19),
+                 .d(s_logisimNet114),
                  .preset(1'b0),
-                 .q(s_logisimNet65),
-                 .qBar(s_logisimNet34),
+                 .q(s_logisimNet64),
+                 .qBar(s_logisimNet33),
                  .reset(s_logisimNet12),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_64 (.clock(s_logisimNet56),
-                 .d(s_logisimNet77),
+      MEMORY_63 (.clock(s_logisimNet55),
+                 .d(s_logisimNet76),
                  .preset(1'b0),
-                 .q(s_logisimNet69),
+                 .q(s_logisimNet68),
                  .qBar(),
                  .reset(1'b0),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_65 (.clock(s_logisimNet125),
-                 .d(s_logisimNet87),
+      MEMORY_64 (.clock(s_logisimNet124),
+                 .d(s_logisimNet85),
                  .preset(1'b0),
-                 .q(s_logisimNet109),
+                 .q(s_logisimNet108),
                  .qBar(),
                  .reset(s_logisimNet12),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_66 (.clock(s_logisimNet56),
+      MEMORY_65 (.clock(s_logisimNet55),
                  .d(s_logisimNet129),
                  .preset(1'b0),
                  .q(s_logisimNet7),
@@ -601,8 +595,8 @@ module CPU( CLK,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_67 (.clock(s_logisimNet56),
-                 .d(s_logisimNet84),
+      MEMORY_66 (.clock(s_logisimNet55),
+                 .d(s_logisimNet82),
                  .preset(1'b0),
                  .q(s_logisimNet0),
                  .qBar(),
@@ -610,8 +604,8 @@ module CPU( CLK,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_68 (.clock(s_logisimNet56),
-                 .d(s_logisimNet106),
+      MEMORY_67 (.clock(s_logisimNet55),
+                 .d(s_logisimNet105),
                  .preset(1'b0),
                  .q(s_logisimNet10),
                  .qBar(),
@@ -619,25 +613,25 @@ module CPU( CLK,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_69 (.clock(s_logisimNet20),
-                 .d(s_logisimNet53),
+      MEMORY_68 (.clock(s_logisimNet20),
+                 .d(s_logisimNet52),
                  .preset(1'b0),
-                 .q(s_logisimNet94),
+                 .q(s_logisimNet92),
+                 .qBar(),
+                 .reset(s_logisimNet12),
+                 .tick(1'b1));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_69 (.clock(s_logisimNet20),
+                 .d(s_logisimNet41),
+                 .preset(1'b0),
+                 .q(s_logisimNet56),
                  .qBar(),
                  .reset(s_logisimNet12),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_70 (.clock(s_logisimNet20),
-                 .d(s_logisimNet42),
-                 .preset(1'b0),
-                 .q(s_logisimNet57),
-                 .qBar(),
-                 .reset(s_logisimNet12),
-                 .tick(1'b1));
-
-   D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_71 (.clock(s_logisimNet20),
                  .d(s_logisimNet15),
                  .preset(1'b0),
                  .q(s_logisimNet9),
@@ -646,26 +640,26 @@ module CPU( CLK,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_72 (.clock(s_logisimNet20),
-                 .d(s_logisimNet58),
+      MEMORY_71 (.clock(s_logisimNet20),
+                 .d(s_logisimNet57),
                  .preset(1'b0),
-                 .q(s_logisimNet31),
+                 .q(s_logisimNet95),
                  .qBar(),
                  .reset(s_logisimNet12),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_73 (.clock(s_logisimNet64),
-                 .d(s_logisimNet53),
+      MEMORY_72 (.clock(s_logisimNet63),
+                 .d(s_logisimNet52),
                  .preset(1'b0),
-                 .q(s_logisimNet36),
+                 .q(s_logisimNet35),
                  .qBar(),
                  .reset(s_logisimNet12),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_74 (.clock(s_logisimNet64),
-                 .d(s_logisimNet42),
+      MEMORY_73 (.clock(s_logisimNet63),
+                 .d(s_logisimNet41),
                  .preset(1'b0),
                  .q(s_logisimNet3),
                  .qBar(),
@@ -673,7 +667,7 @@ module CPU( CLK,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_75 (.clock(s_logisimNet64),
+      MEMORY_74 (.clock(s_logisimNet63),
                  .d(s_logisimNet15),
                  .preset(1'b0),
                  .q(s_logisimNet11),
@@ -682,80 +676,17 @@ module CPU( CLK,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_76 (.clock(s_logisimNet64),
-                 .d(s_logisimNet58),
+      MEMORY_75 (.clock(s_logisimNet63),
+                 .d(s_logisimNet57),
                  .preset(1'b0),
-                 .q(s_logisimNet113),
+                 .q(s_logisimNet112),
                  .qBar(),
                  .reset(s_logisimNet12),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_77 (.clock(s_logisimNet52),
-                 .d(s_logisimNet53),
-                 .preset(1'b0),
-                 .q(s_logisimNet76),
-                 .qBar(),
-                 .reset(1'b0),
-                 .tick(1'b1));
-
-   D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_78 (.clock(s_logisimNet52),
-                 .d(s_logisimNet42),
-                 .preset(1'b0),
-                 .q(s_logisimNet43),
-                 .qBar(),
-                 .reset(1'b0),
-                 .tick(1'b1));
-
-   D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_79 (.clock(s_logisimNet52),
-                 .d(s_logisimNet15),
-                 .preset(1'b0),
-                 .q(s_logisimNet46),
-                 .qBar(),
-                 .reset(1'b0),
-                 .tick(1'b1));
-
-   D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_80 (.clock(s_logisimNet52),
-                 .d(s_logisimNet58),
-                 .preset(1'b0),
-                 .q(s_logisimNet85),
-                 .qBar(),
-                 .reset(1'b0),
-                 .tick(1'b1));
-
-   D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_81 (.clock(s_logisimNet21),
-                 .d(s_logisimNet53),
-                 .preset(1'b0),
-                 .q(s_logisimNet96),
-                 .qBar(),
-                 .reset(1'b0),
-                 .tick(1'b1));
-
-   D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_82 (.clock(s_logisimNet21),
-                 .d(s_logisimNet42),
-                 .preset(1'b0),
-                 .q(s_logisimNet60),
-                 .qBar(),
-                 .reset(1'b0),
-                 .tick(1'b1));
-
-   D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_83 (.clock(s_logisimNet21),
-                 .d(s_logisimNet15),
-                 .preset(1'b0),
-                 .q(s_logisimNet101),
-                 .qBar(),
-                 .reset(1'b0),
-                 .tick(1'b1));
-
-   D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_84 (.clock(s_logisimNet21),
-                 .d(s_logisimNet58),
+      MEMORY_76 (.clock(s_logisimNet51),
+                 .d(s_logisimNet52),
                  .preset(1'b0),
                  .q(s_logisimNet75),
                  .qBar(),
@@ -763,8 +694,71 @@ module CPU( CLK,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_85 (.clock(s_logisimNet17),
-                 .d(s_logisimNet53),
+      MEMORY_77 (.clock(s_logisimNet51),
+                 .d(s_logisimNet41),
+                 .preset(1'b0),
+                 .q(s_logisimNet42),
+                 .qBar(),
+                 .reset(1'b0),
+                 .tick(1'b1));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_78 (.clock(s_logisimNet51),
+                 .d(s_logisimNet15),
+                 .preset(1'b0),
+                 .q(s_logisimNet45),
+                 .qBar(),
+                 .reset(1'b0),
+                 .tick(1'b1));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_79 (.clock(s_logisimNet51),
+                 .d(s_logisimNet57),
+                 .preset(1'b0),
+                 .q(s_logisimNet83),
+                 .qBar(),
+                 .reset(1'b0),
+                 .tick(1'b1));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_80 (.clock(s_logisimNet21),
+                 .d(s_logisimNet52),
+                 .preset(1'b0),
+                 .q(s_logisimNet94),
+                 .qBar(),
+                 .reset(1'b0),
+                 .tick(1'b1));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_81 (.clock(s_logisimNet21),
+                 .d(s_logisimNet41),
+                 .preset(1'b0),
+                 .q(s_logisimNet59),
+                 .qBar(),
+                 .reset(1'b0),
+                 .tick(1'b1));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_82 (.clock(s_logisimNet21),
+                 .d(s_logisimNet15),
+                 .preset(1'b0),
+                 .q(s_logisimNet100),
+                 .qBar(),
+                 .reset(1'b0),
+                 .tick(1'b1));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_83 (.clock(s_logisimNet21),
+                 .d(s_logisimNet57),
+                 .preset(1'b0),
+                 .q(s_logisimNet74),
+                 .qBar(),
+                 .reset(1'b0),
+                 .tick(1'b1));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_84 (.clock(s_logisimNet17),
+                 .d(s_logisimNet52),
                  .preset(1'b0),
                  .q(s_logisimNet13),
                  .qBar(),
@@ -772,37 +766,37 @@ module CPU( CLK,
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_86 (.clock(s_logisimNet17),
-                 .d(s_logisimNet42),
+      MEMORY_85 (.clock(s_logisimNet17),
+                 .d(s_logisimNet41),
                  .preset(1'b0),
-                 .q(s_logisimNet104),
+                 .q(s_logisimNet103),
+                 .qBar(),
+                 .reset(1'b0),
+                 .tick(1'b1));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_86 (.clock(s_logisimNet17),
+                 .d(s_logisimNet15),
+                 .preset(1'b0),
+                 .q(s_logisimNet96),
                  .qBar(),
                  .reset(1'b0),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
       MEMORY_87 (.clock(s_logisimNet17),
-                 .d(s_logisimNet15),
+                 .d(s_logisimNet57),
                  .preset(1'b0),
-                 .q(s_logisimNet97),
+                 .q(s_logisimNet49),
                  .qBar(),
                  .reset(1'b0),
                  .tick(1'b1));
 
    D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_88 (.clock(s_logisimNet17),
-                 .d(s_logisimNet58),
-                 .preset(1'b0),
-                 .q(s_logisimNet50),
-                 .qBar(),
-                 .reset(1'b0),
-                 .tick(1'b1));
-
-   D_FLIPFLOP #(.invertClockEnable(0))
-      MEMORY_89 (.clock(s_logisimNet22),
+      MEMORY_88 (.clock(s_logisimNet22),
                  .d(s_logisimNet8),
                  .preset(1'b0),
-                 .q(s_logisimNet59),
+                 .q(s_logisimNet58),
                  .qBar(),
                  .reset(s_logisimNet12),
                  .tick(1'b1));
@@ -813,118 +807,119 @@ module CPU( CLK,
    *******************************************************************************/
 
    inst_dec   inst_dec_1 (.ARI(s_logisimNet25),
-                          .CLK1(s_logisimNet54),
-                          .D0(s_logisimNet81),
-                          .D1(s_logisimNet39),
+                          .CLK1(s_logisimNet53),
+                          .D0(s_logisimNet79),
+                          .D1(s_logisimNet37),
                           .D2(s_logisimNet130),
-                          .D3(s_logisimNet45),
-                          .I0(s_logisimNet61),
-                          .I1(s_logisimNet40),
-                          .I2(s_logisimNet141),
-                          .I3(s_logisimNet142),
-                          .JMP(s_logisimNet49),
-                          .LD(s_logisimNet72),
+                          .D3(s_logisimNet44),
+                          .I0(s_logisimNet60),
+                          .I1(s_logisimNet39),
+                          .I2(s_logisimNet140),
+                          .I3(s_logisimNet141),
+                          .JMP(s_logisimNet48),
+                          .LD(s_logisimNet71),
                           .LDD(s_logisimNet2),
                           .LOG(s_logisimNet18),
                           .RST_C(s_logisimNet12),
-                          .SEI(s_logisimNet115),
+                          .SEI(s_logisimNet114),
                           .SMH(s_logisimNet1),
                           .SML(s_logisimNet26),
-                          .STR(s_logisimNet33),
+                          .STR(s_logisimNet32),
                           .W_CAR(s_logisimNet30));
 
    clock_gen_2   clock_gen_2_1 (.CLK(s_logisimNet22),
-                                .CLK1(s_logisimNet54),
+                                .CLK1(s_logisimNet53),
                                 .CLK2(s_logisimNet6),
-                                .O_S(s_logisimNet90),
-                                .RST(s_logisimNet32),
+                                .O_S(s_logisimNet88),
+                                .RST(s_logisimNet31),
                                 .RST_C(s_logisimNet12));
 
-   main   main_1 (.CAR_I(s_logisimNet109),
-                  .CAR_O(s_logisimNet87),
+   main   main_1 (.CAR_I(s_logisimNet108),
+                  .CAR_O(s_logisimNet85),
                   .D_0(s_logisimNet5),
-                  .D_1(s_logisimNet103),
-                  .D_2(s_logisimNet121),
-                  .D_3(s_logisimNet83),
+                  .D_1(s_logisimNet102),
+                  .D_2(s_logisimNet120),
+                  .D_3(s_logisimNet81),
                   .LOG_EN(s_logisimNet18),
-                  .LOG_SEL_0(s_logisimNet61),
-                  .LOG_SEL_1(s_logisimNet40),
+                  .LOG_SEL_0(s_logisimNet60),
+                  .LOG_SEL_1(s_logisimNet39),
                   .OUT_0(s_logisimNet129),
-                  .OUT_1(s_logisimNet84),
-                  .OUT_2(s_logisimNet106),
-                  .OUT_3(s_logisimNet77),
-                  .RR_0(s_logisimNet62),
-                  .RR_1(s_logisimNet63),
-                  .RR_2(s_logisimNet48),
-                  .RR_3(s_logisimNet119),
-                  .SUB(s_logisimNet61),
+                  .OUT_1(s_logisimNet82),
+                  .OUT_2(s_logisimNet105),
+                  .OUT_3(s_logisimNet76),
+                  .RR_0(s_logisimNet61),
+                  .RR_1(s_logisimNet62),
+                  .RR_2(s_logisimNet47),
+                  .RR_3(s_logisimNet118),
+                  .SUB(s_logisimNet60),
                   .W_C(s_logisimNet30));
 
    eq_0   eq_0_1 (.D0(s_logisimNet7),
                   .D1(s_logisimNet0),
                   .D2(s_logisimNet10),
-                  .D3(s_logisimNet69),
-                  .is_zero(s_logisimNet38));
+                  .D3(s_logisimNet68),
+                  .is_zero(s_logisimNet36));
 
-   dest_reg_sel_new   dest_reg_sel_new_1 (.CLK1(s_logisimNet54),
+   dest_reg_sel_new   dest_reg_sel_new_1 (.CLK1(s_logisimNet53),
                                           .LDD(s_logisimNet2),
-                                          .RST(s_logisimNet32),
-                                          .S0(s_logisimNet44),
+                                          .RST(s_logisimNet31),
+                                          .S0(s_logisimNet43),
                                           .S1(s_logisimNet126),
-                                          .S2(s_logisimNet124));
+                                          .S2(s_logisimNet123));
 
-   output_logic   output_logic_1 (.DEST_0(s_logisimNet76),
-                                  .DEST_1(s_logisimNet43),
-                                  .DEST_10(s_logisimNet97),
-                                  .DEST_11(s_logisimNet50),
-                                  .DEST_2(s_logisimNet46),
-                                  .DEST_3(s_logisimNet85),
-                                  .DEST_4(s_logisimNet96),
-                                  .DEST_5(s_logisimNet60),
-                                  .DEST_6(s_logisimNet101),
-                                  .DEST_7(s_logisimNet75),
+   output_logic   output_logic_1 (.DEST_0(s_logisimNet75),
+                                  .DEST_1(s_logisimNet42),
+                                  .DEST_10(s_logisimNet96),
+                                  .DEST_11(s_logisimNet49),
+                                  .DEST_2(s_logisimNet45),
+                                  .DEST_3(s_logisimNet83),
+                                  .DEST_4(s_logisimNet94),
+                                  .DEST_5(s_logisimNet59),
+                                  .DEST_6(s_logisimNet100),
+                                  .DEST_7(s_logisimNet74),
                                   .DEST_8(s_logisimNet13),
-                                  .DEST_9(s_logisimNet104),
-                                  .DO_JMP(s_logisimNet120),
-                                  .F_I(s_logisimNet65),
-                                  .JMP(s_logisimNet120),
-                                  .MAR(s_logisimNet68),
-                                  .MAR_0(s_logisimNet94),
-                                  .MAR_1(s_logisimNet57),
+                                  .DEST_9(s_logisimNet103),
+                                  .DO_JMP(s_logisimNet119),
+                                  .F_I(s_logisimNet64),
+                                  .JMP(s_logisimNet119),
+                                  .MAR(s_logisimNet67),
+                                  .MAR_0(s_logisimNet92),
+                                  .MAR_1(s_logisimNet56),
                                   .MAR_2(s_logisimNet9),
-                                  .MAR_3(s_logisimNet31),
-                                  .MAR_4(s_logisimNet36),
+                                  .MAR_3(s_logisimNet95),
+                                  .MAR_4(s_logisimNet35),
                                   .MAR_5(s_logisimNet3),
                                   .MAR_6(s_logisimNet11),
-                                  .MAR_7(s_logisimNet113),
+                                  .MAR_7(s_logisimNet112),
                                   .OUT_0(s_logisimNet131),
-                                  .OUT_1(s_logisimNet107),
+                                  .OUT_1(s_logisimNet106),
                                   .OUT_2(s_logisimNet24),
                                   .OUT_3(s_logisimNet127),
-                                  .OUT_4(s_logisimNet91),
-                                  .OUT_5(s_logisimNet139),
-                                  .OUT_6(s_logisimNet117),
-                                  .OUT_7(s_logisimNet73),
-                                  .O_S(s_logisimNet90),
+                                  .OUT_4(s_logisimNet89),
+                                  .OUT_5(s_logisimNet138),
+                                  .OUT_6(s_logisimNet116),
+                                  .OUT_7(s_logisimNet72),
+                                  .O_S(s_logisimNet88),
                                   .RR_0(s_logisimNet7),
                                   .RR_1(s_logisimNet0),
                                   .RR_2(s_logisimNet10),
-                                  .RR_3(s_logisimNet69),
-                                  .WRITE(s_logisimNet51));
+                                  .RR_3(s_logisimNet68),
+                                  .WRITE(s_logisimNet50));
 
-   int_memory   int_memory_1 (.ADR0(s_logisimNet94),
-                              .ADR1(s_logisimNet57),
+   int_memory   int_memory_1 (.ADR0(s_logisimNet92),
+                              .ADR1(s_logisimNet56),
                               .ADR2(s_logisimNet9),
+                              .ADR3(s_logisimNet95),
                               .CLK(s_logisimNet22),
                               .DI0(s_logisimNet7),
                               .DI1(s_logisimNet0),
                               .DI2(s_logisimNet10),
-                              .DI3(s_logisimNet69),
-                              .DO0(s_logisimNet47),
-                              .DO1(s_logisimNet100),
-                              .DO2(s_logisimNet74),
+                              .DI3(s_logisimNet68),
+                              .DO0(s_logisimNet46),
+                              .DO1(s_logisimNet99),
+                              .DO2(s_logisimNet73),
                               .DO3(s_logisimNet4),
-                              .EN(s_logisimNet78),
-                              .WR(s_logisimNet33));
+                              .EN(s_logisimNet38),
+                              .WR(s_logisimNet32));
 
 endmodule

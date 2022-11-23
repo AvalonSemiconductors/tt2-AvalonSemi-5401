@@ -278,31 +278,32 @@ async def test_cpu(dut):
 
 	# Test internal memory
 
-	for i in range(0, 6):
+	for i in range(0, 8):
+		dut._log.info(i)
 		await set_rr(dut, 5)
 
 		await sei(dut)
-		t0, _ = await exec_instr(dut, I_LML, i | 8, FLAG_MAR)
+		t0, _ = await exec_instr(dut, I_LML, i, FLAG_MAR)
 		await sei(dut)
 		t0, _ = await exec_instr(dut, I_LMH, 15, FLAG_MAR)
-		assert t0 == (0b1111 << 4) | i | 8
+		assert t0 == (0b1111 << 4) | i
 
 		await exec_instr(dut, I_STR, 0, 0)
 
 		await sei(dut)
 		t0, _ = await exec_instr(dut, I_LMH, 12, FLAG_MAR)
-		assert t0 == (0b1100 << 4) | i | 8
+		assert t0 == (0b1100 << 4) | i
 
 		await set_rr(dut, 0)
 
 		await sei(dut)
 		t0, _ = await exec_instr(dut, I_LMH, 15, FLAG_MAR)
-		assert t0 == (0b1111 << 4) | i | 8
+		assert t0 == (0b1111 << 4) | i
 
 		await exec_instr(dut, I_LD, 0, 0)
 
 		await sei(dut)
 		t0, _ = await exec_instr(dut, I_LMH, 12, FLAG_MAR)
-		assert t0 ==  (0b1100 << 4) | i | 8
+		assert t0 ==  (0b1100 << 4) | i
 
 		await assert_rr(dut, 5)
