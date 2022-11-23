@@ -2,13 +2,13 @@
  ** Logisim-evolution goes FPGA automatic generated Verilog code             **
  ** https://github.com/logisim-evolution/                                    **
  **                                                                          **
- ** Component : OR_GATE_BUS                                                  **
+ ** Component : NAND_GATE_BUS                                                **
  **                                                                          **
  *****************************************************************************/
 
-module OR_GATE_BUS( input1,
-                    input2,
-                    result );
+module NAND_GATE_BUS( input1,
+                      input2,
+                      result );
 
    /*******************************************************************************
    ** Here all module parameters are defined with a dummy value                  **
@@ -46,7 +46,7 @@ module OR_GATE_BUS( input1,
    /*******************************************************************************
    ** Here the functionality is defined                                          **
    *******************************************************************************/
-   assign result = s_realInput1|
-                   s_realInput2;
+   assign result = ~(s_realInput1&
+                     s_realInput2);
 
 endmodule

@@ -5,6 +5,8 @@ project:
   source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
     - toplevel/logisimTopLevelShell.v
     - arith/Adder.v
+    - arith/FullAdder.v
+    - arith/Comparator.v
     - circuit/CPU.v
     - circuit/clock_gen_2.v
     - circuit/dest_reg_sel_new.v
@@ -14,12 +16,13 @@ project:
     - circuit/main.v
     - circuit/output_logic.v
     - circuit/mul2.v
+    - circuit/div.v
     - gates/AND_GATE.v
     - gates/AND_GATE_BUS.v
     - gates/NAND_GATE.v
+    - gates/NAND_GATE_BUS.v
     - gates/NOR_GATE.v
     - gates/OR_GATE.v
-    - gates/OR_GATE_BUS.v
     - gates/OR_GATE_BUS_4_INPUTS.v
     - gates/XOR_GATE_ONEHOT.v
     - memory/D_FLIPFLOP.v

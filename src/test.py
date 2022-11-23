@@ -117,6 +117,53 @@ async def test_mul(dut, a, b):
 	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
 	await assert_rr(dut, res >> 4)
 	
+async def test_div(dut, a, b):
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 10, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LD, a & 0b1111)
+	await exec_instr(dut, I_STR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 11, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LD, a >> 4)
+	await exec_instr(dut, I_STR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 12, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LD, b)
+	await exec_instr(dut, I_STR)
+	
+	res = int(int(a) / int(b))
+	res_m = int(int(a) % int(b))
+	
+	await sei(dut)
+	await exec_instr(dut, I_LML, 10, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
+	await assert_rr(dut, res_m)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
+	
+	await sei(dut)
+	await exec_instr(dut, I_LML, 11, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
+	await assert_rr(dut, res & 0b1111)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
+	
+	await sei(dut)
+	await exec_instr(dut, I_LML, 12, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
+	await assert_rr(dut, res >> 4)
+	
 @cocotb.test()
 async def test_cpu(dut):
 	dut._log.info("start")
@@ -338,7 +385,11 @@ async def test_cpu(dut):
 		await assert_rr(dut, 5)
 		
 	# Test hardware multiply
-		
 	for i in range(0, 16):
 		for j in range(0, 16):
 			await test_mul(dut, i, j)
+	
+	# Test hardware divide
+	for i in range(0, 256):
+		for j in range(1, 16):
+			await test_div(dut, i, j)
