@@ -92,17 +92,17 @@ async def test_mul(dut, a, b):
 	await sei(dut)
 	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
 	await sei(dut)
-	await exec_instr(dut, I_LML, 8, FLAG_MAR)
+	await exec_instr(dut, I_LML, 10, FLAG_MAR)
 	await sei(dut)
 	await exec_instr(dut, I_LD, a)
 	await exec_instr(dut, I_STR)
 	await sei(dut)
-	await exec_instr(dut, I_LML, 9, FLAG_MAR)
+	await exec_instr(dut, I_LML, 11, FLAG_MAR)
 	await sei(dut)
 	await exec_instr(dut, I_LD, b)
 	await exec_instr(dut, I_STR)
 	await sei(dut)
-	await exec_instr(dut, I_LML, 8, FLAG_MAR)
+	await exec_instr(dut, I_LML, 10, FLAG_MAR)
 	await exec_instr(dut, I_LD)
 	res = a * b
 	await sei(dut)
@@ -111,7 +111,7 @@ async def test_mul(dut, a, b):
 	await sei(dut)
 	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
 	await sei(dut)
-	await exec_instr(dut, I_LML, 9, FLAG_MAR)
+	await exec_instr(dut, I_LML, 11, FLAG_MAR)
 	await exec_instr(dut, I_LD)
 	await sei(dut)
 	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
@@ -121,17 +121,17 @@ async def test_div(dut, a, b):
 	await sei(dut)
 	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
 	await sei(dut)
-	await exec_instr(dut, I_LML, 10, FLAG_MAR)
+	await exec_instr(dut, I_LML, 12, FLAG_MAR)
 	await sei(dut)
 	await exec_instr(dut, I_LD, a & 0b1111)
 	await exec_instr(dut, I_STR)
 	await sei(dut)
-	await exec_instr(dut, I_LML, 11, FLAG_MAR)
+	await exec_instr(dut, I_LML, 13, FLAG_MAR)
 	await sei(dut)
 	await exec_instr(dut, I_LD, a >> 4)
 	await exec_instr(dut, I_STR)
 	await sei(dut)
-	await exec_instr(dut, I_LML, 12, FLAG_MAR)
+	await exec_instr(dut, I_LML, 14, FLAG_MAR)
 	await sei(dut)
 	await exec_instr(dut, I_LD, b)
 	await exec_instr(dut, I_STR)
@@ -140,7 +140,7 @@ async def test_div(dut, a, b):
 	res_m = int(int(a) % int(b))
 	
 	await sei(dut)
-	await exec_instr(dut, I_LML, 10, FLAG_MAR)
+	await exec_instr(dut, I_LML, 12, FLAG_MAR)
 	await exec_instr(dut, I_LD)
 	await sei(dut)
 	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
@@ -149,7 +149,7 @@ async def test_div(dut, a, b):
 	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
 	
 	await sei(dut)
-	await exec_instr(dut, I_LML, 11, FLAG_MAR)
+	await exec_instr(dut, I_LML, 13, FLAG_MAR)
 	await exec_instr(dut, I_LD)
 	await sei(dut)
 	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
@@ -158,7 +158,7 @@ async def test_div(dut, a, b):
 	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
 	
 	await sei(dut)
-	await exec_instr(dut, I_LML, 12, FLAG_MAR)
+	await exec_instr(dut, I_LML, 14, FLAG_MAR)
 	await exec_instr(dut, I_LD)
 	await sei(dut)
 	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
@@ -354,7 +354,7 @@ async def test_cpu(dut):
 
 	# Test internal memory
 
-	for i in range(0, 8):
+	for i in range(0, 10):
 		dut._log.info(i)
 		await set_rr(dut, 5)
 

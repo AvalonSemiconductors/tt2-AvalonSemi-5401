@@ -91,18 +91,18 @@ module div( A0,
    wire [4:0] s_logisimBus66;
    wire [2:0] s_logisimBus68;
    wire [4:0] s_logisimBus70;
-   wire [4:0] s_logisimBus75;
-   wire [1:0] s_logisimBus77;
    wire [1:0] s_logisimBus78;
    wire [1:0] s_logisimBus79;
    wire [2:0] s_logisimBus80;
    wire [2:0] s_logisimBus81;
-   wire [2:0] s_logisimBus82;
+   wire [4:0] s_logisimBus82;
    wire [4:0] s_logisimBus83;
    wire [4:0] s_logisimBus84;
    wire [4:0] s_logisimBus85;
    wire [4:0] s_logisimBus86;
-   wire [4:0] s_logisimBus87;
+   wire [1:0] s_logisimBus87;
+   wire [2:0] s_logisimBus88;
+   wire [4:0] s_logisimBus89;
    wire       s_logisimNet0;
    wire       s_logisimNet1;
    wire       s_logisimNet10;
@@ -144,13 +144,13 @@ module div( A0,
    wire       s_logisimNet56;
    wire       s_logisimNet69;
    wire       s_logisimNet7;
-   wire       s_logisimNet71;
    wire       s_logisimNet72;
    wire       s_logisimNet73;
    wire       s_logisimNet74;
+   wire       s_logisimNet75;
+   wire       s_logisimNet76;
+   wire       s_logisimNet77;
    wire       s_logisimNet8;
-   wire       s_logisimNet88;
-   wire       s_logisimNet89;
    wire       s_logisimNet9;
 
    /*******************************************************************************
@@ -200,46 +200,46 @@ module div( A0,
    assign s_logisimBus64[1] = s_logisimBus23[1];
    assign s_logisimBus64[2] = s_logisimBus23[2];
    assign s_logisimBus64[3] = s_logisimBus23[3];
-   assign s_logisimBus77[0] = s_logisimNet5;
-   assign s_logisimBus77[1] = s_logisimNet24;
    assign s_logisimBus78[0] = s_logisimNet27;
    assign s_logisimBus78[1] = s_logisimNet27;
    assign s_logisimBus79[0] = s_logisimNet15;
    assign s_logisimBus79[1] = s_logisimNet12;
-   assign s_logisimBus80[0] = s_logisimNet54;
-   assign s_logisimBus80[1] = s_logisimBus6[0];
-   assign s_logisimBus80[2] = s_logisimBus6[1];
-   assign s_logisimBus81[0] = s_logisimNet13;
-   assign s_logisimBus81[1] = s_logisimNet13;
-   assign s_logisimBus81[2] = s_logisimNet13;
-   assign s_logisimBus82[0] = s_logisimNet15;
-   assign s_logisimBus82[1] = s_logisimNet12;
-   assign s_logisimBus82[2] = s_logisimNet28;
-   assign s_logisimBus83[0] = s_logisimNet10;
-   assign s_logisimBus83[1] = s_logisimNet10;
-   assign s_logisimBus83[2] = s_logisimNet10;
-   assign s_logisimBus83[3] = s_logisimNet10;
-   assign s_logisimBus83[4] = s_logisimNet10;
-   assign s_logisimBus84[0] = s_logisimNet14;
-   assign s_logisimBus84[1] = s_logisimNet14;
-   assign s_logisimBus84[2] = s_logisimNet14;
-   assign s_logisimBus84[3] = s_logisimNet14;
-   assign s_logisimBus84[4] = s_logisimNet14;
-   assign s_logisimBus85[0] = s_logisimNet17;
-   assign s_logisimBus85[1] = s_logisimNet17;
-   assign s_logisimBus85[2] = s_logisimNet17;
-   assign s_logisimBus85[3] = s_logisimNet17;
-   assign s_logisimBus85[4] = s_logisimNet17;
-   assign s_logisimBus86[0] = s_logisimNet25;
-   assign s_logisimBus86[1] = s_logisimNet25;
-   assign s_logisimBus86[2] = s_logisimNet25;
-   assign s_logisimBus86[3] = s_logisimNet25;
-   assign s_logisimBus86[4] = s_logisimNet25;
-   assign s_logisimBus87[0] = s_logisimNet22;
-   assign s_logisimBus87[1] = s_logisimNet22;
-   assign s_logisimBus87[2] = s_logisimNet22;
-   assign s_logisimBus87[3] = s_logisimNet22;
-   assign s_logisimBus87[4] = s_logisimNet22;
+   assign s_logisimBus80[0] = s_logisimNet13;
+   assign s_logisimBus80[1] = s_logisimNet13;
+   assign s_logisimBus80[2] = s_logisimNet13;
+   assign s_logisimBus81[0] = s_logisimNet15;
+   assign s_logisimBus81[1] = s_logisimNet12;
+   assign s_logisimBus81[2] = s_logisimNet28;
+   assign s_logisimBus82[0] = s_logisimNet10;
+   assign s_logisimBus82[1] = s_logisimNet10;
+   assign s_logisimBus82[2] = s_logisimNet10;
+   assign s_logisimBus82[3] = s_logisimNet10;
+   assign s_logisimBus82[4] = s_logisimNet10;
+   assign s_logisimBus83[0] = s_logisimNet14;
+   assign s_logisimBus83[1] = s_logisimNet14;
+   assign s_logisimBus83[2] = s_logisimNet14;
+   assign s_logisimBus83[3] = s_logisimNet14;
+   assign s_logisimBus83[4] = s_logisimNet14;
+   assign s_logisimBus84[0] = s_logisimNet17;
+   assign s_logisimBus84[1] = s_logisimNet17;
+   assign s_logisimBus84[2] = s_logisimNet17;
+   assign s_logisimBus84[3] = s_logisimNet17;
+   assign s_logisimBus84[4] = s_logisimNet17;
+   assign s_logisimBus85[0] = s_logisimNet25;
+   assign s_logisimBus85[1] = s_logisimNet25;
+   assign s_logisimBus85[2] = s_logisimNet25;
+   assign s_logisimBus85[3] = s_logisimNet25;
+   assign s_logisimBus85[4] = s_logisimNet25;
+   assign s_logisimBus86[0] = s_logisimNet22;
+   assign s_logisimBus86[1] = s_logisimNet22;
+   assign s_logisimBus86[2] = s_logisimNet22;
+   assign s_logisimBus86[3] = s_logisimNet22;
+   assign s_logisimBus86[4] = s_logisimNet22;
+   assign s_logisimBus87[0] = s_logisimNet5;
+   assign s_logisimBus87[1] = s_logisimNet24;
+   assign s_logisimBus88[0] = s_logisimNet54;
+   assign s_logisimBus88[1] = s_logisimBus6[0];
+   assign s_logisimBus88[2] = s_logisimBus6[1];
 
    /*******************************************************************************
    ** Here all input connections are defined                                     **
@@ -250,7 +250,7 @@ module div( A0,
    assign s_logisimBus45[0] = A0;
    assign s_logisimBus48[0] = A3;
    assign s_logisimBus51[0] = A2;
-   assign s_logisimBus75[0] = A7;
+   assign s_logisimBus89[0] = A7;
    assign s_logisimNet12    = B1;
    assign s_logisimNet15    = B0;
    assign s_logisimNet28    = B2;
@@ -277,16 +277,8 @@ module div( A0,
    ** Here all in-lined components are defined                                   **
    *******************************************************************************/
 
-   // Do not connect
-
-   // Do not connect
-
-   // Do not connect
-
-   // Do not connect
-
    // Constant
-   assign  s_logisimBus75[4:1]  =  4'h0;
+   assign  s_logisimNet7  =  1'b1;
 
 
    // Constant
@@ -298,233 +290,241 @@ module div( A0,
 
 
    // Constant
-   assign  s_logisimNet7  =  1'b1;
+   assign  s_logisimBus36[4]  =  1'b0;
+
+
+   // Do not connect
+
+   // Do not connect
+
+   // Do not connect
+
+   // Do not connect
+
+   // Constant
+   assign  s_logisimBus89[4:1]  =  4'h0;
 
 
    // Constant
    assign  s_logisimBus2[4]  =  1'b0;
 
 
-   // Constant
-   assign  s_logisimBus36[4]  =  1'b0;
-
-
    /*******************************************************************************
    ** Here all normal components are defined                                     **
    *******************************************************************************/
-   Comparator #(.nrOfBits(5),
-                .twosComplement(0))
-      ARITH_1 (.aEqualsB(s_logisimNet3),
-               .aGreaterThanB(s_logisimNet0),
-               .aLessThanB(),
-               .dataA(s_logisimBus75[4:0]),
-               .dataB(s_logisimBus2[4:0]));
-
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_2 (.input1(s_logisimNet0),
+      GATES_1 (.input1(s_logisimNet0),
                .input2(s_logisimNet3),
                .result(s_logisimNet11));
 
-   Comparator #(.nrOfBits(5),
-                .twosComplement(0))
-      ARITH_3 (.aEqualsB(s_logisimNet46),
-               .aGreaterThanB(s_logisimNet56),
-               .aLessThanB(),
-               .dataA(s_logisimBus61[4:0]),
-               .dataB(s_logisimBus2[4:0]));
+   NAND_GATE #(.BubblesMask(2'b00))
+      GATES_2 (.input1(s_logisimNet11),
+               .input2(s_logisimNet15),
+               .result(s_logisimNet50));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_4 (.input1(s_logisimNet56),
+      GATES_3 (.input1(s_logisimNet56),
                .input2(s_logisimNet46),
                .result(s_logisimNet27));
 
-   Comparator #(.nrOfBits(5),
-                .twosComplement(0))
-      ARITH_5 (.aEqualsB(s_logisimNet44),
-               .aGreaterThanB(s_logisimNet53),
-               .aLessThanB(),
-               .dataA(s_logisimBus47[4:0]),
-               .dataB(s_logisimBus2[4:0]));
+   NAND_GATE_BUS #(.BubblesMask(2'b00),
+                   .NrOfBits(2))
+      GATES_4 (.input1(s_logisimBus78[1:0]),
+               .input2(s_logisimBus79[1:0]),
+               .result(s_logisimBus52[1:0]));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_6 (.input1(s_logisimNet53),
+      GATES_5 (.input1(s_logisimNet53),
                .input2(s_logisimNet44),
                .result(s_logisimNet13));
 
-   Comparator #(.nrOfBits(5),
-                .twosComplement(0))
-      ARITH_7 (.aEqualsB(s_logisimNet31),
-               .aGreaterThanB(s_logisimNet41),
-               .aLessThanB(),
-               .dataA(s_logisimBus36[4:0]),
-               .dataB(s_logisimBus2[4:0]));
+   NAND_GATE_BUS #(.BubblesMask(2'b00),
+                   .NrOfBits(3))
+      GATES_6 (.input1(s_logisimBus80[2:0]),
+               .input2(s_logisimBus81[2:0]),
+               .result(s_logisimBus68[2:0]));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_8 (.input1(s_logisimNet41),
+      GATES_7 (.input1(s_logisimNet41),
                .input2(s_logisimNet31),
                .result(s_logisimNet10));
 
-   Comparator #(.nrOfBits(5),
-                .twosComplement(0))
-      ARITH_9 (.aEqualsB(s_logisimNet32),
-               .aGreaterThanB(s_logisimNet1),
-               .aLessThanB(),
-               .dataA(s_logisimBus48[4:0]),
-               .dataB(s_logisimBus2[4:0]));
+   NAND_GATE_BUS #(.BubblesMask(2'b00),
+                   .NrOfBits(5))
+      GATES_8 (.input1(s_logisimBus82[4:0]),
+               .input2(s_logisimBus2[4:0]),
+               .result(s_logisimBus16[4:0]));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_10 (.input1(s_logisimNet1),
-                .input2(s_logisimNet32),
-                .result(s_logisimNet14));
+      GATES_9 (.input1(s_logisimNet1),
+               .input2(s_logisimNet32),
+               .result(s_logisimNet14));
 
-   Comparator #(.nrOfBits(5),
-                .twosComplement(0))
-      ARITH_11 (.aEqualsB(s_logisimNet30),
-                .aGreaterThanB(s_logisimNet4),
-                .aLessThanB(),
-                .dataA(s_logisimBus51[4:0]),
-                .dataB(s_logisimBus2[4:0]));
+   NAND_GATE_BUS #(.BubblesMask(2'b00),
+                   .NrOfBits(5))
+      GATES_10 (.input1(s_logisimBus83[4:0]),
+                .input2(s_logisimBus2[4:0]),
+                .result(s_logisimBus55[4:0]));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_12 (.input1(s_logisimNet4),
+      GATES_11 (.input1(s_logisimNet4),
                 .input2(s_logisimNet30),
                 .result(s_logisimNet17));
 
-   Comparator #(.nrOfBits(5),
-                .twosComplement(0))
-      ARITH_13 (.aEqualsB(s_logisimNet9),
-                .aGreaterThanB(s_logisimNet33),
-                .aLessThanB(),
-                .dataA(s_logisimBus43[4:0]),
-                .dataB(s_logisimBus2[4:0]));
+   NAND_GATE_BUS #(.BubblesMask(2'b00),
+                   .NrOfBits(5))
+      GATES_12 (.input1(s_logisimBus84[4:0]),
+                .input2(s_logisimBus2[4:0]),
+                .result(s_logisimBus57[4:0]));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_14 (.input1(s_logisimNet33),
+      GATES_13 (.input1(s_logisimNet33),
                 .input2(s_logisimNet9),
                 .result(s_logisimNet25));
 
-   Comparator #(.nrOfBits(5),
-                .twosComplement(0))
-      ARITH_15 (.aEqualsB(s_logisimNet8),
-                .aGreaterThanB(s_logisimNet34),
-                .aLessThanB(),
-                .dataA(s_logisimBus45[4:0]),
-                .dataB(s_logisimBus2[4:0]));
+   NAND_GATE_BUS #(.BubblesMask(2'b00),
+                   .NrOfBits(5))
+      GATES_14 (.input1(s_logisimBus85[4:0]),
+                .input2(s_logisimBus2[4:0]),
+                .result(s_logisimBus66[4:0]));
 
    OR_GATE #(.BubblesMask(2'b00))
-      GATES_16 (.input1(s_logisimNet34),
+      GATES_15 (.input1(s_logisimNet34),
                 .input2(s_logisimNet8),
                 .result(s_logisimNet22));
 
-   Adder #(.extendedBits(6),
-           .nrOfBits(5))
-      ARITH_17 (.carryIn(s_logisimNet7),
-                .carryOut(),
-                .dataA(s_logisimBus45[4:0]),
-                .dataB(s_logisimBus65[4:0]),
-                .result(s_logisimBus70[4:0]));
+   NAND_GATE_BUS #(.BubblesMask(2'b00),
+                   .NrOfBits(5))
+      GATES_16 (.input1(s_logisimBus86[4:0]),
+                .input2(s_logisimBus2[4:0]),
+                .result(s_logisimBus65[4:0]));
 
    FullAdder #(.extendedBits(2))
-      ARITH_18 (.carryIn(s_logisimNet7),
+      ARITH_17 (.carryIn(s_logisimNet7),
                 .carryOut(),
-                .dataA(s_logisimBus75[0]),
+                .dataA(s_logisimBus89[0]),
                 .dataB(s_logisimNet50),
                 .result(s_logisimNet24));
 
-   NAND_GATE #(.BubblesMask(2'b00))
-      GATES_19 (.input1(s_logisimNet11),
-                .input2(s_logisimNet15),
-                .result(s_logisimNet50));
+   Comparator #(.nrOfBits(5),
+                .twosComplement(0))
+      ARITH_18 (.aEqualsB(s_logisimNet46),
+                .aGreaterThanB(s_logisimNet56),
+                .aLessThanB(),
+                .dataA(s_logisimBus61[4:0]),
+                .dataB(s_logisimBus2[4:0]));
 
    Adder #(.extendedBits(3),
            .nrOfBits(2))
-      ARITH_20 (.carryIn(s_logisimNet7),
+      ARITH_19 (.carryIn(s_logisimNet7),
                 .carryOut(),
-                .dataA(s_logisimBus77[1:0]),
+                .dataA(s_logisimBus87[1:0]),
                 .dataB(s_logisimBus52[1:0]),
                 .result(s_logisimBus6[1:0]));
 
-   NAND_GATE_BUS #(.BubblesMask(2'b00),
-                   .NrOfBits(2))
-      GATES_21 (.input1(s_logisimBus78[1:0]),
-                .input2(s_logisimBus79[1:0]),
-                .result(s_logisimBus52[1:0]));
+   Comparator #(.nrOfBits(5),
+                .twosComplement(0))
+      ARITH_20 (.aEqualsB(s_logisimNet44),
+                .aGreaterThanB(s_logisimNet53),
+                .aLessThanB(),
+                .dataA(s_logisimBus47[4:0]),
+                .dataB(s_logisimBus2[4:0]));
 
    Adder #(.extendedBits(4),
            .nrOfBits(3))
-      ARITH_22 (.carryIn(s_logisimNet7),
+      ARITH_21 (.carryIn(s_logisimNet7),
                 .carryOut(),
-                .dataA(s_logisimBus80[2:0]),
+                .dataA(s_logisimBus88[2:0]),
                 .dataB(s_logisimBus68[2:0]),
                 .result(s_logisimBus36[3:1]));
 
-   NAND_GATE_BUS #(.BubblesMask(2'b00),
-                   .NrOfBits(3))
-      GATES_23 (.input1(s_logisimBus81[2:0]),
-                .input2(s_logisimBus82[2:0]),
-                .result(s_logisimBus68[2:0]));
+   Comparator #(.nrOfBits(5),
+                .twosComplement(0))
+      ARITH_22 (.aEqualsB(s_logisimNet31),
+                .aGreaterThanB(s_logisimNet41),
+                .aLessThanB(),
+                .dataA(s_logisimBus36[4:0]),
+                .dataB(s_logisimBus2[4:0]));
 
    Adder #(.extendedBits(6),
            .nrOfBits(5))
-      ARITH_24 (.carryIn(s_logisimNet7),
+      ARITH_23 (.carryIn(s_logisimNet7),
                 .carryOut(),
                 .dataA(s_logisimBus36[4:0]),
                 .dataB(s_logisimBus16[4:0]),
                 .result(s_logisimBus23[4:0]));
 
-   NAND_GATE_BUS #(.BubblesMask(2'b00),
-                   .NrOfBits(5))
-      GATES_25 (.input1(s_logisimBus83[4:0]),
-                .input2(s_logisimBus2[4:0]),
-                .result(s_logisimBus16[4:0]));
+   Comparator #(.nrOfBits(5),
+                .twosComplement(0))
+      ARITH_24 (.aEqualsB(s_logisimNet32),
+                .aGreaterThanB(s_logisimNet1),
+                .aLessThanB(),
+                .dataA(s_logisimBus48[4:0]),
+                .dataB(s_logisimBus2[4:0]));
 
    Adder #(.extendedBits(6),
            .nrOfBits(5))
-      ARITH_26 (.carryIn(s_logisimNet7),
+      ARITH_25 (.carryIn(s_logisimNet7),
                 .carryOut(),
                 .dataA(s_logisimBus48[4:0]),
                 .dataB(s_logisimBus55[4:0]),
                 .result(s_logisimBus26[4:0]));
 
-   NAND_GATE_BUS #(.BubblesMask(2'b00),
-                   .NrOfBits(5))
-      GATES_27 (.input1(s_logisimBus84[4:0]),
-                .input2(s_logisimBus2[4:0]),
-                .result(s_logisimBus55[4:0]));
+   Comparator #(.nrOfBits(5),
+                .twosComplement(0))
+      ARITH_26 (.aEqualsB(s_logisimNet30),
+                .aGreaterThanB(s_logisimNet4),
+                .aLessThanB(),
+                .dataA(s_logisimBus51[4:0]),
+                .dataB(s_logisimBus2[4:0]));
 
    Adder #(.extendedBits(6),
            .nrOfBits(5))
-      ARITH_28 (.carryIn(s_logisimNet7),
+      ARITH_27 (.carryIn(s_logisimNet7),
                 .carryOut(),
                 .dataA(s_logisimBus51[4:0]),
                 .dataB(s_logisimBus57[4:0]),
                 .result(s_logisimBus18[4:0]));
 
-   NAND_GATE_BUS #(.BubblesMask(2'b00),
-                   .NrOfBits(5))
-      GATES_29 (.input1(s_logisimBus85[4:0]),
-                .input2(s_logisimBus2[4:0]),
-                .result(s_logisimBus57[4:0]));
+   Comparator #(.nrOfBits(5),
+                .twosComplement(0))
+      ARITH_28 (.aEqualsB(s_logisimNet9),
+                .aGreaterThanB(s_logisimNet33),
+                .aLessThanB(),
+                .dataA(s_logisimBus43[4:0]),
+                .dataB(s_logisimBus2[4:0]));
 
    Adder #(.extendedBits(6),
            .nrOfBits(5))
-      ARITH_30 (.carryIn(s_logisimNet7),
+      ARITH_29 (.carryIn(s_logisimNet7),
                 .carryOut(),
                 .dataA(s_logisimBus43[4:0]),
                 .dataB(s_logisimBus66[4:0]),
                 .result(s_logisimBus21[4:0]));
 
-   NAND_GATE_BUS #(.BubblesMask(2'b00),
-                   .NrOfBits(5))
-      GATES_31 (.input1(s_logisimBus86[4:0]),
-                .input2(s_logisimBus2[4:0]),
-                .result(s_logisimBus66[4:0]));
+   Comparator #(.nrOfBits(5),
+                .twosComplement(0))
+      ARITH_30 (.aEqualsB(s_logisimNet8),
+                .aGreaterThanB(s_logisimNet34),
+                .aLessThanB(),
+                .dataA(s_logisimBus45[4:0]),
+                .dataB(s_logisimBus2[4:0]));
 
-   NAND_GATE_BUS #(.BubblesMask(2'b00),
-                   .NrOfBits(5))
-      GATES_32 (.input1(s_logisimBus87[4:0]),
-                .input2(s_logisimBus2[4:0]),
-                .result(s_logisimBus65[4:0]));
+   Adder #(.extendedBits(6),
+           .nrOfBits(5))
+      ARITH_31 (.carryIn(s_logisimNet7),
+                .carryOut(),
+                .dataA(s_logisimBus45[4:0]),
+                .dataB(s_logisimBus65[4:0]),
+                .result(s_logisimBus70[4:0]));
+
+   Comparator #(.nrOfBits(5),
+                .twosComplement(0))
+      ARITH_32 (.aEqualsB(s_logisimNet3),
+                .aGreaterThanB(s_logisimNet0),
+                .aLessThanB(),
+                .dataA(s_logisimBus89[4:0]),
+                .dataB(s_logisimBus2[4:0]));
 
 
 endmodule
