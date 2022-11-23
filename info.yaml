@@ -4,6 +4,7 @@ project:
   wokwi_id:    0        # If using wokwi, set this to your project's ID
   source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
     - toplevel/logisimTopLevelShell.v
+    - arith/Adder.v
     - circuit/CPU.v
     - circuit/clock_gen_2.v
     - circuit/dest_reg_sel_new.v
@@ -12,6 +13,7 @@ project:
     - circuit/int_memory.v
     - circuit/main.v
     - circuit/output_logic.v
+    - circuit/mul2.v
     - gates/AND_GATE.v
     - gates/AND_GATE_BUS.v
     - gates/NAND_GATE.v

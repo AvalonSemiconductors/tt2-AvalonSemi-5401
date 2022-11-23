@@ -88,6 +88,35 @@ async def test_ef(dut, EF0, EF1):
 		comp += 2
 	await assert_rr(dut, comp)
 	
+async def test_mul(dut, a, b):
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 8, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LD, a)
+	await exec_instr(dut, I_STR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 9, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LD, b)
+	await exec_instr(dut, I_STR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 8, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	res = a * b
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
+	await assert_rr(dut, res & 0b1111)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 15, FLAG_MAR)
+	await sei(dut)
+	await exec_instr(dut, I_LML, 9, FLAG_MAR)
+	await exec_instr(dut, I_LD)
+	await sei(dut)
+	await exec_instr(dut, I_LMH, 0, FLAG_MAR)
+	await assert_rr(dut, res >> 4)
+	
 @cocotb.test()
 async def test_cpu(dut):
 	dut._log.info("start")
@@ -307,3 +336,9 @@ async def test_cpu(dut):
 		assert t0 ==  (0b1100 << 4) | i
 
 		await assert_rr(dut, 5)
+		
+	# Test hardware multiply
+		
+	for i in range(0, 16):
+		for j in range(0, 16):
+			await test_mul(dut, i, j)
