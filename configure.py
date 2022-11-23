@@ -139,7 +139,8 @@ def get_stats():
             if(line[0] in cell_types):
                 type_counts[cell_types[line[0]]] += int(line[1])
             else:
-                type_count['UNK'] += int(line[1])
+                type_counts['UNK'] += int(line[1])
+                print(line[0])
 
     for i in types:
         if(type_counts[i] > 0 or types[i]):
