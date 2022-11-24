@@ -99,6 +99,7 @@ The following registers are present inside the 5401:
 | Quotient Register¹² | QR | 8 | Quotient output of the divide unit |
 
 ¹ Memory mapped
+
 ² Virtual register
 
 Virtual registers are locations that yield data when read, but are not physically present as latches in the processor. For instance, the PR virtual register will read as the current output of the multiply unit, which is not buffered and determined by the values currently residing in the FA and FB registers.
@@ -119,6 +120,8 @@ The 5401 posseses several memory-mapped registers and devices. These are accessi
 
 Locations FAh - FEh access different locations depending on the direction of the data transfer. For instance, a write to location FAh will set the value of the FA register, while a read from FAh will yield the value in the lower 4 bits of the PR register.
 Location FFh is read-only, and writes to this location will be discarded.
+
+When executing a STR instruction on one of these locations, the WR flag will be supressed.
 
 ### Multiply unit
 
