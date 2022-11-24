@@ -1,13 +1,13 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/tests/badge.svg)
 
-# Avalon Semiconductors 5401 - 4 bit Microprocessor with on-chip RAM
+# Avalon Semiconductors 5401 - 4 bit Microprocessor with hardware multiply and divide and on-chip RAM
 This is a submission for TinyTapeout 2.
 
 ```
 Author's note: I thought I'd give this a bit of a nostalgic feel by calling it the '5401', like it's some old microprocessor from the 70s or 80s. Of course had to be complete with a made-up brand name, which is where the 'Avalon Semiconductors' comes from. Documentation for this is quite long, but I hope it will be a informative as well as enjoyable read.
 ```
 
-The 5401 is a 4-bit hybrid Harvard architecture microprocessor capable of addressing up to 4096 bytes of program memory, and 254 words of data memory. This is possible through multiplexing on both the input and output ports. The processor also contains 6 words of on-chip RAM and general-purpose inputs, accessible through special memory addresses.
+The 5401 is a 4-bit hybrid Harvard architecture microprocessor capable of addressing up to 4096 bytes of program memory, and 249 words of data memory. This is possible through multiplexing on both the input and output ports. The processor also contains hardware multiply and divide units, as well as 10 words of on-chip RAM and general-purpose inputs, accessible through special memory addresses.
 
 ![block diagram](https://raw.githubusercontent.com/89Mods/tt2-AvalonSemi-5401/main/assets/block_diag.png)
 
@@ -90,14 +90,52 @@ The following registers are present inside the 5401:
 | Destination Register | DR | 12 | Buffers the branch target for jump instructions |
 | Memory Address Buffer Register | MABR | 8 | Internal buffer of the Memory Address Register |
 | Destination Register Pointer | DRP | 3 | Pointer to one of the three words comprising the Destination Register |
+| Factor A register¹ | FA | 4 | First factor input of the hardware multiply unit |
+| Factor B register¹ | FB | 4 | First factor input of the hardware multiply unit |
+| Product Register¹² | PR | 8 | Output of the multiply unit |
+| Dividend Register¹ | DR | 8 | Dividend input of the hardware divide unit |
+| Divisor Register¹ | DiR | 4 | Divisor input of the hardware divide unit |
+| Remainder Register¹² | ReR | 4 | Remainder output of the divide unit |
+| Quotient Register¹² | QR | 8 | Quotient output of the divide unit |
 
-## Input ports
+¹ Memory mapped
+² Virtual register
+
+Virtual registers are locations that yield data when read, but are not physically present as latches in the processor. For instance, the PR virtual register will read as the current output of the multiply unit, which is not buffered and determined by the values currently residing in the FA and FB registers.
+
+## Memory-mapped hardware
+
+The 5401 posseses several memory-mapped registers and devices. These are accessible by reading or writing to specific memory locations. The following addresses are reserved for this functionality:
+
+
+| Address | Destination |
+| ------- | ----------- |
+| FAh | FA (write), lower word of PR (read) |
+| FBh | FB (write), upper word of PR (read) |
+| FCh | Lower word of DR (write), ReR (read) |
+| FDh | Upper word of DR (write), lower word of QR (read) |
+| FEh | DiR (write), upper word of QR (read) |
+| FFh | EF0 - EF1 (read-only) |
+
+Locations FAh - FEh access different locations depending on the direction of the data transfer. For instance, a write to location FAh will set the value of the FA register, while a read from FAh will yield the value in the lower 4 bits of the PR register.
+Location FFh is read-only, and writes to this location will be discarded.
+
+### Multiply unit
+
+Memory locations FAh and FBh can be used to interact with the hardware multiply unit. This part of the processor will perform a multiplication on the two words stored in the FA and FB registers, outputting a 8-bit value in PR, so no part of the result is lost.
+The two halves of PR can be read individually from the two memory locations.
+
+### Divide unit
+
+Memory locations FCh - FEh are wired to the hardware divide unit, which divides an 8-bit value by a 4-bit value. After loading DR and DiR with arguments, the 4-bit remainder of the division will be visible at ReR, and the 8-bit result at QR.
+
+### Input ports
 
 The 5401 has two, general-purpose input ports, EF0 and EF1. They are memory mapped. If the MABR is set to FFh and the LD instruction is executed, bits 0 and 1 of the loaded data word will defined by the states of EF0 and EF1. Bit 0 will be 1 if EF0 is at a high logic level (0 otherwise), while bit 1 will be 1 if EF1 is at a high logic level (0 otherwise). Bits 2 and 3 will be 0.
 
 ## Built-in RAM
 
-The 5401 has 6 words of built-in RAM, accessible at memory locations F8h - FDh. Any memory reads and writes to those addresses will be served by the internal RAM. The WRITE flag is supressed during a STR instruction on these addresses. As a consequence of the implementation of this component, address FEh will always read as 0, and data written to this location will be lost.
+The 5401 has 10 words of built-in RAM, accessible at memory locations F0h - F9h. Any memory reads and writes to those addresses will be served by the internal RAM. The WRITE flag is supressed during a STR instruction on these addresses.
 
 # Instruction set
 
