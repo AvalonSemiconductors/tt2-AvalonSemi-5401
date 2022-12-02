@@ -36,7 +36,8 @@ project:
 # Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
 #
 # This info will be automatically collected and used to make a datasheet for the chip.
-documentation: 
+documentation:
+  discord:      "Tholin#7559"
   author:       "Tholin"      # Your name
   title:        "Avalon Semiconductors '5401' 4-bit Microprocessor"      # Project title
   description:  "4-bit CPU capable of addressing 4096 bytes program memory and 254 words data memory, with 6 words of on-chip RAM and two general-purpose input ports. Hopefully capable of more complex computation than previous CPU submissions."      # Short description of what your project does
