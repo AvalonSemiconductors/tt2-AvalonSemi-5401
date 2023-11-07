@@ -2588,7 +2588,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="test_board"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="4.0"/>
+    <a name="simulationFrequency" val="8.0"/>
     <comp lib="0" loc="(1450,840)" name="Constant"/>
     <comp lib="0" loc="(1540,830)" name="Constant">
       <a name="facing" val="west"/>
@@ -2714,8 +2714,10 @@
       <a name="addrWidth" val="12"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="contents">addr/data: 12 8
-2 2 ff 2 3 2 51 2
-13 51 2 23 0 2 33
+2 2 3f 2 13 2 10 1
+2 13 0 2 68 1 2 3
+0 2 a 1 2 87 7 7
+4
 </a>
       <a name="label" val="ROM_1"/>
     </comp>
