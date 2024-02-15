@@ -1,0 +1,45 @@
+From d3c93d88421609076cc576289c54eeb9209b2a16 Mon Sep 17 00:00:00 2001
+From: Tholin <cutie@tholin.dev>
+Date: Thu, 15 Feb 2024 12:01:56 +0100
+Subject: [PATCH 2/2] Enable AS501 code gens.
+
+---
+ as.c      | 2 ++
+ headids.c | 1 +
+ 2 files changed, 3 insertions(+)
+
+diff --git a/as.c b/as.c
+index 14c4c37..1f35ec8 100644
+--- a/as.c
++++ b/as.c
+@@ -476,6 +476,7 @@
+ #include "codevector.h"
+ #include "codexcore.h"
+ #include "code1750.h"
++#include "code5401.h"
+ /**          Code21xx};**/
+ 
+ static char *FileMask;
+@@ -4639,6 +4640,7 @@ int main(int argc, char **argv)
+     code960_init();
+     code8x30x_init();
+     code2650_init();
++    code5401_init();
+     codexa_init();
+     codeavr_init();
+     code29k_init();
+diff --git a/headids.c b/headids.c
+index 5fd55e1..d4d39cc 100644
+--- a/headids.c
++++ b/headids.c
+@@ -212,6 +212,7 @@ static TFamilyDescr Descrs[] =
+   { "ATARI_VECTOR" , 0x0002, IntHex   },
+   { "XCore"        , 0x0006, MotoS    },
+   { "1750"         , 0x004f, IntHex   },
++  { "5401"         , 0x0069, IntHex   },
+   { NULL           , 0xffff, Default  }
+ };
+ 
+-- 
+2.34.1
+

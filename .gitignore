@@ -8,6 +8,7 @@ pdk/
 caravel_user_project/
 src/tholin_avalonsemi_5401.v
 
+asl/
 __pycache__/
 sim_build/
 gds_out/
