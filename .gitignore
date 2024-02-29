@@ -12,6 +12,7 @@ asl/
 __pycache__/
 sim_build/
 gds_out/
+obj_dir/
 
 # Unit test results
 *.xml
